@@ -6,6 +6,7 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import i18n from "./i18n";
 import Header from "./sections/header";
 import Projects from "./sections/projects";
+import Members from "./sections/members";
 
 export default function Home() {
 
@@ -28,6 +29,7 @@ export default function Home() {
       </div>
         <Header></Header>
         <Projects></Projects>
+        <Members></Members>
     </main>
   );
 }
