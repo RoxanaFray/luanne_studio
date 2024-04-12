@@ -1,51 +1,33 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
-import {User} from "@nextui-org/react";
+import { User } from "@nextui-org/react";
+import { Avatar } from "@nextui-org/react";
+import {Divider} from "@nextui-org/react";
 
 
 export default function Team() {
   const { t }: any = useTranslation();
   const list = [
     {
-      title: "Orange",
+      name: t("Alik"),
       img: "/images/rick.jpg",
-      price: "$5.50",
+      position: t("game director")
     },
     {
-      title: "Tangerine",
-      img: "/images/morty.jpg",
-      price: "$3.00",
-    },
-    {
-      title: "Raspberry",
+      name: t("Sergey"),
       img: "/images/jerry.jpg",
-      price: "$10.00",
+      position: t("game programmer")
     },
     {
-      title: "Lemon",
+      name: t("Tanya"),
       img: "/images/morty.jpg",
-      price: "$5.30",
+      position: t("game programmer")
     },
     {
-      title: "Avocado",
-      img: "/images/rick.jpg",
-      price: "$15.70",
-    },
-    {
-      title: "Lemon 2",
-      img: "/images/jerry.jpg",
-      price: "$8.00",
-    },
-    {
-      title: "Banana",
-      img: "/images/morty.jpg",
-      price: "$7.50",
-    },
-    {
-      title: "Watermelon",
-      img: "/images/rick.jpg",
-      price: "$12.20",
+      name: t("Liana"),
+      img: "/images/summer.jpg",
+      position: t("game artist")
     },
   ];
 
@@ -55,17 +37,36 @@ export default function Team() {
       <h1 className={`mb-20 text-5xl`}>
         {t('team')}
       </h1>
-      <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
+      <div className="gap-20 grid grid-cols-4 sm:grid-cols-4">
         {list.map((item, index) => (
-          <User   
-          name={item.title}
-          description="Product Designer"
+          <div className="flex flex-col items-center gap-1">
 
-          avatarProps={{
-            src: item.img,
-          }}
-        />
+            <Avatar isBordered src={item.img} className="w-56 h-56 text-large mb-5" />
+            <h4 className="font-bold text-large">{item.name}</h4>
+            <small className="text-default-500">{item.position}</small>
+            <Divider className="my-4" />
+          </div>
+
+          //   <Card shadow="sm" key={index} isPressable onPress={() => console.log("item pressed")}>
+          //   <CardBody className="overflow-visible p-0">
+          //     <Image
+          //       shadow="sm"
+          //       radius="lg"
+          //       width="100%"
+          //       alt={item.name}
+          //       className="w-full object-cover h-[140px] w-20 h-20 rounded-full"
+          //       src={item.img}
+          //     />
+          //   </CardBody>
+          //   <CardFooter className="text-small justify-between">
+          //     <b>{item.name}</b>
+          //     <p className="text-default-500">{item.position}</p>
+          //   </CardFooter>
+          // </Card>
         ))}
+        {/* <Image className="w-20 h-20 rounded-full" src="/images/morty.jpg" alt="Rounded avatar"/> */}
+
+
       </div>
     </main>)
 }

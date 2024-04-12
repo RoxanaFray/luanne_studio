@@ -23,8 +23,12 @@ export default function Home() {
     <NextUIProvider>
       <main className="">
         <div className="hidden lg:flex justify-end ">
-          <button className="m-3" onClick={() => changeLanguage('ru')}>{t('russian')}</button>
-          <button className="m-3" onClick={() => changeLanguage('en')}>{t('english')}</button>
+          <button className="m-3" onClick={() => changeLanguage('ru')}>
+          <small className="text-default-500">{t('russian')}</small>
+            </button>
+          <button className="m-3" onClick={() => changeLanguage('en')}>
+          <small className="text-default-500">{t('english')}</small>
+            </button>
         </div>
         <Header></Header>
         <Projects></Projects>

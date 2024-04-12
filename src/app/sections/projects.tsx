@@ -9,29 +9,29 @@ export default function Projects() {
     const { t }: any = useTranslation();
     const list = [
         {
-            title: "Minesweeper Paws",
+            title: t("game-1 title"),
             img: "/images/B1.jpg",
-            description: "Fun bomb game",
+            description: t("game-1 description"),
         },
         {
-            title: "Run use gun",
+            title: t("game-2 title"),
             img: "/images/B2.jpg",
-            description: "Cool game for running and shooting",
+            description: t("game-2 description"),
         },
         {
-            title: "Game №1",
+            title: t("game-3 title"),
             img: "/images/B3.jpg",
-            description: "Some game",
+            description: t("game-3 description"),
         },
         {
-            title: "Game №2",
+            title: t("game-4 title"),
             img: "/images/B4.jpg",
-            description: "Wonderful game",
+            description: t("game-4 description"),
         },
         {
-            title: "Game №3",
+            title: t("game-5 title"),
             img: "/images/B5.jpg",
-            description: "Just amazing!",
+            description: t("game-5 description"),
         },
     ];
     return (

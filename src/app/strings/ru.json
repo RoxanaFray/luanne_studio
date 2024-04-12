@@ -1,8 +1,24 @@
-
 {
    "hello": "Привет!",
    "projects": "Проекты",
-   "russian":"Русский",
+   "russian": "Русский",
    "english": "English",
-   "team": "Команда"
+   "Alik": "Алик",
+   "Sergey": "Сергей",
+   "Tanya": "Таня",
+   "Liana": "Лиана",
+   "team": "Команда",
+   "game-1 title": "Minesweeper Paws",
+   "game-2 title": "Run use gun",
+   "game-3 title": "Игра №3",
+   "game-4 title": "Игра №4",
+   "game-5 title": "Игра №5",
+   "game-1 description": "Бомбовая игра",
+   "game-2 description": "Крутая игра с бегом и стрельбой",
+   "game-3 description": "Какая-то игра",
+   "game-4 description": "Чудесная игра",
+   "game-5 description": "Просто потрясно!",
+   "game director": "Директор",
+   "game artist": "Художник",
+   "game programmer": "Разработчик"
 }
