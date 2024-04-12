@@ -6,7 +6,8 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import i18n from "./i18n";
 import Header from "./sections/header";
 import Projects from "./sections/projects";
-import Members from "./sections/members";
+import Team from "./sections/team";
+import { NextUIProvider } from "@nextui-org/react";
 
 export default function Home() {
 
@@ -19,17 +20,16 @@ export default function Home() {
   }
 
   return (
-    <main className="">
-<div className="hidden lg:flex justify-end ">
-        <button className="m-3" onClick={() => changeLanguage('ru')}>{t('russian')}</button>
-        <button className="m-3" onClick={() => changeLanguage('en')}>{t('english')}</button>
-
-      </div>
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-      </div>
+    <NextUIProvider>
+      <main className="">
+        <div className="hidden lg:flex justify-end ">
+          <button className="m-3" onClick={() => changeLanguage('ru')}>{t('russian')}</button>
+          <button className="m-3" onClick={() => changeLanguage('en')}>{t('english')}</button>
+        </div>
         <Header></Header>
         <Projects></Projects>
-        <Members></Members>
-    </main>
+        <Team></Team>
+      </main>
+    </NextUIProvider>
   );
 }
