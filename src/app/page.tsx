@@ -8,6 +8,8 @@ import Header from "./sections/header";
 import Projects from "./sections/projects";
 import Team from "./sections/team";
 import { NextUIProvider } from "@nextui-org/react";
+// import Contacts from "./sections/contacts";
+import Footer from "./sections/footer"
 
 export default function Home() {
 
@@ -33,6 +35,8 @@ export default function Home() {
         <Header></Header>
         <Projects></Projects>
         <Team></Team>
+        {/* <Contacts></Contacts> */}
+      <Footer></Footer>
       </main>
     </NextUIProvider>
   );

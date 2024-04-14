@@ -11,11 +11,16 @@ const config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {backgroundImage: {
+    extend: {
+      backgroundImage: {
       "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       "gradient-conic":
         "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-    },},
+      },
+      colors: {
+        "light-blue": "#ecf1f1"
+      },
+  },
   },
   darkMode: "class",
   plugins: [nextui()]
