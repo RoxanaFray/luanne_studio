@@ -1,8 +1,8 @@
 {
    "hello": "Hello!",
    "projects": "Projects",
-   "russian": "Русский",
-   "english": "English",
+   "russian": "РУ",
+   "english": "EN",
    "team": "Team",
    "contacts": "Feel free to contact us",
    "Alik": "Alik",
@@ -11,7 +11,7 @@
    "Liana": "Liana",
    "game-1 title": "Minesweeper Paws",
    "game-2 title": "Run use gun",
-   "game-3 title": "Game №3",
+   "game-3 title": "Command: Summon",
    "game-4 title": "Game №4",
    "game-5 title": "Game №5",
    "game-1 description": "Fun bomb game",
@@ -21,5 +21,7 @@
    "game-5 description": "Just amazing!",
    "game director": "Game Director",
    "game artist": "Game Artist",
-   "game programmer": "Game Programmer"
+   "game programmer": "Game Programmer",
+   "team description": "We're a team of creative Unity enthusiasts bringing your gaming visions to life with flair and finesse!",
+   "more": "More"
 }
