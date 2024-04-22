@@ -35,8 +35,8 @@ export default function Projects() {
         // },
     ];
     return (
-        <main className="flex flex-col items-center pt-24 pb-8">
-            <h1 className="mb-20 text-5xl antialiased pb-12">
+        <main className="flex flex-col items-center pb-36">
+            <h1 className="font-MPlusRegular uppercase mb-32 text-5xl antialiased">
                 {t('projects')}
             </h1>
             <div className="grid grid-cols-4 gap-10">
@@ -55,8 +55,8 @@ export default function Projects() {
                       width={250}
                     />
                     <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-                      <p className="text-sm text-white/80 font-medium">{item.title}</p>
-                      <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
+                      <p className="font-MPlusBold absolute left-4 text-primary-800 text-4xl text-sm text-white/80">{item.title}</p>
+                      <Button className="text-tiny text-white bg-black/20 font-dudka" variant="flat" color="default" radius="lg" size="sm">
                         {t("more")}
                         <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;

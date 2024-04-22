@@ -18,16 +18,50 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: 'lucida';
+    src: url(/fonts/lucida-grande.woff2) format('woff2');
+  }
+
+  @font-face {
+    font-family: 'ephesis';
+    src: url(../../public/fonts/Ephesis.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'MPlusRegular';
+    src: url(../../public/fonts/MPlusRegular.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'MPlusMedium';
+    font-weight: 900;
+    src: url(../../public/fonts/MPlusMedium.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'MPlusBold';
+    src: url(../../public/fonts/MPlusBold.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'MPlusExtraBold';
+    src: url(../../public/fonts/MPlusExtraBold.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'MPlusLight';
+    src: url(../../public/fonts/MPlusLight.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'MPlusThin';
+    src: url(../../public/fonts/MPlusThin.woff2) format('woff2');
   }
 }

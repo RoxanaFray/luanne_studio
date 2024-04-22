@@ -32,12 +32,12 @@ export default function Team() {
   ];
 
   return (
-    <main className="flex flex-col items-center mb-12">
-      <div className="w-2/3 border-t-2 object-center border-black"/>
-      <h5 className="text-3xl mt-28 mb-8 max-w-4xl text-center leading-normal tracking-wide antialiased">
+    <main className="font-MPlusLight flex flex-col items-center mb-44">
+      <div className="w-2/3 border-t-1 object-center border-black"/>
+      <h5 className="text-3xl mt-36 mb-36 max-w-4xl text-center leading-normal tracking-wide antialiased">
       {t("team description")}
       </h5>
-      <div className="gap-20 grid grid-cols-4 sm:grid-cols-4 pt-24">
+      <div className="gap-20 grid grid-cols-4 sm:grid-cols-4">
         {list.map((item, index) => (
           <div className="flex flex-col items-center gap-1">
             <Avatar isBordered src={item.img} className="w-56 h-56 text-large mb-5" />

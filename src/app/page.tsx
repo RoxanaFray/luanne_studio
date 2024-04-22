@@ -26,10 +26,10 @@ export default function Home() {
       <main className="">
         <div className="hidden lg:flex justify-end gap-1 fixed top-2 right-2">
             <Button className="" isIconOnly variant="faded" onClick={() => changeLanguage('ru')}>
-              <small className="text-default-500">{t('russian')}</small>
+              <small className="font-MPlusMedium text-default-500">{t('russian')}</small>
             </Button>
             <Button className="" isIconOnly variant="faded" onClick={() => changeLanguage('en')}>
-              <small className="text-default-500">{t('english')}</small>
+              <small className="font-MPlusMedium text-default-500">{t('english')}</small>
             </Button>
         </div>
         <Header></Header>
