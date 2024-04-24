@@ -20,7 +20,8 @@ const config = {
       colors: {
         "light-blue": "#ecf1f1",
         "light-grey": "#ebebeb",
-        "grey": "#12121226"
+        "grey": "#12121226",
+        "yellow": "#f7f0e0"
       },
       fontFamily: {
         lucida: ['lucida', 'sans-serif'],

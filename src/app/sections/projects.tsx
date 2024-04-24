@@ -35,7 +35,7 @@ export default function Projects() {
         // },
     ];
     return (
-        <main className="flex flex-col items-center pb-36">
+        <main className="flex flex-col items-center pb-28">
             <h1 className="font-MPlusRegular uppercase mb-32 text-5xl antialiased">
                 {t('projects')}
             </h1>
@@ -43,44 +43,39 @@ export default function Projects() {
                 {list.map((item, index) => (
 
                     <Card
-                    isFooterBlurred
-                    radius="lg"
-                    className="border-none"
-                  >
-                    <Image
-                      alt="Woman listing to music"
-                      className="object-cover"
-                      height={250}
-                      src={item.img}
-                      width={250}
-                    />
-                    <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-                      <p className="font-MPlusBold absolute left-4 text-primary-800 text-4xl text-sm text-white/80">{item.title}</p>
-                      <Button className="text-tiny text-white bg-black/20 font-dudka" variant="flat" color="default" radius="lg" size="sm">
-                        {t("more")}
-                        <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                    // <Card isPressable className="py-4">
-                    //     <CardBody className="overflow-visible py-2">
-                    //         <Image
-                    //             alt="Card background"
-                    //             className="object-cover rounded-xl"
-                    //             src={item.img}
-                    //             width={250}
-                    //             height={250}
-                    //         />
-                    //     </CardBody>
-                    //     <CardFooter className="relative flex-col items-start shadow-black/5 shadow-none rounded-large">
-                    //         <h4 className="font-bold text-large">{item.title}</h4>
-                    //         <small className="text-default-500">{item.description}</small>
-                    //     </CardFooter>
-                    // </Card>
+                        isFooterBlurred
+                        radius="lg"
+                        className="border-none"
+                    >
+                        <Link href="#">
+                        <Image
+                            alt={item.title}
+                            className="object-cover"
+                            height={250}
+                            src={item.img}
+                            width={250}
+                        />
+
+                        </Link>
+                        <CardFooter className="justify-center h-10 before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+                            <p className="font-MPlusBold text-primary-800 text-4xl text-sm text-white/80">{item.title}</p>
+                            {/* <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm"> */}
+                                {/* <span className="font-MPlusBold">{t("more")}</span>
+                                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                                    -&gt;
+                                </span> */}
+                            {/* </Button> */}
+                        </CardFooter>
+                    </Card>
                 ))}
             </div>
+            <Button className="text-default-500 mt-32 px-10 py-3 bg-light-grey text-md" radius="lg">
+                <span className="font-MPlusMedium">{t("show all")}</span>
+
+                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                    -&gt;
+                </span>
+            </Button>
         </main>
 
     )
