@@ -77,6 +77,10 @@ body {
         blink 1s 4;
 }
 
+.sound {
+    display: block;
+}
+
 @keyframes typing {
     0% {
         width: 0%;
@@ -95,5 +99,17 @@ body {
 
     50% {
         border-right: 2px solid #222;
+    }
+}
+
+.show-more-button:hover {
+    background-color: #eeeeee;
+
+    .show-more-button-text {
+        color: #8c8d94;
+    }
+    .show-more-button-arrow {
+        transform: translateX(0.25rem);
+        color: #8c8d94;
     }
 }

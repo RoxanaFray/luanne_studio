@@ -18,21 +18,25 @@ export default function Projects() {
       title: t("game-1 title"),
       img: "/images/B4.jpg",
       description: t("game-1 description"),
+      link: "projects",
     },
     {
       title: t("game-2 title"),
       img: "/images/run_use_gun.jpg",
       description: t("game-2 description"),
+      link: "projects",
     },
     {
       title: t("game-3 title"),
       img: "/images/summon.png",
       description: t("game-3 description"),
+      link: "projects",
     },
     {
       title: t("game-4 title"),
       img: "/images/B5.jpg",
       description: t("game-4 description"),
+      link: "projects",
     },
     // {
     //     title: t("game-5 title"),
@@ -40,6 +44,7 @@ export default function Projects() {
     //     description: t("game-5 description"),
     // },
   ];
+  function openProjects() {}
   return (
     <main className="flex flex-col items-center pb-28">
       <h1 className="font-MPlusRegular uppercase mb-36 text-5xl antialiased">
@@ -48,7 +53,7 @@ export default function Projects() {
       <div className="grid grid-cols-4 gap-10">
         {list.map((item, index) => (
           <Card isFooterBlurred key={index} radius="lg" className="border-none">
-            <Link href="#">
+            <Link href={item.link}>
               <Image
                 alt={item.title}
                 className="object-cover"
@@ -71,16 +76,18 @@ export default function Projects() {
           </Card>
         ))}
       </div>
-      <Button
-        className="text-default-500 mt-32 px-10 py-3 bg-light-grey text-lg"
-        radius="lg"
+      <Link
+        className="show-more-button text-default-500 mt-32 px-10 py-2 bg-light-grey text-lg rounded-xl"
+        href="projects"
       >
-        <span className="font-MPlusMedium">{t("show all")}</span>
+        <span className="show-more-button-text font-MPlusMedium">
+          {t("show all")}
+        </span>
 
-        <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+        <span className="show-more-button-arrow inline-block pl-2 transition-transform motion-reduce:transform-none">
           -&gt;
         </span>
-      </Button>
+      </Link>
     </main>
   );
 }
