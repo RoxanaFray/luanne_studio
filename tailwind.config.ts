@@ -8,7 +8,7 @@ const config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -20,23 +20,23 @@ const config = {
       colors: {
         "light-blue": "#ecf1f1",
         "light-grey": "#ebebeb",
-        "grey": "#12121226",
-        "yellow": "#f7f0e0"
+        grey: "#12121226",
+        yellow: "#ffe7b500",
       },
       fontFamily: {
-        lucida: ['lucida', 'sans-serif'],
-        ephesis: ['ephesis', 'sans-serif'],
-        MPlusRegular: ['MPlusRegular', 'sans-serif'],
-        MPlusMedium: ['MPlusMedium', 'sans-serif'],
-        MPlusBold: ['MPlusBold', 'sans-serif'],
-        MPlusExtraBold: ['MPlusExtraBold', 'sans-serif'],
-        MPlusLight: ['MPlusLight', 'sans-serif'],
-        MPlusThin: ['MPlusThin', 'sans-serif'],
+        lucida: ["lucida", "sans-serif"],
+        ephesis: ["ephesis", "sans-serif"],
+        MPlusRegular: ["MPlusRegular", "sans-serif"],
+        MPlusMedium: ["MPlusMedium", "sans-serif"],
+        MPlusBold: ["MPlusBold", "sans-serif"],
+        MPlusExtraBold: ["MPlusExtraBold", "sans-serif"],
+        MPlusLight: ["MPlusLight", "sans-serif"],
+        MPlusThin: ["MPlusThin", "sans-serif"],
       },
     },
   },
   darkMode: "class",
-  plugins: [nextui()]
-}
+  plugins: [nextui()],
+};
 
 export default config;

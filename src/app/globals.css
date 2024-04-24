@@ -3,65 +3,97 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+            to bottom,
+            transparent,
+            rgb(var(--background-end-rgb))
+        )
+        rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
 }
 
 @layer base {
-  @font-face {
-    font-family: 'lucida';
-    src: url(/fonts/lucida-grande.woff2) format('woff2');
-  }
+    @font-face {
+        font-family: "lucida";
+        src: url(/fonts/lucida-grande.woff2) format("woff2");
+    }
 
-  @font-face {
-    font-family: 'ephesis';
-    src: url(../../public/fonts/Ephesis.woff2) format('woff2');
-  }
-  @font-face {
-    font-family: 'MPlusRegular';
-    src: url(../../public/fonts/MPlusRegular.woff2) format('woff2');
-  }
-  @font-face {
-    font-family: 'MPlusMedium';
-    font-weight: 900;
-    src: url(../../public/fonts/MPlusMedium.woff2) format('woff2');
-  }
-  @font-face {
-    font-family: 'MPlusBold';
-    src: url(../../public/fonts/MPlusBold.woff2) format('woff2');
-  }
-  @font-face {
-    font-family: 'MPlusExtraBold';
-    src: url(../../public/fonts/MPlusExtraBold.woff2) format('woff2');
-  }
-  @font-face {
-    font-family: 'MPlusLight';
-    src: url(../../public/fonts/MPlusLight.woff2) format('woff2');
-  }
-  @font-face {
-    font-family: 'MPlusThin';
-    src: url(../../public/fonts/MPlusThin.woff2) format('woff2');
-  }
+    @font-face {
+        font-family: "ephesis";
+        src: url(../../public/fonts/Ephesis.woff2) format("woff2");
+    }
+    @font-face {
+        font-family: "MPlusRegular";
+        src: url(../../public/fonts/MPlusRegular.woff2) format("woff2");
+    }
+    @font-face {
+        font-family: "MPlusMedium";
+        font-weight: 900;
+        src: url(../../public/fonts/MPlusMedium.woff2) format("woff2");
+    }
+    @font-face {
+        font-family: "MPlusBold";
+        src: url(../../public/fonts/MPlusBold.woff2) format("woff2");
+    }
+    @font-face {
+        font-family: "MPlusExtraBold";
+        src: url(../../public/fonts/MPlusExtraBold.woff2) format("woff2");
+    }
+    @font-face {
+        font-family: "MPlusLight";
+        src: url(../../public/fonts/MPlusLight.woff2) format("woff2");
+    }
+    @font-face {
+        font-family: "MPlusThin";
+        src: url(../../public/fonts/MPlusThin.woff2) format("woff2");
+    }
+}
+
+.text-typing {
+    white-space: nowrap;
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+    animation:
+        typing 1.5s steps(16, end) forwards,
+        blink 1s 4;
+}
+
+@keyframes typing {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        border-right: 2px solid transparent;
+    }
+
+    50% {
+        border-right: 2px solid #222;
+    }
 }
