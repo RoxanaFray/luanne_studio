@@ -29,7 +29,7 @@ export default function Home() {
             variant="faded"
             onClick={() => changeLanguage("ru")}
           >
-            <small className="font-MPlusMedium text-default-500">
+            <small className="font-MPlusMedium text-default-500 text-black/70">
               {t("russian")}
             </small>
           </Button>
@@ -39,7 +39,7 @@ export default function Home() {
             variant="faded"
             onClick={() => changeLanguage("en")}
           >
-            <small className="font-MPlusMedium text-default-500">
+            <small className="font-MPlusMedium text-default-500 text-black/70">
               {t("english")}
             </small>
           </Button>

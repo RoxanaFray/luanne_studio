@@ -63,7 +63,7 @@ export default function Header() {
   ];
   return (
     <main className="flex flex-col items-center pb-20">
-      <div className="w-2/3 border-t-2 border-grey object-center p-8 pb-12" />
+      <div className="w-2/3 border-t-1 border-black/20 object-center p-8 pb-12" />
       <div className="flex items-center justify-between gap-10">
         {list.map((item, index) => (
           <Tooltip content={item.title} key={index}>

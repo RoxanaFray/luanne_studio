@@ -113,3 +113,15 @@ body {
         color: #8c8d94;
     }
 }
+
+.project-link div:first-child {
+    height: 100%;
+}
+
+.project-card:hover {
+    .hover-cover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
