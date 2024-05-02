@@ -38,12 +38,8 @@ export default function Projects() {
       description: t("game-4 description"),
       link: "projects",
     },
-    // {
-    //     title: t("game-5 title"),
-    //     img: "/images/B5.jpg",
-    //     description: t("game-5 description"),
-    // },
   ];
+
   function openProjects() {}
   return (
     <main className="flex flex-col items-center pb-28">
