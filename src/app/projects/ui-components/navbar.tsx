@@ -1,11 +1,4 @@
 import React from "react";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Button,
-} from "@nextui-org/react";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import Link from "next/link";
@@ -104,48 +97,43 @@ export default function NavBar() {
 
   return (
     <main>
-      <div className="w-1/5 h-screen">
-        <Navbar className="h-full shadow-xl border-1 w-full ">
-          <NavbarContent
-            className="hidden sm:flex flex-col gap-4 w-full items-center h-screen"
-            justify="center"
-          >
-            <NavbarBrand className="pt-4">
-              <Image
-                src="/images/logo_no_color_words_grey.png"
-                alt="LuanneStudio logo"
-                width={80}
-                sizes="width:100%"
-                height={80}
-                className="rounded-xl"
-              />
-            </NavbarBrand>
-            <Divider className="w-full" />
-            <ScrollShadow className="h-full">
-              {list.map((item, index) => (
-                <NavbarItem key={index} className="w-full border-b-1 p-2">
-                  <Link
-                    color="foreground"
-                    className="flex flex-row"
-                    href={item.link}
-                  >
-                    <Image
-                      src={item.img}
-                      width={50}
-                      height={50}
-                      alt="Picture of the game"
-                      className="rounded-xl"
-                    />
-                    <span className="font-MPlusLight text-black/70 p-4">
-                      {" "}
-                      {item.title}
-                    </span>
-                  </Link>
-                </NavbarItem>
-              ))}
-            </ScrollShadow>
-          </NavbarContent>
-        </Navbar>
+      <div className="w-1/5 h-screen shadow-xl border-1 border-grey-border bg-light-background">
+        <div className="hidden sm:flex flex-col gap-4 w-full items-center h-screen justify-center">
+          <div className="pt-4">
+            <Image
+              src="/images/logo_no_color_words_grey.png"
+              alt="LuanneStudio logo"
+              width={80}
+              // sizes="width:100%"
+              height={80}
+              className="rounded-xl"
+            />
+          </div>
+          <Divider className="w-full" />
+          <ScrollShadow className="h-full w-full pl-4 pr-8">
+            {list.map((item, index) => (
+              <div key={index} className="w-full border-b-1 p-2">
+                <Link
+                  color="foreground"
+                  className="flex flex-row w-full"
+                  href={item.link}
+                >
+                  <Image
+                    src={item.img}
+                    width={50}
+                    height={50}
+                    alt="Picture of the game"
+                    className="rounded-xl object-contain"
+                  />
+                  <span className="font-MPlusLight text-black/70 p-4">
+                    {" "}
+                    {item.title}
+                  </span>
+                </Link>
+              </div>
+            ))}
+          </ScrollShadow>
+        </div>
       </div>
     </main>
   );

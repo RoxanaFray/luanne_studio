@@ -23,6 +23,8 @@ const config = {
         grey: "#12121226",
         yellow: "#ffe7b500",
         "grey-text": "#555555",
+        "light-background": "#f4f5f5",
+        "grey-border": "rgb(229, 231, 235)",
       },
       fontFamily: {
         lucida: ["lucida", "sans-serif"],
