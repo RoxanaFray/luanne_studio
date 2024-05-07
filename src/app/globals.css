@@ -32,6 +32,27 @@ body {
     }
 }
 
+/* width */
+/* .navbar ::-webkit-scrollbar {
+    width: 6px;
+} */
+
+/* Track */
+/* .navbar ::-webkit-scrollbar-track {
+    background: #f4f5f5;
+    border-radius: 20px;
+} */
+
+/* .navbar ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 20px;
+} */
+
+/* Handle on hover */
+/* .navbar ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} */
+
 @layer base {
     @font-face {
         font-family: "lucida";

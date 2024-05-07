@@ -96,39 +96,41 @@ export default function NavBar() {
   ];
 
   return (
-    <main>
+    <main className="navbar">
       <div className="w-1/5 h-screen shadow-xl border-1 border-grey-border bg-light-background">
         <div className="hidden sm:flex flex-col gap-4 w-full items-center h-screen justify-center">
-          <div className="pt-4">
+          <Link href="/" className="pt-4 ">
             <Image
               src="/images/logo_no_color_words_grey.png"
               alt="LuanneStudio logo"
               width={80}
-              // sizes="width:100%"
               height={80}
               className="rounded-xl"
             />
-          </div>
+          </Link>
           <Divider className="w-full" />
-          <ScrollShadow className="h-full w-full pl-4 pr-8">
+          <ScrollShadow className="h-full w-full  bg-light-background">
             {list.map((item, index) => (
-              <div key={index} className="w-full border-b-1 p-2">
+              <div key={index} className="w-full project-card border-b-1">
                 <Link
                   color="foreground"
-                  className="flex flex-row w-full"
+                  className="flex flex-row relative project-link w-full min-h-16"
                   href={item.link}
                 >
-                  <Image
-                    src={item.img}
-                    width={50}
-                    height={50}
-                    alt="Picture of the game"
-                    className="rounded-xl object-contain"
-                  />
-                  <span className="font-MPlusLight text-black/70 p-4">
+                  <div className="pt-2 pb-2">
+                    <Image
+                      src={item.img}
+                      width={50}
+                      height={50}
+                      alt="Picture of the game"
+                      className="rounded-xl object-contain ml-4 align-middle"
+                    />
+                  </div>
+                  <span className="font-MPlusLight text-black/70 p-4 pt-5">
                     {" "}
                     {item.title}
                   </span>
+                  <div className="hover-cover absolute bg-grey/5 rounded w-full h-full top-0 hidden" />
                 </Link>
               </div>
             ))}
