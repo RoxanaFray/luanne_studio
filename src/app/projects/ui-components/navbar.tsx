@@ -96,8 +96,8 @@ export default function NavBar() {
   ];
 
   return (
-    <main className="navbar">
-      <div className="w-1/5 h-screen shadow-xl border-1 border-grey-border bg-light-background">
+    <main className="navbar basis-1/5 ">
+      <div className="h-screen shadow-xl border-1 border-grey-border bg-light-background">
         <div className="hidden sm:flex flex-col gap-4 w-full items-center h-screen justify-center">
           <Link href="/" className="pt-4 ">
             <Image
