@@ -5,10 +5,9 @@ import i18n from "../i18n";
 import "../globals.css";
 import { Button, ButtonGroup } from "@nextui-org/react";
 
-export default function Home() {
+export default function TranslateButtons() {
   const { t }: any = useTranslation();
   const [language, setLanguage] = useLocalStorage("language", "en");
-
   const changeLanguage = (lan: string) => {
     i18n.changeLanguage(lan);
     setLanguage(lan);

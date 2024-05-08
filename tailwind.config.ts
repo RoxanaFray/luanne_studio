@@ -25,6 +25,7 @@ const config = {
         "grey-text": "#555555",
         "light-background": "#f4f5f5",
         "grey-border": "rgb(229, 231, 235)",
+        "background-grey": "#d7dcdd",
       },
       fontFamily: {
         lucida: ["lucida", "sans-serif"],
