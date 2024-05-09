@@ -15,7 +15,7 @@ export default function ProjectsLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <TranslateButtons />
+        <TranslateButtons isHidden={false} />
         <div className="flex flex-row">
           <NavBar></NavBar>
           {children}
