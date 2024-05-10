@@ -52,16 +52,17 @@ export default function Projects() {
             isFooterBlurred
             key={index}
             radius="lg"
-            className="project-card border-none"
+            className="project-card border-none rounded-none"
           >
             <Link href={item.link} className="h-full project-link relative">
               <Image
                 alt={item.title}
                 src={item.img}
                 width={250}
-                className="z-0 h-full object-cover"
+                className="z-0 h-full object-cover rounded-none"
               />
-              <CardFooter className="justify-center h-10 before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+              {/* <CardFooter className="justify-center h-10 before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10"> */}
+              <CardFooter className="justify-center h-10 before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute rounded-none bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
                 {/* <p className="font-MPlusBold text-primary-800 text-sm text-white/80"> */}
                 <h6 className="text-white/80 font-medium text-md">
                   {item.title}
@@ -118,7 +119,9 @@ export default function Projects() {
         ))}
       </div>
       <Link
-        className="show-more-button text-default-500 mt-32 px-10 py-2 bg-light-grey text-lg rounded-xl"
+        // className="show-more-button text-default-500 mt-32 px-10 py-2 bg-light-grey text-lg rounded-xl"
+
+        className="show-more-button text-default-500 mt-32 px-10 py-2 text-lg border-2 border-black/50 "
         href="projects"
       >
         <span className="show-more-button-text font-MPlusMedium text-black/60">

@@ -39,11 +39,20 @@ export default function Team() {
       <div className="gap-20 grid grid-cols-4 sm:grid-cols-4">
         {list.map((item, index) => (
           <div className="flex flex-col items-center gap-1" key={index}>
-            <Avatar
+            {/* <Avatar
               isBordered
               src={item.img}
               className="w-56 h-56 text-large mb-5"
-            />
+            /> */}
+            <div className="bg-white border-2 p-0.5 mb-5 border-black/20">
+              <Image
+                src={item.img}
+                width="170"
+                height="170"
+                className="rounded-none"
+                alt="team photo"
+              />
+            </div>
             <h4 className="font-bold text-large text-black/70">{item.name}</h4>
             <small className="text-default-500 text-black/70">
               {item.position}

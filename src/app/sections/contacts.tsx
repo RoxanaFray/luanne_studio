@@ -69,7 +69,12 @@ export default function Header() {
       </div> */}
       <div className="grid grid-cols-5 items-center justify-between gap-8">
         {list.map((item, index) => (
-          <Button variant="bordered" size="lg" key={index}>
+          <Button
+            variant="bordered"
+            className="rounded-none border-black/20 border-2"
+            size="lg"
+            key={index}
+          >
             <Image
               className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert "
               src={item.img}

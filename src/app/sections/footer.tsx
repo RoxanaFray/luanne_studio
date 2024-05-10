@@ -70,7 +70,7 @@ export default function Header() {
             <Button
               isIconOnly
               variant="solid"
-              className="bg-light-grey"
+              className="bg-transparent rounded-none border-1 border-black/20"
               size="lg"
             >
               <Image

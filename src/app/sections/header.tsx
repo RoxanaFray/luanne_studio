@@ -15,9 +15,10 @@ export default function Header() {
         height={550}
         priority
       />
-      <div className="flex justify-center border-2 border-black/70 rounded-2xl py-7 px-12 mt-4 content-center mx-auto ">
-        <span className="text-typing text-black/70 uppercase font-MPlusRegular text-6xl">
-          Luanne Studio
+      {/* <div className="flex justify-center border-2 border-black/70 rounded-2xl py-7 px-12 mt-4 content-center mx-auto "> */}
+      <div className="flex justify-center border-3 border-black/70 py-7 px-12 mt-4 content-center mx-auto ">
+        <span className="text-typing text-black/70 lowercase font-MPlusRegular text-6xl">
+          Luanne_Studio
         </span>
       </div>
       {/* </div> */}
