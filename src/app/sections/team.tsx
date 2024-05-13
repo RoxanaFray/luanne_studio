@@ -11,29 +11,34 @@ export default function Team() {
     {
       name: t("Alik"),
       img: "/images/rick.jpg",
-      position: t("game director"),
+      position: "@shrekfactory",
     },
     {
       name: t("Sergey"),
       img: "/images/jerry.jpg",
-      position: t("game programmer"),
+      position: t("@gastar"),
     },
     {
       name: t("Tanya"),
       img: "/images/morty.jpg",
-      position: t("game programmer"),
+      position: t("@roxanafray"),
     },
     {
       name: t("Liana"),
       img: "/images/summer.jpg",
-      position: t("game artist"),
+      position: t("@lulun"),
     },
   ];
 
   return (
-    <main className="font-MPlusLight flex flex-col items-center my-44">
-      <div className="w-2/3 border-t-1 object-center border-black/50" />
-      <h5 className="text-3xl mt-36 mb-36 max-w-4xl text-center text-black/70 leading-normal tracking-wide antialiased">
+    <main
+      className="font-MPlusLight flex flex-col items-start px-48"
+      id="about_us"
+    >
+      <h1 className="font-MPlusRegular pt-32 tracking-wide text-black/15 uppercase text-9xl antialiased">
+        {t("team")}
+      </h1>
+      <h5 className="text-3xl mb-20 mt-16 max-w-4xl text-start text-black/70 leading-normal tracking-wide antialiased">
         {t("team description")}
       </h5>
       <div className="gap-20 grid grid-cols-4 sm:grid-cols-4">
@@ -42,12 +47,15 @@ export default function Team() {
             <Avatar
               isBordered
               src={item.img}
-              className="w-56 h-56 text-large mb-5"
+              className="w-56 h-56 text-large mb-5 "
             />
+
             <h4 className="font-bold text-large text-black/70">{item.name}</h4>
-            <small className="text-default-500 text-black/70">
-              {item.position}
-            </small>
+            <Link href="/projects">
+              <small className="text-default-500 text-black/70 ">
+                {item.position}
+              </small>
+            </Link>
             <Divider className="my-4" />
           </div>
         ))}
