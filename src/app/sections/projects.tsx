@@ -44,7 +44,7 @@ export default function Projects() {
   return (
     <main id="projects" className="px-48 pb-28 pt-32">
       <div className="flex flex-col items-start">
-        <h1 className="font-MPlusRegular tracking-wide text-black/15 uppercase mb-16 text-9xl antialiased">
+        <h1 className="font-MPlusRegular tracking-wide text-black/10 uppercase mb-16 text-9xl antialiased">
           {t("projects")}
         </h1>
         <div className="grid grid-cols-4 gap-10 items-center">
