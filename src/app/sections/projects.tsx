@@ -40,7 +40,6 @@ export default function Projects() {
     },
   ];
 
-  function openProjects() {}
   return (
     <main id="projects" className="px-48 pb-28 pt-32">
       <div className="flex flex-col items-start">
