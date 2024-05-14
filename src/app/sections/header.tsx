@@ -7,33 +7,48 @@ export default function Header() {
   const list = [
     {
       title: "About us",
-      link: "#about_us",
+      id: "about_us",
     },
     {
       title: "Projects",
-      link: "#projects",
+      id: "projects",
     },
     {
       title: "Contacts",
-      link: "#contacts",
+      id: "contacts",
     },
   ];
+
+  const smoothScrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({
+      block: "start",
+      behavior: "smooth", // smooth scroll
+    });
+  };
 
   return (
     <main className="border-b-1 border-black/30 fixed max-h-[120px] w-full z-40 bg-background-grey">
       <div className="flex px-48 grey-text flex-row items-center justify-between pt-4 pb-2">
-        <div className="border-1 border-black/70 rounded py-1 px-2 mb-4 mt-2">
+        <button
+          className="border-1 border-black/70 rounded py-1 px-2 mb-4 mt-2"
+          onClick={() => smoothScrollTo("about_us")}
+        >
           <span className="text-typing text-black/60 uppercase font-MPlusMedium text-lg">
             Luanne Studio
           </span>
-        </div>
+        </button>
         <div className="flex flex-row items-end gap-10 pt-4">
           {list.map((item, index) => (
-            <Link href={item.link} className="" key={index}>
+            <button
+              onClick={() => smoothScrollTo(item.id)}
+              className=""
+              key={index}
+            >
               <span className="text-black/30 uppercase font-MPlusBold text-xl">
                 {item.title}
               </span>
-            </Link>
+            </button>
           ))}
         </div>
       </div>

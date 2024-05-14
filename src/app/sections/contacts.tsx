@@ -62,15 +62,18 @@ export default function Header() {
     },
   ];
   return (
-    <main className="flex flex-col items-center pb-20">
+    <main className="flex flex-col items-center pb-20" id="contacts">
       <div className="w-2/3 border-t-1 border-black/20 object-center p-8 pb-12" />
       {/* <div className="font-MPlusMedium pb-20 text-grey uppercase text-8xl tracking-widest text-center antialiased">
         Write us
       </div> */}
+      <h5 className="font-MPlusMedium tracking-wide text-black/10 uppercase text-7xl antialiased pr-12">
+        Connect us
+      </h5>
       <div className="grid grid-cols-5 items-center justify-between gap-8">
         {list.map((item, index) => (
           <Button variant="bordered" size="lg" key={index}>
-            <Image
+            {/* <Image
               className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert "
               src={item.img}
               alt={item.title}
@@ -78,7 +81,7 @@ export default function Header() {
               width={30}
               height={30}
               priority
-            />
+            /> */}
             <span>{item.title}</span>
           </Button>
         ))}

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/navigation";
 
 import React from "react";
 import {
@@ -13,6 +14,9 @@ import {
 
 export default function Projects() {
   const { t }: any = useTranslation();
+
+  const router = useRouter();
+
   const list = [
     {
       title: t("game-1 title"),
@@ -41,7 +45,8 @@ export default function Projects() {
   ];
 
   return (
-    <main id="projects" className="px-48 pb-28 pt-32">
+    <main className="px-48 pb-24 mt-8 relative">
+      <div id="projects" className="absolute -top-36" />
       <div className="flex flex-col items-start">
         <h1 className="font-MPlusRegular tracking-wide text-black/10 uppercase mb-16 text-9xl antialiased">
           {t("projects")}
@@ -49,25 +54,24 @@ export default function Projects() {
         <div className="grid grid-cols-4 gap-10 items-center">
           {list.map((item, index) => (
             <Card
-              isFooterBlurred
               key={index}
-              radius="lg"
+              radius="sm"
               className="project-card rounded"
+              shadow="sm"
+              isPressable
+              onPress={() => router.push(item.link)}
             >
-              <Link href={item.link} className="h-full project-link relative">
-                <Image
-                  alt={item.title}
-                  src={item.img}
-                  width={250}
-                  className="z-0 h-full object-cover rounded"
-                />
-                <CardFooter className="project-card-title justify-center h-10 before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded mx-2 rounded bottom-1 w-[calc(100%_-_20px)] shadow-small z-10">
-                  <h6 className="text-white/80 font-medium text-md">
-                    {item.title}
-                  </h6>
-                </CardFooter>
-                <div className="hover-cover absolute bg-white/20 w-full h-full top-0 hidden"></div>
-              </Link>
+              <Image
+                alt={item.title}
+                src={item.img}
+                width={250}
+                className="z-0 h-full object-cover rounded-none"
+              />
+              <CardFooter className="project-card-title justify-between h-10">
+                <h6 className="text-black/80 font-medium text-md">
+                  {item.title}
+                </h6>
+              </CardFooter>
             </Card>
           ))}
         </div>
