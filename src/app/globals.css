@@ -124,10 +124,10 @@ body {
 }
 
 .show-more-button:hover {
-    background-color: #eeeeee;
+    background-color: #ffffff;
 
     .show-more-button-text {
-        color: #8c8d94;
+        /* color: #8c8d94; */
     }
     .show-more-button-arrow {
         transform: translateX(0.25rem);
@@ -139,10 +139,16 @@ body {
     height: 100%;
 }
 
-.project-card:hover {
-    .hover-cover {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+/* SIZES */
+
+@media screen and (min-width: 1000px) {
+    .project-card-image {
+        height: 260px;
+    }
+}
+
+@media screen and (max-width: 999px) {
+    .project-card-image {
+        height: 200px;
     }
 }

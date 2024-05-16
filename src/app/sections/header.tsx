@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { Button } from "@nextui-org/button";
 
 export default function Header() {
   const { t }: any = useTranslation();
@@ -30,25 +31,30 @@ export default function Header() {
   return (
     <main className="border-b-1 border-black/30 fixed max-h-[120px] w-full z-40 bg-background-grey">
       <div className="flex px-48 grey-text flex-row items-center justify-between pt-4 pb-2">
-        <button
+        <Button
+          variant="light"
+          data-hover="hovered"
+          disableRipple={true}
           className="border-1 border-black/70 rounded py-1 px-2 mb-4 mt-2"
-          onClick={() => smoothScrollTo("about_us")}
+          onClick={() => smoothScrollTo("top_point")}
         >
           <span className="text-typing text-black/60 uppercase font-MPlusMedium text-lg">
             Luanne Studio
           </span>
-        </button>
+        </Button>
         <div className="flex flex-row items-end gap-10 pt-4">
           {list.map((item, index) => (
-            <button
+            <Button
+              variant="light"
               onClick={() => smoothScrollTo(item.id)}
-              className=""
+              disableRipple={true}
+              data-hover="hovered"
               key={index}
             >
               <span className="text-black/30 uppercase font-MPlusBold text-xl">
                 {item.title}
               </span>
-            </button>
+            </Button>
           ))}
         </div>
       </div>

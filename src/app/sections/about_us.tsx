@@ -31,7 +31,8 @@ export default function Team() {
   ];
 
   return (
-    <main id="about_us">
+    <main className="w-full">
+      <div id="about_us" className="absolute top-8" />
       <div className="font-MPlusLight flex flex-col items-start px-48">
         <h1 className="font-MPlusRegular pt-36 tracking-wide text-black/15 uppercase text-9xl antialiased">
           {t("team")}

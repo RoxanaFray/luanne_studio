@@ -20,14 +20,8 @@ export default function Projects() {
   const list = [
     {
       title: t("game-1 title"),
-      img: "/images/B4.jpg",
+      img: "/images/B3.jpg",
       description: t("game-1 description"),
-      link: "projects",
-    },
-    {
-      title: t("game-2 title"),
-      img: "/images/run_use_gun.jpg",
-      description: t("game-2 description"),
       link: "projects",
     },
     {
@@ -37,37 +31,58 @@ export default function Projects() {
       link: "projects",
     },
     {
+      title: t("game-2 title"),
+      img: "/images/run_use_gun.jpg",
+      description: t("game-2 description"),
+      link: "projects",
+    },
+    {
       title: t("game-4 title"),
-      img: "/images/B5.jpg",
+      img: "/images/poodle.jpeg",
       description: t("game-4 description"),
       link: "projects",
     },
   ];
 
   return (
-    <main className="px-48 pb-24 mt-8 relative">
-      <div id="projects" className="absolute -top-36" />
+    <main className="px-48 pb-32 mt-24 relative">
+      <div id="projects" className="absolute -top-44" />
       <div className="flex flex-col items-start">
-        <h1 className="font-MPlusRegular tracking-wide text-black/10 uppercase mb-16 text-9xl antialiased">
-          {t("projects")}
-        </h1>
+        <div className="flex flex-row justify-between w-full items-center">
+          <h1 className="font-MPlusRegular tracking-wide text-black/10 uppercase mb-24 text-9xl antialiased">
+            {t("projects")}
+          </h1>
+          <Button
+            variant="light"
+            data-hover="hovered"
+            disableRipple={true}
+            onPress={() => router.push("projects")}
+            size="lg"
+            className="text-black/30 font-MPlusMedium text-xl border-2 rounded-md tracking-wider px-4"
+          >
+            View all
+          </Button>
+        </div>
         <div className="grid grid-cols-4 gap-10 items-center">
           {list.map((item, index) => (
             <Card
               key={index}
-              radius="sm"
-              className="project-card rounded"
               shadow="sm"
               isPressable
               onPress={() => router.push(item.link)}
+              className="rounded-md"
             >
-              <Image
-                alt={item.title}
-                src={item.img}
-                width={250}
-                className="z-0 h-full object-cover rounded-none"
-              />
-              <CardFooter className="project-card-title justify-between h-10">
+              <CardBody className="overflow-visible p-0">
+                <Image
+                  alt={item.title}
+                  shadow="sm"
+                  radius="lg"
+                  width="100%"
+                  src={item.img}
+                  className="project-card-image w-full rounded-sm object-cover max-h-[260px] "
+                />
+              </CardBody>
+              <CardFooter className="project-card-title justify-between h-12">
                 <h6 className="text-black/80 font-medium text-md">
                   {item.title}
                 </h6>
@@ -75,21 +90,6 @@ export default function Projects() {
             </Card>
           ))}
         </div>
-      </div>
-
-      <div className="flex flex-col items-end">
-        <Link
-          className="show-more-button flex flex-row border-1 border-black/20 justify-center text-default-500 h-15 py-2 px-8 mt-16 text-2xl rounded mb-0"
-          href="projects"
-        >
-          <span className="show-more-button-text font-MPlusMedium text-black/40">
-            {t("show all")}
-          </span>
-
-          <span className="show-more-button-arrow inline-block pl-2 transition-transform motion-reduce:transform-none">
-            -&gt;
-          </span>
-        </Link>
       </div>
     </main>
   );
