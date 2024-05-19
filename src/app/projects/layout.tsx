@@ -1,5 +1,4 @@
 "use client";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
 import NavBar from "./ui-components/navbar";
@@ -15,7 +14,7 @@ export default function ProjectsLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <TranslateButtons isHidden={false} />
+        <TranslateButtons />
         <div className="flex flex-row">
           <NavBar></NavBar>
           {children}

@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import React from "react";
 import "./globals.css";
-import TranslateButtons from "./ui-components/translateButtons";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -33,10 +31,7 @@ export default function RootLayout({
           sizes="<generated>"
         />
       </head>
-      <body className={inter.className}>
-        {children}
-        <TranslateButtons isHidden={true} />
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

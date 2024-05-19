@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import { Button, Tooltip } from "@nextui-org/react";
 
 export default function Header() {
