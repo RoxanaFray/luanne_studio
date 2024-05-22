@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { Button } from "@nextui-org/button";
 import TranslateButtons from "../ui-components/translateButtons";
+import TranslateDropdown from "../ui-components/translateDropdown";
 
 export default function Header() {
   const { t }: any = useTranslation();
@@ -32,7 +33,6 @@ export default function Header() {
 
   return (
     <main className="border-b-1 border-black/30 fixed max-h-[120px] w-full z-40 bg-background-grey">
-      <TranslateButtons />
       <div className="flex px-48 grey-text flex-row items-center justify-between pt-4 pb-2">
         <Button
           variant="light"
@@ -59,6 +59,7 @@ export default function Header() {
               </span>
             </Button>
           ))}
+          <TranslateButtons />
         </div>
       </div>
     </main>
