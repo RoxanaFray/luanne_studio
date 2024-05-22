@@ -23,23 +23,23 @@ export default function TranslateButtons() {
   document.addEventListener("mousedown", () => openSelect(false));
 
   return (
-    <div className="hidden lg:flex flex-col justify-end fixed gap-1 top-8 right-8">
+    <div className="hidden lg:flex flex-col justify-end fixed gap-2 top-8 right-8">
       <Button
         isIconOnly
         onClick={() => openSelect(!isSelectOpened)}
         variant="light"
         data-hover="hovered"
         disableRipple={true}
-        className="border-1 border-black/50 w-12 rounded py-1 px-2"
+        className="border-1 border-black/20 w-12 rounded py-1 px-2"
       >
-        <span className="font-MPlusMedium text-xs text-default-500 text-black/80 pr-2">
+        <span className="font-MPlusMedium text-xs text-black/50 pr-2">
           {t(language)}
         </span>
         <span
           id="arrow"
           className={
             (isSelectOpened ? "rotated-up" : "rotated-down") +
-            " font-MPlusMedium select-arrow-down text-xs text-default-500 text-black/80"
+            " text-xs text-black/50"
           }
         >
           ❮
@@ -50,16 +50,16 @@ export default function TranslateButtons() {
           key={index}
           className={
             isSelectOpened && item != language
-              ? "block border-1 border-black/50 w-12 rounded py-1 px-2 pr-6 bg-background-grey "
+              ? "block border-1 border-black/20 w-12 rounded py-1 px-2 pr-6 lan-button"
               : "hidden"
           }
           isIconOnly
-          variant="solid"
+          variant="light"
           data-hover="hovered"
           disableRipple={true}
           onClick={() => changeLanguage(item)}
         >
-          <span className="font-MPlusMedium text-xs text-default-500 text-black/80">
+          <span className="font-MPlusMedium text-xs text-black/50">
             {t(item)}
           </span>
         </Button>
