@@ -6,7 +6,14 @@ import "../globals.css";
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
 
-export default function TranslateButtons() {
+interface MyButtonProps {
+  /** The text to display inside the button */
+  top: number;
+  /** Whether the button can be interacted with */
+  right: number;
+}
+
+export default function TranslateButtons({ top, right }: MyButtonProps) {
   const { t }: any = useTranslation();
 
   const lans = ["ru", "en"];
@@ -23,14 +30,17 @@ export default function TranslateButtons() {
   document.addEventListener("mousedown", () => openSelect(false));
 
   return (
-    <div className="hidden lg:flex flex-col justify-end fixed gap-2 top-8 right-8">
+    <div
+      className={`hidden lg:flex flex-col justify-end absolute gap-2 top-${top} right-${right}`}
+    >
       <Button
         isIconOnly
         onClick={() => openSelect(!isSelectOpened)}
-        variant="light"
+        variant="solid"
         data-hover="hovered"
         disableRipple={true}
-        className="border-1 border-black/20 w-12 rounded py-1 px-2"
+        className="border-1 border-black/20 w-12 rounded px-2 bg-gray-50"
+        size="md"
       >
         <span className="font-MPlusMedium text-xs text-black/50 pr-2">
           {t(language)}
@@ -50,13 +60,14 @@ export default function TranslateButtons() {
           key={index}
           className={
             isSelectOpened && item != language
-              ? "block border-1 border-black/20 w-12 rounded py-1 px-2 pr-6 lan-button"
+              ? "block border-1 border-black/20 w-12 rounded px-2 pr-6 lan-button bg-gray-50"
               : "hidden"
           }
           isIconOnly
-          variant="light"
+          variant="solid"
           data-hover="hovered"
           disableRipple={true}
+          size="md"
           onClick={() => changeLanguage(item)}
         >
           <span className="font-MPlusMedium text-xs text-black/50">

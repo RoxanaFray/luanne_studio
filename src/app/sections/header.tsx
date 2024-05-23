@@ -59,9 +59,9 @@ export default function Header() {
               </span>
             </Button>
           ))}
-          <TranslateButtons />
         </div>
       </div>
+      <TranslateButtons top={8} right={8} />
     </main>
   );
 }

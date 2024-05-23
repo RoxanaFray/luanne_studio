@@ -14,7 +14,10 @@ export default function ProjectsLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <TranslateButtons />
+        <div className="absolute w-16 h-12 top-3 right-3">
+          <TranslateButtons top={0} right={0} />
+        </div>
+
         <div className="flex flex-row">
           <NavBar></NavBar>
           {children}

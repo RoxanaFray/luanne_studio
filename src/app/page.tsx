@@ -16,7 +16,6 @@ export default function Home() {
         <Header></Header>
         <Team></Team>
         <Projects></Projects>
-        {/* <Contacts /> */}
         <Footer></Footer>
       </main>
     </NextUIProvider>
