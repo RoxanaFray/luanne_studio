@@ -55,7 +55,6 @@ export default function Projects() {
           <Button
             variant="light"
             data-hover="hovered"
-            disableRipple={true}
             onPress={() => router.push("projects")}
             size="lg"
             className="text-black/30 font-MPlusMedium text-xl border-2 rounded-md tracking-wider px-4"

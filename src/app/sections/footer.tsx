@@ -57,18 +57,16 @@ export default function Header() {
     },
     {
       title: "LinkedIn",
-      img: "/images/contact_icons/linkedin_color1.png",
+      img: "/images/contact_icons/linkedin_no_border.svg",
       link: "#",
     },
   ];
+
   return (
     <main id="contacts">
       <div className="w-full border-t-1 border-black/20 object-center pt-8 pb-12" />
-      <div className="flex flex-row items-center justify-start px-48 pb-20">
-        {/* <h1 className="font-MPlusRegular tracking-wide text-black/10 uppercase mb-16 text-9xl antialiased">
-          Connect us
-        </h1> */}
-        <h5 className="font-MPlusMedium tracking-wide text-black/10 uppercase text-7xl antialiased pr-12">
+      <div className="flex flex-row items-stretch justify-start px-48 pb-20 gap-20">
+        <h5 className="font-MPlusMedium tracking-wide text-black/10 uppercase text-7xl antialiased">
           Connect us
         </h5>
         <div className="flex items-center pl-12 justify-between gap-10">
