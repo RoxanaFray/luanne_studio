@@ -6,14 +6,7 @@ import "../globals.css";
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
 
-interface MyButtonProps {
-  /** The text to display inside the button */
-  top: number;
-  /** Whether the button can be interacted with */
-  right: number;
-}
-
-export default function TranslateButtons({ top, right }: MyButtonProps) {
+export default function TranslateButtons() {
   const { t }: any = useTranslation();
 
   const lans = ["ru", "en"];
@@ -30,9 +23,7 @@ export default function TranslateButtons({ top, right }: MyButtonProps) {
   document.addEventListener("mousedown", () => openSelect(false));
 
   return (
-    <div
-      className={`hidden lg:flex flex-col justify-end absolute gap-2 top-${top} right-${right}`}
-    >
+    <div className="hidden lg:flex flex-col justify-end absolute gap-2">
       <Button
         isIconOnly
         onClick={() => openSelect(!isSelectOpened)}

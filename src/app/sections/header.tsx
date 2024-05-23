@@ -61,7 +61,9 @@ export default function Header() {
           ))}
         </div>
       </div>
-      <TranslateButtons top={8} right={8} />
+      <div className="absolute w-16 h-12 top-8 right-2">
+        <TranslateButtons />
+      </div>
     </main>
   );
 }
