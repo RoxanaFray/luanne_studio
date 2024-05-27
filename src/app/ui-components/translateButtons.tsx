@@ -5,14 +5,29 @@ import { useTranslation } from "next-i18next";
 import "../globals.css";
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
+import ScrollPosition from "@/utils/scrollPosition";
 
 export default function TranslateButtons() {
   const { t }: any = useTranslation();
+  const scrollPosition = ScrollPosition();
 
+  console.log(scrollPosition);
   const lans = ["ru", "en"];
 
   const [language, setLanguage] = useLocalStorage("language", "en");
   const [isSelectOpened, openSelect] = useState(false);
+
+  function background(): string {
+    let color: string = "background-grey";
+    if (scrollPosition <= 400) {
+      color = "background-grey";
+    } else if (scrollPosition > 400 && scrollPosition < 1000) {
+      color = "background-grey-1";
+    } else {
+      color = "background-grey-2";
+    }
+    return color;
+  }
 
   const changeLanguage = (lan: string) => {
     i18n.changeLanguage(lan);
@@ -26,12 +41,11 @@ export default function TranslateButtons() {
     <div className="hidden lg:flex flex-col justify-end absolute gap-2">
       <Button
         isIconOnly
-        onClick={() => openSelect(!isSelectOpened)}
-        variant="solid"
+        variant="light"
         data-hover="hovered"
-        disableRipple={true}
-        className="border-1 border-black/20 w-12 rounded px-2 bg-gray-50"
+        onPress={() => openSelect(!isSelectOpened)}
         size="md"
+        className="text-black/10 border-1 font-MPlusMedium text-sm w-12  border-black/20 rounded tracking-wider px-4"
       >
         <span className="font-MPlusMedium text-xs text-black/50 pr-2">
           {t(language)}
@@ -51,12 +65,12 @@ export default function TranslateButtons() {
           key={index}
           className={
             isSelectOpened && item != language
-              ? "block border-1 border-black/20 w-12 rounded px-2 pr-6 lan-button bg-gray-50"
+              ? `block border-1 border-black/20 w-12 rounded px-2 pr-6 lan-button bg-background-grey`
               : "hidden"
           }
           isIconOnly
-          variant="solid"
           data-hover="hovered"
+          variant="light"
           disableRipple={true}
           size="md"
           onClick={() => changeLanguage(item)}

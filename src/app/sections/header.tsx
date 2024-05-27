@@ -61,7 +61,7 @@ export default function Header() {
           ))}
         </div>
       </div>
-      <div className="absolute w-16 h-12 top-8 right-2">
+      <div className="absolute w-16 h-12 top-7 right-3">
         <TranslateButtons />
       </div>
     </main>
