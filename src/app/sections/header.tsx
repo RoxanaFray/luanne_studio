@@ -39,7 +39,7 @@ export default function Header() {
           data-hover="hovered"
           disableRipple={true}
           className="border-1 border-black/70 rounded py-1 px-2 mb-4 mt-2"
-          onClick={() => smoothScrollTo("top_point")}
+          onPress={() => smoothScrollTo("top_point")}
         >
           <span className="text-typing text-black/60 uppercase font-MPlusMedium text-lg">
             Luanne Studio

@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Divider } from "@nextui-org/divider";
 import { ScrollShadow } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
+import { useRouter } from "next/navigation";
 
 export default function NavBar() {
   const { t }: any = useTranslation();
@@ -95,19 +97,23 @@ export default function NavBar() {
     },
   ];
 
+  const router = useRouter();
+
   return (
     <main className="navbar basis-1/5 ">
       <div className="h-screen shadow-xl border-1 border-grey-border bg-light-background">
         <div className="hidden sm:flex flex-col gap-4 w-full items-center h-screen justify-center">
-          <Link href="/" className="pt-4 ">
-            <Image
-              src="/images/logo_no_color_words_grey.png"
-              alt="LuanneStudio logo"
-              width={80}
-              height={80}
-              className="rounded-xl"
-            />
-          </Link>
+          <Button
+            variant="light"
+            data-hover="hovered"
+            disableRipple={true}
+            className="border-1 border-black/70 rounded py-1 px-2 mb-4 mt-8"
+            onPress={() => router.push("/")}
+          >
+            <span className="text-black/60 uppercase font-MPlusMedium text-lg">
+              Luanne Studio
+            </span>
+          </Button>
           <Divider className="w-full" />
           <ScrollShadow className="h-full w-full  bg-light-background">
             {list.map((item, index) => (
