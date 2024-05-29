@@ -102,43 +102,43 @@ export default function NavBar() {
   return (
     <main className="navbar basis-1/5 ">
       <div className="h-screen shadow-xl border-1 border-grey-border bg-light-background">
-        <div className="hidden sm:flex flex-col gap-4 w-full items-center h-screen justify-center">
+        <div className="hidden sm:flex flex-col w-full items-center h-screen justify-center">
           <Button
             variant="light"
             data-hover="hovered"
             disableRipple={true}
-            className="border-1 border-black/70 rounded py-1 px-2 mb-4 mt-8"
+            className="border-1 border-black/70 rounded py-1 px-2 mb-8 mt-8"
             onPress={() => router.push("/")}
           >
             <span className="text-black/60 uppercase font-MPlusMedium text-lg">
               Luanne Studio
             </span>
           </Button>
-          <Divider className="w-full" />
-          <ScrollShadow className="h-full w-full  bg-light-background">
+          <Divider className="w-full p-0" />
+          <ScrollShadow className="h-full w-full bg-light-background">
             {list.map((item, index) => (
-              <div key={index} className="w-full project-card border-b-1">
-                <Link
-                  color="foreground"
-                  className="flex flex-row relative project-link w-full min-h-16"
-                  href={item.link}
-                >
-                  <div className="pt-2 pb-2">
-                    <Image
-                      src={item.img}
-                      width={50}
-                      height={50}
-                      alt="Picture of the game"
-                      className="rounded-xl object-contain ml-4 align-middle"
-                    />
-                  </div>
-                  <span className="font-MPlusLight text-black/70 p-4 pt-5">
-                    {" "}
-                    {item.title}
-                  </span>
-                  <div className="hover-cover absolute bg-grey/5 rounded w-full h-full top-0 hidden" />
-                </Link>
-              </div>
+              <Button
+                key={index}
+                variant="light"
+                radius="none"
+                className="flex flex-row items-start justify-start w-full pl-0 relative project-link min-h-16 project-card border-b-1 "
+                href={item.link}
+              >
+                <div className="py-2">
+                  <Image
+                    src={item.img}
+                    width={50}
+                    height={50}
+                    alt="Picture of the game"
+                    className="rounded-xl object-contain ml-4 align-middle"
+                  />
+                </div>
+                <span className="font-MPlusLight text-black/70 p-4 pt-5 text-md">
+                  {" "}
+                  {item.title}
+                </span>
+                <div className="hover-cover absolute bg-grey/5 rounded w-full h-full top-0 hidden" />
+              </Button>
             ))}
           </ScrollShadow>
         </div>
