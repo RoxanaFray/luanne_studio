@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { Button } from "@nextui-org/button";
 import TranslateButtons from "../ui-components/translateButtons";
-import TranslateDropdown from "../ui-components/translateDropdown";
 
 export default function Header() {
   const { t }: any = useTranslation();
