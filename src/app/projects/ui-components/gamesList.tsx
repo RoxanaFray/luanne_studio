@@ -13,99 +13,85 @@ export default function GamesList() {
       title: t("game-1 title"),
       img: "/images/B4.jpg",
       description: t("game-1 description"),
-      link: "projects",
-      id: "minesweeper",
+      link: "/projects/minesweeper",
     },
     {
       title: t("game-2 title"),
       img: "/images/run_use_gun.jpg",
       description: t("game-2 description"),
-      link: "projects",
-      id: "run_use_gun",
+      link: "/projects/run_use_gun",
     },
     {
       title: t("game-3 title"),
       img: "/images/summon.png",
       description: t("game-3 description"),
-      link: "projects",
-      id: "summon",
+      link: "/projects/summon",
     },
     {
       title: t("game-4 title"),
       img: "/images/B5.jpg",
       description: t("game-4 description"),
-      link: "projects",
-      id: "catch_the_toy",
+      link: "/projects/catch_the_toy",
     },
     {
       title: t("game-5 title"),
       img: "/images/rick.jpg",
       description: t("game-5 description"),
-      link: "projects",
-      id: "",
+      link: "/projects/find_me",
     },
     {
       title: t("game-1 title"),
       img: "/images/B4.jpg",
       description: t("game-1 description"),
-      link: "projects",
-      id: "",
+      link: "/projects/minesweeper",
     },
     {
       title: t("game-2 title"),
       img: "/images/run_use_gun.jpg",
       description: t("game-2 description"),
-      link: "projects",
-      id: "",
+      link: "/projects/run_use_gun",
     },
     {
       title: t("game-3 title"),
       img: "/images/summon.png",
       description: t("game-3 description"),
-      link: "projects",
-      id: "",
+      link: "/projects/summon",
     },
     {
       title: t("game-4 title"),
       img: "/images/B5.jpg",
       description: t("game-4 description"),
-      link: "projects",
-      id: "",
+      link: "/projects/catch_the_toy",
     },
     {
       title: t("game-5 title"),
       img: "/images/rick.jpg",
       description: t("game-5 description"),
-      link: "projects",
-      id: "",
+      link: "/projects/find_me",
     },
     {
       title: t("game-2 title"),
       img: "/images/run_use_gun.jpg",
       description: t("game-2 description"),
-      link: "projects",
-      id: "",
+      link: "/projects/run_use_gun",
     },
     {
       title: t("game-3 title"),
       img: "/images/summon.png",
       description: t("game-3 description"),
-      link: "projects",
-      id: "",
+      link: "/projects/summon",
     },
     {
       title: t("game-4 title"),
       img: "/images/B5.jpg",
       description: t("game-4 description"),
-      link: "projects",
-      id: "",
+      link: "/projects/catch_the_toy",
     },
     {
       title: t("game-5 title"),
       img: "/images/rick.jpg",
       description: t("game-5 description"),
-      link: "projects",
-      id: "",
+      link: "/projects/find_me",
     },
   ];
 
@@ -117,7 +103,7 @@ export default function GamesList() {
           variant="light"
           radius="none"
           className="flex flex-row items-start justify-start w-full pl-0 relative project-link min-h-16 project-card border-b-1 "
-          onPress={() => router.push(`/projects/#${item.id}`)}
+          onPress={() => router.push(item.link)}
         >
           <div className="py-2">
             <Image
