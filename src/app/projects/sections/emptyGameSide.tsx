@@ -1,7 +1,7 @@
 "use client";
 import { useTranslation } from "react-i18next";
 
-export default function PickSomethingNoticement() {
+export default function EmptyGameSide() {
   const { t }: any = useTranslation();
   return (
     <main className="font-MPlusBold text-grey uppercase text-6xl tracking-wider leading-normal text-center antialiased">

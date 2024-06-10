@@ -2,7 +2,6 @@
 import { Inter } from "next/font/google";
 import "../globals.css";
 import TranslateButtons from "../ui-components/translateButtons";
-import GameDescription from "./sections/gameDescription";
 import Navbar from "./sections/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,8 +19,9 @@ export default function ProjectsLayout({
         </div>
         <div className="flex flex-row">
           <Navbar />
-          <GameDescription />
-          {children}
+          <div className="basis-4/5 flex flex-col justify-center items-center">
+            {children}
+          </div>
         </div>
       </body>
     </html>
