@@ -3,11 +3,13 @@ import { useTranslation } from "react-i18next";
 import { Image } from "@nextui-org/image";
 import { Button } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
+import ImageCarouselPopup from "./carouselPopup";
+import ImageCarousel from "./carousel";
 
 const GameInfo = (props: GameInfoProps) => {
   const { t }: any = useTranslation();
-  const router = useRouter();
 
+  const router = useRouter();
   return (
     <main className="font-MPlusBold text-grey tracking-wider leading-normal text-center antialiased">
       <div className="flex flex-col gap-16 my-16 ml-20 mr-32 text-left">
@@ -28,15 +30,12 @@ const GameInfo = (props: GameInfoProps) => {
         <p className="font-MPlusRegular text-lg text-grey-text">
           {props.description}
         </p>
-        <div className="flex flex-row gap-4">
-          {props.gameImages.map((item, index) => (
-            <Image width="200" alt="Game Image" key={index} src={item} />
-          ))}
-        </div>
+        {/* <ImageCarouselPopup images={props.gameImages} /> */}
+        <ImageCarousel images={props.gameImages} />
         <div className="flex flex-row gap-4 ">
           {props.playOpportunity ? (
             <Button
-              className="py-4 px-8 "
+              className="py-4 px-8 bg-grey"
               variant="solid"
               size="lg"
               onPress={() => {
@@ -52,7 +51,7 @@ const GameInfo = (props: GameInfoProps) => {
           )}
 
           <Button
-            className="py-4 px-8"
+            className="py-4 px-8 bg-grey"
             variant="solid"
             size="lg"
             onPress={() => {

@@ -4,7 +4,16 @@ import { GameInfo } from "../ui-components/gameInfo";
 
 export default function Page() {
   const { t }: any = useTranslation();
-  const imagesList = ["/images/B1.jpg", "/images/B2.jpg", "/images/B3.jpg"];
+  const imagesList = [
+    "/images/B1.jpg",
+    "/images/B2.jpg",
+    "/images/B3.jpg",
+    "/images/B4.jpg",
+    "/images/B5.jpg",
+    "/images/fishes.png",
+    "/images/summon.png",
+    "/images/toy.jpeg",
+  ];
 
   return (
     <main className="">
