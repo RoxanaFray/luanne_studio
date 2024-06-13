@@ -3,21 +3,38 @@ import { Button } from "@nextui-org/react";
 import { useState } from "react";
 
 export default function ImageCarousel(props: CarouselProps) {
-  function changeList() {}
-  const [imagesList, changeImagesList] = useState([0, 1, 2]);
+  let maxImagesPerSlide: number = 3;
+  let indexesArray: Array<number> = [];
+  let imagesAmount: number = props.images.length;
+
+  for (let i = 0; i < maxImagesPerSlide; i++) {
+    indexesArray.push(i);
+  }
+
+  const [imagesList, changeImagesList] = useState(indexesArray);
 
   function showNext() {
     let a: Array<number> = [];
+
     imagesList.map((item) => {
-      a.push(item + 3);
+      if (item + maxImagesPerSlide <= imagesAmount) {
+        a.push(item + maxImagesPerSlide);
+      }
     });
+    if (a.length == 0) {
+      a = imagesList;
+    }
     changeImagesList(a);
   }
 
   function showPrev() {
     let a: Array<number> = [];
     imagesList.map((item) => {
-      a.push(item - 3);
+      if (item < maxImagesPerSlide) {
+        a = indexesArray;
+      } else {
+        a.push(item - maxImagesPerSlide);
+      }
     });
     changeImagesList(a);
   }
