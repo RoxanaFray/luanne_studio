@@ -19,9 +19,7 @@ export default function ProjectsLayout({
         </div>
         <div className="flex flex-row">
           <Navbar />
-          <div className="basis-4/5 flex flex-col justify-center items-center">
-            {children}
-          </div>
+          <div className="basis-4/5">{children}</div>
         </div>
       </body>
     </html>

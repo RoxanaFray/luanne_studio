@@ -3,10 +3,13 @@ import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import { Button } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
 export default function GamesList() {
   const { t }: any = useTranslation();
   const router = useRouter();
+  const pathname = usePathname();
 
   const list = [
     {
@@ -102,7 +105,12 @@ export default function GamesList() {
           key={index}
           variant="light"
           radius="none"
-          className="flex flex-row items-start justify-start w-full pl-0 relative project-link min-h-16 project-card border-b-1 "
+          className={clsx(
+            "flex flex-row items-start font-MPlusLight justify-start w-full pl-0 relative project-link min-h-16 project-card border-b-1 ",
+            {
+              "bg-background-grey font-MPlusMedium": pathname === item.link,
+            },
+          )}
           onPress={() => router.push(item.link)}
         >
           <div className="py-2">
@@ -114,10 +122,7 @@ export default function GamesList() {
               className="rounded-xl object-contain ml-4 align-middle"
             />
           </div>
-          <span className="font-MPlusLight text-black/70 p-4 pt-5 text-md">
-            {" "}
-            {item.title}
-          </span>
+          <span className=" text-black/70 p-4 pt-5 text-md"> {item.title}</span>
           <div className="hover-cover absolute bg-grey/5 rounded w-full h-full top-0 hidden" />
         </Button>
       ))}
