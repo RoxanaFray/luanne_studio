@@ -23,8 +23,8 @@ export default function ImageCarousel(props: CarouselProps) {
   }
 
   return (
-    <div className="flex flex-row gap-4 border-1 items-center justify-start border-black relative">
-      <div className="absolute w-full left-0 flex flex-row justify-between z-20 border-1 border-red-200 h-20">
+    <div className="flex flex-row gap-4  items-center justify-start  relative">
+      <div className="absolute w-full left-0 flex flex-row justify-between z-20 h-20">
         <Button
           isIconOnly
           variant="solid"
@@ -48,8 +48,8 @@ export default function ImageCarousel(props: CarouselProps) {
       </div>
       {imagesList.map((item, index) => (
         <Image
-          width="auto"
-          height="100%"
+          width="200"
+          height="200"
           alt="Game Image"
           key={index}
           src={props.images[item]}
