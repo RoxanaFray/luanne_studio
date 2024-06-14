@@ -5,6 +5,7 @@ import { Button } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import ImageCarouselPopup from "./carouselPopup";
 import ImageCarousel from "./carousel";
+import ImagesGrid from "./imagesGrid";
 
 const GameInfo = (props: GameInfoProps) => {
   const { t }: any = useTranslation();
@@ -31,7 +32,8 @@ const GameInfo = (props: GameInfoProps) => {
           {props.description}
         </p>
         {/* <ImageCarouselPopup images={props.gameImages} /> */}
-        <ImageCarousel images={props.gameImages} />
+        {/* <ImageCarousel images={props.gameImages} /> */}
+        <ImagesGrid images={props.gameImages} />
         <div className="flex flex-row gap-4 ">
           {props.playOpportunity ? (
             <Button

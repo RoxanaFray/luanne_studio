@@ -12,7 +12,6 @@ export default function Page() {
     "/images/B5.jpg",
     "/images/fishes.png",
     "/images/summon.png",
-    "/images/toy.jpeg",
   ];
 
   return (
@@ -23,7 +22,7 @@ export default function Page() {
         description={t("game-1 description")}
         image="/images/B4.jpg"
         playOpportunity={true}
-        githubLink="test"
+        githubLink="/"
         playLink=""
         gameImages={imagesList}
       />
