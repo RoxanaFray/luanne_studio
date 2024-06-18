@@ -7,6 +7,7 @@ export default function ImagesGrid(props: CarouselProps) {
   function scroll(side: string) {
     let container = document.getElementById("scrollContainer");
     let leftScrollPosition = container?.scrollLeft || 0;
+
     if (side == "left") {
       container?.scroll(leftScrollPosition - 600, 0);
     }
@@ -51,6 +52,7 @@ export default function ImagesGrid(props: CarouselProps) {
                 key={index}
                 src={item}
                 className=""
+                onClick={() => props.imageClick(item)}
               />
             );
           })}
@@ -62,4 +64,5 @@ export default function ImagesGrid(props: CarouselProps) {
 
 interface CarouselProps {
   images: Array<string>;
+  imageClick: (imagePath: string) => void;
 }

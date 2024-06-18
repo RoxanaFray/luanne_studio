@@ -19,7 +19,7 @@ export default function Page() {
     <main className="">
       <GameInfo
         title={t("game-2 title")}
-        subtitle="Frenchie Edition"
+        subtitle=""
         description={t("game-2 description")}
         image="/images/B4.jpg"
         playOpportunity={true}

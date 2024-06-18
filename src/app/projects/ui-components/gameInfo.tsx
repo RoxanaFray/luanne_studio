@@ -6,9 +6,18 @@ import { useRouter } from "next/navigation";
 import ImageCarouselPopup from "./carouselPopup";
 import ImageCarousel from "./carousel";
 import ImagesGrid from "./imagesGrid";
+import { useState } from "react";
 
 const GameInfo = (props: GameInfoProps) => {
   const { t }: any = useTranslation();
+
+  const [isImagePopupOpen, openImagePopup] = useState(false);
+  const [activeImage, setActiveImage] = useState("");
+
+  function openImage(imagePath: string) {
+    openImagePopup(true);
+    setActiveImage(imagePath);
+  }
 
   const router = useRouter();
   return (
@@ -31,9 +40,14 @@ const GameInfo = (props: GameInfoProps) => {
         <p className="font-MPlusRegular text-lg text-grey-text">
           {props.description}
         </p>
-        {/* <ImageCarouselPopup images={props.gameImages} /> */}
-        {/* <ImageCarousel images={props.gameImages} /> */}
-        <ImagesGrid images={props.gameImages} />
+        {isImagePopupOpen && (
+          <ImageCarouselPopup
+            images={props.gameImages}
+            activeImagePath={activeImage}
+          />
+        )}
+
+        <ImagesGrid images={props.gameImages} imageClick={openImage} />
         <div className="flex flex-row gap-4 ">
           {props.playOpportunity ? (
             <Button
