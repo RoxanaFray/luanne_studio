@@ -1,6 +1,7 @@
 import {Image} from "@nextui-org/image";
 import {Button} from "@nextui-org/react";
-import {useState} from "react";
+import React from "react";
+
 
 export default function ImageCarouselPopup(props: CarouselProps) {
     function showNext() {
@@ -10,8 +11,10 @@ export default function ImageCarouselPopup(props: CarouselProps) {
     }
 
     return (
+        props.isOpen &&
         <div
-            className="absolute flex flex-row justify-center items-center w-screen h-screen top-0 left-0 bg-black/80 z-10">
+            className="absolute flex flex-row justify-center items-center w-screen h-screen top-0 left-0 bg-black/80 z-10"
+            onClick={props.closeImagePopup}>
             <Button
                 variant="light"
                 radius="full"
@@ -25,6 +28,7 @@ export default function ImageCarouselPopup(props: CarouselProps) {
                 width="700"
                 alt="Game Image"
                 src={props.activeImagePath}
+                onClick={(e) => e.stopPropagation()}
             />
             <Button
                 variant="light"
@@ -50,10 +54,13 @@ export default function ImageCarouselPopup(props: CarouselProps) {
         })} */}
             {/*</div>*/}
         </div>
+
     );
 }
 
 interface CarouselProps {
     images: Array<string>;
     activeImagePath: string;
+    isOpen: boolean;
+    closeImagePopup: () => void;
 }

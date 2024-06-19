@@ -14,12 +14,13 @@ const GameInfo = (props: GameInfoProps) => {
   const [isImagePopupOpen, openImagePopup] = useState(false);
   const [activeImage, setActiveImage] = useState("");
 
-  function openImage(imagePath: string) {
+  function openImageCarouselPopup(imagePath: string) {
     openImagePopup(true);
     setActiveImage(imagePath);
   }
 
   const router = useRouter();
+
   return (
     <main className="font-MPlusBold text-grey tracking-wider leading-normal text-center antialiased">
       <div className="flex flex-col gap-16 my-16 ml-20 mr-32 text-left">
@@ -40,14 +41,14 @@ const GameInfo = (props: GameInfoProps) => {
         <p className="font-MPlusRegular text-lg text-grey-text">
           {props.description}
         </p>
-        {isImagePopupOpen && (
           <ImageCarouselPopup
             images={props.gameImages}
             activeImagePath={activeImage}
+            isOpen={isImagePopupOpen}
+            closeImagePopup={() => openImagePopup(false)}
           />
-        )}
 
-        <ImagesGrid images={props.gameImages} imageClick={openImage} />
+        <ImagesGrid images={props.gameImages} imageClick={openImageCarouselPopup} />
         <div className="flex flex-row gap-4 ">
           {props.playOpportunity ? (
             <Button
