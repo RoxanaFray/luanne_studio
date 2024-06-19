@@ -18,11 +18,21 @@ export default function ImageCarouselPopup(props: CarouselProps) {
             <Button
                 variant="light"
                 radius="full"
-                className="h-24 w-24 text-white absolute left-5"
+                className="absolute w-20 h-20 right-1 top-1 text-4xl text-white"
+                size="sm"
+                onPress={props.closeImagePopup}
+            >
+                <Image src="/images/svg/xmark.svg" alt="Close Icon" width={25} height={25} />
+            </Button>
+
+            <Button
+                variant="light"
+                radius="full"
+                className="h-24 w-24 text-4xl text-white absolute left-5"
                 size="sm"
                 onPress={showPrev}
             >
-                <span className="rotate-180 text-2xl"> ❯ </span>
+                <Image src="/images/svg/arrowbackward.svg" alt="Close Icon" width={25} height={25} />
             </Button>
             <Image
                 width="700"
@@ -37,7 +47,7 @@ export default function ImageCarouselPopup(props: CarouselProps) {
                 size="sm"
                 onPress={showNext}
             >
-                <span className="text-2xl"> ❯ </span>
+                <Image src="/images/svg/arrowforward.svg" alt="Close Icon" width={25} height={25} />
             </Button>
             {/*<div className="">*/}
             {/* {props.images.map((item, index) => {
