@@ -1,6 +1,6 @@
 import { Image } from "@nextui-org/image";
 import { Button } from "@nextui-org/react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { ScrollShadow } from "@nextui-org/react";
 
 export default function ImagesGrid(props: CarouselProps) {
@@ -25,7 +25,7 @@ export default function ImagesGrid(props: CarouselProps) {
         size="sm"
         onPress={() => scroll("left")}
       >
-        <span className="rotate-180"> ❯ </span>
+          <Image src="/images/svg/chevronleftgrey.svg" alt="Close Icon" width={10} height={10} />
       </Button>
       <Button
         variant="light"
@@ -34,7 +34,7 @@ export default function ImagesGrid(props: CarouselProps) {
         size="sm"
         onPress={() => scroll("right")}
       >
-        <span className=""> ❯ </span>
+          <Image src="/images/svg/chevronrightgrey.svg" alt="Close Icon" width={10} height={10} />
       </Button>
       <ScrollShadow
         hideScrollBar
@@ -51,7 +51,7 @@ export default function ImagesGrid(props: CarouselProps) {
                 alt="Game Image"
                 key={index}
                 src={item}
-                className=""
+                className="cursor-pointer"
                 onClick={() => props.imageClick(item)}
               />
             );
