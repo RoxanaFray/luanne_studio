@@ -1,6 +1,6 @@
 "use client";
 import { useTranslation } from "react-i18next";
-import { GameInfo } from "../ui-components/gameInfo";
+import { GameInfo } from "../sections/gameInfo";
 
 export default function Page() {
   const { t }: any = useTranslation();

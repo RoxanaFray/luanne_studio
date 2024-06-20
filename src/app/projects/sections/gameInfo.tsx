@@ -1,11 +1,9 @@
 "use client";
 import { useTranslation } from "react-i18next";
-import { Image } from "@nextui-org/image";
 import { Button } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
-import ImageCarouselPopup from "./carouselPopup";
-import ImageCarousel from "./carousel";
-import ImagesGrid from "./imagesGrid";
+import ImageCarouselPopup from "../ui-components/carouselPopup";
+import ImagesGrid from "../ui-components/imagesGrid";
 import { useState } from "react";
 
 const GameInfo = (props: GameInfoProps) => {

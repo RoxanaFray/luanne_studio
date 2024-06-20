@@ -3,7 +3,7 @@ import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
 import { Divider } from "@nextui-org/divider";
-import GamesList from "../ui-components/gamesList";
+import GameList from "../ui-components/gameList";
 import { ScrollShadow } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
@@ -29,7 +29,7 @@ export default function NavBar() {
           </Button>
           <Divider className="w-full p-0" />
           <ScrollShadow className="h-full w-full bg-light-background">
-            <GamesList></GamesList>
+            <GameList></GameList>
           </ScrollShadow>
         </div>
       </div>
