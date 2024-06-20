@@ -1,33 +1,16 @@
 "use client";
 import i18n from "../i18n";
-import useLocalStorage from "../hooks/useLocalStorage";
+import useLocalStorage from "@/app/utils/useLocalStorage";
 import { useTranslation } from "next-i18next";
 import "../globals.css";
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
-import ScrollPosition from "@/utils/scrollPosition";
 
 export default function TranslateButtons() {
-  const { t }: any = useTranslation();
-  const scrollPosition = ScrollPosition();
-
-  console.log(scrollPosition);
-  const lans = ["ru", "en"];
-
+  const { t } = useTranslation();
+  const langs : Array<"ru" | "en"> = ["ru", "en"];
   const [language, setLanguage] = useLocalStorage("language", "en");
   const [isSelectOpened, openSelect] = useState(false);
-
-  function background(): string {
-    let color: string = "background-grey";
-    if (scrollPosition <= 400) {
-      color = "background-grey";
-    } else if (scrollPosition > 400 && scrollPosition < 1000) {
-      color = "background-grey-1";
-    } else {
-      color = "background-grey-2";
-    }
-    return color;
-  }
 
   const changeLanguage = (lan: string) => {
     i18n.changeLanguage(lan);
@@ -60,7 +43,7 @@ export default function TranslateButtons() {
           ❮
         </span>
       </Button>
-      {lans.map((item, index) => (
+      {langs.map((item, index) => (
         <Button
           key={index}
           className={

@@ -1,7 +1,7 @@
 "use client";
 import i18n from "i18next";
-import en from "./strings/en.json";
-import ru from "./strings/ru.json";
+import en from "@/app/localizations/en.json";
+import ru from "@/app/localizations/ru.json";
 import { initReactI18next } from "react-i18next";
 
 const resources = {
