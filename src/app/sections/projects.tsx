@@ -22,25 +22,25 @@ export default function Projects() {
       title: t("game-1 title"),
       img: "/images/B3.jpg",
       description: t("game-1 description"),
-      link: "projects",
+      link: "projects/minesweeper",
     },
     {
       title: t("game-3 title"),
       img: "/images/summon.png",
       description: t("game-3 description"),
-      link: "projects",
+      link: "projects/summon",
     },
     {
       title: t("game-2 title"),
       img: "/images/run_use_gun.jpg",
       description: t("game-2 description"),
-      link: "projects",
+      link: "projects/run_use_gun",
     },
     {
       title: t("game-4 title"),
       img: "/images/poodle.jpeg",
       description: t("game-4 description"),
-      link: "projects",
+      link: "projects/catch_the_toy",
     },
   ];
 
