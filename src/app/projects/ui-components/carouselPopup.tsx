@@ -1,15 +1,10 @@
 import {Image} from "@nextui-org/image";
 import {Button} from "@nextui-org/react";
 import React from "react";
+import clsx from "clsx";
 
 
 export default function ImageCarouselPopup(props: CarouselProps) {
-    function showNext() {
-    }
-
-    function showPrev() {
-    }
-
     return (
         props.isOpen &&
         <div
@@ -28,9 +23,14 @@ export default function ImageCarouselPopup(props: CarouselProps) {
             <Button
                 variant="light"
                 radius="full"
-                className="h-24 w-24 text-4xl text-white absolute left-5"
+                className={clsx(
+                    "h-24 w-24 text-white absolute left-5",
+                    {
+                        "hidden": props.isPrevButtonDisabled,
+                    },
+                )}
                 size="sm"
-                onPress={showPrev}
+                onPress={props.showPrev}
             >
                 <Image src="/images/svg/arrowbackward.svg" alt="Close Icon" width={25} height={25} />
             </Button>
@@ -43,34 +43,28 @@ export default function ImageCarouselPopup(props: CarouselProps) {
             <Button
                 variant="light"
                 radius="full"
-                className="h-24 w-24 text-white absolute right-5"
+                className={clsx(
+                    "h-24 w-24 text-white absolute right-5",
+                    {
+                        "hidden": props.isNextButtonDisabled,
+                    },
+                )}
                 size="sm"
-                onPress={showNext}
+                onPress={props.showNext}
             >
                 <Image src="/images/svg/arrowforward.svg" alt="Close Icon" width={25} height={25} />
             </Button>
-            {/*<div className="">*/}
-            {/* {props.images.map((item, index) => {
-          return (
-            <Image
-              width="200"
-              height="200"
-              alt="Game Image"
-              key={index}
-              src={item}
-              className=""
-            />
-          );
-        })} */}
-            {/*</div>*/}
         </div>
 
     );
 }
 
 interface CarouselProps {
-    images: Array<string>;
     activeImagePath: string;
+    isPrevButtonDisabled: boolean;
+    isNextButtonDisabled: boolean;
     isOpen: boolean;
     closeImagePopup: () => void;
+    showPrev: () => void;
+    showNext: () => void;
 }

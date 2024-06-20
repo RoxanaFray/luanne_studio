@@ -52,7 +52,7 @@ export default function ImagesGrid(props: CarouselProps) {
                 key={index}
                 src={item}
                 className="cursor-pointer"
-                onClick={() => props.imageClick(item)}
+                onClick={() => props.imageClick(index)}
               />
             );
           })}
@@ -64,5 +64,5 @@ export default function ImagesGrid(props: CarouselProps) {
 
 interface CarouselProps {
   images: Array<string>;
-  imageClick: (imagePath: string) => void;
+  imageClick: (imageIndex: number) => void;
 }

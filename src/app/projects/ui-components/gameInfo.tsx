@@ -12,12 +12,32 @@ const GameInfo = (props: GameInfoProps) => {
   const { t }: any = useTranslation();
 
   const [isImagePopupOpen, openImagePopup] = useState(false);
-  const [activeImage, setActiveImage] = useState("");
+  const [activeImageIndex, setActiveImageIndex] = useState(0) ;
+  const [activeImagePath, setActiveImagePath] = useState("");
 
-  function openImageCarouselPopup(imagePath: string) {
+  function openImageCarouselPopup(imageIndex: number) {
     openImagePopup(true);
-    setActiveImage(imagePath);
+    setActiveImage(imageIndex);
   }
+
+  function showNextImageInPopup() {
+    if (activeImageIndex >= props.gameImages.length - 1) {
+      return;
+    }
+    setActiveImage(activeImageIndex + 1)
+  }
+
+  function showPrevImageInPopup() {
+    if (activeImageIndex <= 0) {
+      return;
+    }
+    setActiveImage(activeImageIndex - 1)
+  }
+
+   function setActiveImage(index: number) {
+    setActiveImageIndex(index);
+    setActiveImagePath(props.gameImages[index]);
+   }
 
   const router = useRouter();
 
@@ -42,10 +62,13 @@ const GameInfo = (props: GameInfoProps) => {
           {props.description}
         </p>
           <ImageCarouselPopup
-            images={props.gameImages}
-            activeImagePath={activeImage}
+            isPrevButtonDisabled={activeImageIndex <= 0}
+            isNextButtonDisabled={activeImageIndex >= props.gameImages.length - 1}
+            activeImagePath={activeImagePath}
             isOpen={isImagePopupOpen}
             closeImagePopup={() => openImagePopup(false)}
+            showPrev={showPrevImageInPopup}
+            showNext={showNextImageInPopup}
           />
 
         <ImagesGrid images={props.gameImages} imageClick={openImageCarouselPopup} />
