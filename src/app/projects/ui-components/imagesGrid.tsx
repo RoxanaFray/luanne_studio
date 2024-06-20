@@ -14,6 +14,7 @@ export default function ImagesGrid(props: CarouselProps) {
     if (side == "right") {
       container?.scroll(leftScrollPosition + 600, 0);
     }
+    if (side == "start") container?.scroll({ top:0, left:0, behavior: "instant"} );
   }
 
   return (
@@ -52,7 +53,7 @@ export default function ImagesGrid(props: CarouselProps) {
                 key={index}
                 src={item}
                 className="cursor-pointer"
-                onClick={() => props.imageClick(index)}
+                onClick={() => {props.imageClick(index); scroll("start")}}
               />
             );
           })}
