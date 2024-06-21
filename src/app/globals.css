@@ -32,37 +32,7 @@ body {
     }
 }
 
-/* width */
-/* .navbar ::-webkit-scrollbar {
-    width: 6px;
-} */
-
-/* Track */
-/* .navbar ::-webkit-scrollbar-track {
-    background: #f4f5f5;
-    border-radius: 20px;
-} */
-
-/* .navbar ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 20px;
-} */
-
-/* Handle on hover */
-/* .navbar ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-} */
-
 @layer base {
-    @font-face {
-        font-family: "lucida";
-        src: url(/fonts/lucida-grande.woff2) format("woff2");
-    }
-
-    @font-face {
-        font-family: "ephesis";
-        src: url(../../public/fonts/Ephesis.woff2) format("woff2");
-    }
     @font-face {
         font-family: "MPlusRegular";
         src: url(../../public/fonts/MPlusRegular.woff2) format("woff2");
@@ -98,13 +68,10 @@ body {
         blink 1s 4;
 }
 
-.sound {
-    display: block;
-}
 
 @keyframes typing {
     0% {
-        width: 0%;
+        width: 0;
     }
 
     100% {
@@ -123,18 +90,6 @@ body {
     }
 }
 
-.show-more-button:hover {
-    background-color: #ffffff;
-
-    .show-more-button-text {
-        /* color: #8c8d94; */
-    }
-    .show-more-button-arrow {
-        transform: translateX(0.25rem);
-        color: #8c8d94;
-    }
-}
-
 .project-link div:first-child {
     height: 100%;
 }
@@ -146,6 +101,7 @@ body {
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.15s ease-in-out;
 }
+
 .rotated-up {
     transform: rotate(90deg);
     -webkit-transition: all 0.5s ease-in-out;
@@ -156,16 +112,6 @@ body {
 
 .lan-button {
     animation: appear 0.1s linear;
-}
-
-.background-grey {
-    background-color: #d7dcdd;
-}
-.background-grey-1 {
-    background-color: #e1e5e6;
-}
-.background-grey-2 {
-    background-color: #eff1f1;
 }
 
 @keyframes appear {

@@ -4,7 +4,7 @@ import React from "react";
 import clsx from "clsx";
 
 
-export default function ImageCarouselPopup(props: CarouselProps) {
+export default function ImagesCarouselPopup(props: CarouselProps) {
     return (
         props.isOpen &&
         <div
@@ -17,7 +17,7 @@ export default function ImageCarouselPopup(props: CarouselProps) {
                 size="sm"
                 onPress={props.closeImagePopup}
             >
-                <Image src="/images/svg/xmark.svg" alt="Close Icon" width={25} height={25} />
+                <Image src="/images/svg/xmark.svg" alt="Close Icon" width={25} height={25}/>
             </Button>
 
             <Button
@@ -32,7 +32,7 @@ export default function ImageCarouselPopup(props: CarouselProps) {
                 size="sm"
                 onPress={props.showPrev}
             >
-                <Image src="/images/svg/arrowbackward.svg" alt="Close Icon" width={25} height={25} />
+                <Image src="/images/svg/arrowbackward.svg" alt="Close Icon" width={25} height={25}/>
             </Button>
             <Image
                 width="700"
@@ -52,7 +52,7 @@ export default function ImageCarouselPopup(props: CarouselProps) {
                 size="sm"
                 onPress={props.showNext}
             >
-                <Image src="/images/svg/arrowforward.svg" alt="Close Icon" width={25} height={25} />
+                <Image src="/images/svg/arrowforward.svg" alt="Close Icon" width={25} height={25}/>
             </Button>
         </div>
 

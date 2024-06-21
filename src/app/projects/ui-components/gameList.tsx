@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
-import Image from "next/image";
+import { Image } from "@nextui-org/image";
 import { Button } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
@@ -8,7 +8,7 @@ import clsx from "clsx";
 import projectsList from "../../data/gamesArray.json"
 
 export default function GameList() {
-  const { t }: any = useTranslation();
+  const { t } = useTranslation();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -30,8 +30,8 @@ export default function GameList() {
           <div className="py-2">
             <Image
               src={item.img}
-              width={50}
-              height={50}
+              width="50"
+              height="50"
               alt="Picture of the game"
               className="rounded-xl object-contain ml-4 align-middle"
             />

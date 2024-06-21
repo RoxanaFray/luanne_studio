@@ -1,29 +1,41 @@
 {
   "hello": "Hello!",
+  "luanne_studio": "LUANNE STUDIO",
   "projects": "Projects",
   "ru": "РУ",
   "en": "EN",
   "team": "Team",
-  "contacts": "Feel free to contact us",
+  "contacts": "Contacts",
   "Alik": "Alik",
   "Sergey": "Sergey",
   "Tanya": "Tanya",
   "Liana": "Liana",
-  "game-1 title": "Minesweeper Paws",
-  "game-2 title": "Run use gun",
-  "game-3 title": "Command: Summon",
-  "game-4 title": "Catch the toy",
-  "game-5 title": "Find me",
-  "game-1 description": "Activision has released a new Call of Duty game every year since 2005, and that streak will continue in 2024 with the next entry in the main series. But 2024's Call of Duty game, Call of Duty: Black Ops 6, will be the most notable in years. That's because it's the first new entry since Microsoft acquired",
-  "game-3 description": "Some game",
-  "game-4 description": "Wonderful game",
-  "game-5 description": "Just amazing!",
-  "game director": "Game Director",
-  "game artist": "Game Artist",
-  "game programmer": "Game Programmer",
-  "team description": "We're a team of creative Unity enthusiasts bringing your gaming visions to life with flair and finesse!",
+  "play": "Play",
+  "show_on_github": "Show on GitHub",
+  "connect_us": "Connect us",
+  "titles": {
+    "game_1": "Minesweeper Paws",
+    "game_2": "Run use gun",
+    "game_3": "Command: Summon",
+    "game_4": "Catch the toy",
+    "game_5": "Find me"
+  },
+  "subtitles": {
+    "game_1": "Frenchie Edition"
+  },
+  "descriptions": {
+    "game_1": "Activision has released a new Call of Duty game every year since 2005, and that streak will continue in 2024 with the next entry in the main series. But 2024's Call of Duty game, Call of Duty: Black Ops 6, will be the most notable in years. That's because it's the first new entry since Microsoft acquired",
+    "game_2": "Stop release a new Call of Duty game every year since 2005, and that streak will continue in 2024 with the next entry in the main series. But 2024's Call of Duty game, Call of Duty: Black Ops 6, will be the most notable in years. That's because it's the first new entry since Microsoft acquired",
+    "game_3": "Some game",
+    "game_4": "Wonderful game",
+    "game_5": "Just amazing!"
+  },
+  "game_director": "Game Director",
+  "game_artist": "Game Artist",
+  "game_programmer": "Game Programmer",
+  "team_description": "We're a team of creative Unity enthusiasts bringing your gaming visions to life with flair and finesse!",
   "more": "More",
-  "show all": "Show all",
-  "pick something": "Pick something ",
-  "from the list": "from the list"
+  "view_all": "View all",
+  "pick_something": "Pick something ",
+  "from_the_list": "from the list"
 }

@@ -3,7 +3,7 @@ import { GameInfo } from "../sections/gameInfo";
 import { useTranslation } from "react-i18next";
 
 export default function Page() {
-  const { t }: any = useTranslation();
+  const { t } = useTranslation();
   const imagesList = [
     "/images/B1.jpg",
     "/images/B2.jpg",
@@ -18,12 +18,12 @@ export default function Page() {
   return (
     <main className="">
       <GameInfo
-        title={t("game-2 title")}
+        title={t("titles.game_2")}
         subtitle=""
-        description={t("game-2 description")}
+        description={t("descriptions.game_2")}
         image="/images/B4.jpg"
-        playOpportunity={true}
-        githubLink="test"
+        playOpportunity={false}
+        githubLink="https://github.com/"
         playLink=""
         gameImages={imagesList}
       />

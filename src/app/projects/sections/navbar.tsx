@@ -1,7 +1,5 @@
 import React from "react";
-import { useTranslation } from "next-i18next";
-import Image from "next/image";
-import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import { Divider } from "@nextui-org/divider";
 import GameList from "../ui-components/gameList";
 import { ScrollShadow } from "@nextui-org/react";
@@ -9,7 +7,7 @@ import { Button } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 
 export default function NavBar() {
-  const { t }: any = useTranslation();
+  const { t }  = useTranslation();
   const router = useRouter();
 
   return (
@@ -24,12 +22,12 @@ export default function NavBar() {
             onPress={() => router.push("/")}
           >
             <span className="text-black/60 uppercase font-MPlusMedium text-lg">
-              Luanne Studio
+              {t("luanne_studio")}
             </span>
           </Button>
           <Divider className="w-full p-0" />
           <ScrollShadow className="h-full w-full bg-light-background">
-            <GameList></GameList>
+            <GameList/>
           </ScrollShadow>
         </div>
       </div>

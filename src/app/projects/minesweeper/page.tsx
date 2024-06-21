@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { GameInfo } from "../sections/gameInfo";
 
 export default function Page() {
-  const { t }: any = useTranslation();
+  const { t } = useTranslation();
   const imagesList = [
     "/images/B1.jpg",
     "/images/B2.jpg",
@@ -17,13 +17,13 @@ export default function Page() {
   return (
     <main className="">
       <GameInfo
-        title={t("game-1 title")}
-        subtitle="Frenchie Edition"
-        description={t("game-1 description")}
+        title={t("titles.game_1")}
+        subtitle={t("subtitles.game_1")}
+        description={t("descriptions.game_1")}
         image="/images/B4.jpg"
         playOpportunity={true}
-        githubLink="/"
-        playLink=""
+        githubLink="https://github.com/"
+        playLink="https://github.com/"
         gameImages={imagesList}
       />
     </main>

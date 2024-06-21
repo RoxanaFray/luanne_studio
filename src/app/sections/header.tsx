@@ -4,29 +4,14 @@ import {Button} from "@nextui-org/button";
 import TranslateButtons from "../ui-components/translateButtons";
 
 export default function Header() {
-    const {t}: any = useTranslation();
-
-
-    const list = [
-        {
-            title: "About us",
-            id: "about_us",
-        },
-        {
-            title: "Projects",
-            id: "projects",
-        },
-        {
-            title: "Contacts",
-            id: "contacts",
-        },
-    ];
+    const {t} = useTranslation();
+    const menuItems = ["team", "projects", "contacts"]
 
     const smoothScrollTo = (id: string) => {
         const element = document.getElementById(id);
         element?.scrollIntoView({
             block: "start",
-            behavior: "smooth", // smooth scroll
+            behavior: "smooth",
         });
     };
 
@@ -41,20 +26,20 @@ export default function Header() {
                     onPress={() => smoothScrollTo("top_point")}
                 >
           <span className="text-typing text-black/60 uppercase font-MPlusMedium text-lg">
-            Luanne Studio
+            {t("luanne_studio")}
           </span>
                 </Button>
                 <div className="flex flex-row items-end gap-10 pt-4">
-                    {list.map((item, index) => (
+                    {menuItems.map((item, index) => (
                         <Button
                             variant="light"
-                            onClick={() => smoothScrollTo(item.id)}
+                            onClick={() => smoothScrollTo(item)}
                             disableRipple={true}
                             data-hover="hovered"
                             key={index}
                         >
               <span className="text-black/30 uppercase font-MPlusBold text-xl">
-                {item.title}
+                {t(item)}
               </span>
                         </Button>
                     ))}

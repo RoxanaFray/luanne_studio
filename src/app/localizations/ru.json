@@ -1,5 +1,6 @@
 {
   "hello": "Привет!",
+  "luanne_studio": "LUANNE STUDIO",
   "projects": "Проекты",
   "ru": "РУ",
   "en": "EN",
@@ -9,22 +10,32 @@
   "Liana": "Лиана",
   "team": "Команда",
   "contacts": "Контакты",
-  "game-1 title": "Minesweeper Paws",
-  "game-2 title": "Run use gun",
-  "game-3 title": "Command: Summon",
-  "game-4 title": "Поймай игрушку",
-  "game-5 title": "Найди меня",
-  "game-1 description": "Бомбовая игра",
-  "game-2 description": "Крутая игра с бегом и стрельбой",
-  "game-3 description": "Какая-то игра",
-  "game-4 description": "Чудесная игра",
-  "game-5 description": "Просто потрясно!",
-  "game director": "Директор",
-  "game artist": "Художник",
-  "game programmer": "Разработчик",
-  "team description": "Мы — команда творческих энтузиастов Unity, которые воплощают в жизнь ваши игровые идеи с талантом и изяществом!",
+  "play": "Играть",
+  "show_on_github": "Открыть на GitHub",
+  "connect_us": "Контакты",
+  "titles": {
+    "game_1": "Minesweeper Paws",
+    "game_2": "Run use gun",
+    "game_3": "Command: Summon",
+    "game_4": "Catch the toy",
+    "game_5": "Find me"
+  },
+  "subtitles": {
+    "game_1": "Frenchie Edition"
+  },
+  "descriptions": {
+    "game_1": "Бомбовая игра",
+    "game_2": "Крутая игра с бегом и стрельбой",
+    "game_3": "Какая_то игра",
+    "game_4": "Чудесная игра",
+    "game_5": "Просто потрясно!"
+  },
+  "game_director": "Директор",
+  "game_artist": "Художник",
+  "game_programmer": "Разработчик",
+  "team_description": "Мы — команда творческих энтузиастов Unity, которые воплощают в жизнь ваши игровые идеи с талантом и изяществом!",
   "more": "Подробнее",
-  "show all": "Показать все",
-  "pick something": "Выберите ",
-  "from the list": "игру из списка"
+  "view_all": "Все проекты",
+  "pick_something": "Выберите ",
+  "from_the_list": "игру из списка"
 }

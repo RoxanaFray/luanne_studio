@@ -11,7 +11,7 @@ import {
 import projectsList from "../data/gamesArray.json"
 
 export default function Projects() {
-    const {t}: any = useTranslation();
+    const {t} = useTranslation();
     const maxGamesAmount = 4;
     const router = useRouter();
 
@@ -30,7 +30,7 @@ export default function Projects() {
                         size="lg"
                         className="text-black/30 font-MPlusMedium text-xl border-2 rounded-md tracking-wider px-4"
                     >
-                        View all
+                        {t("view_all")}
                     </Button>
                 </div>
                 <div className="grid grid-cols-4 gap-10 items-center">
