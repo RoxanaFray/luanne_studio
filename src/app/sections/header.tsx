@@ -16,7 +16,7 @@ export default function Header() {
     };
 
     return (
-        <main className="border-b-1 border-black/30 fixed max-h-[120px] w-full z-40 bg-background-grey">
+        <main className="border-b-1 border-black/30 fixed max-h-[120px] w-full z-40 bg-background-grey hidden md:block">
             <div className="flex px-48 grey-text flex-row items-center justify-between pt-4 pb-2">
                 <Button
                     variant="light"
