@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 export default function Home() {
     useEffect(() =>
     {
-        document.body.classList.add("w-fit");
+        // document.body.classList.add("w-fit");
     }, []);
   return (
     <NextUIProvider>

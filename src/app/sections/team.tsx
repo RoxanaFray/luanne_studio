@@ -32,13 +32,13 @@ export default function Team() {
     <main className="w-full">
       <div id="team" className="absolute top-10" />
       <div className="font-MPlusLight flex flex-col items-start px-20 sm:px-48">
-        <h1 className="font-MPlusRegular pt-36 tracking-wide text-black/15 uppercase text-9xl antialiased">
+        <h1 className="font-MPlusRegular pt-64 sm:pt-36 tracking-wide text-black/15 uppercase text-9xl antialiased">
           {t("team")}
         </h1>
-        <h5 className="text-3xl mb-20 mt-16 max-w-4xl text-start text-black/70 leading-normal tracking-wide antialiased">
+        <h5 className="text-5xl sm:text-3xl mb-20 mt-16 max-w-full sm:max-w-4xl text-start text-black/70 leading-normal tracking-wide antialiased">
           {t("team_description")}
         </h5>
-        <div className="gap-20 grid grid-cols-4 items-center sm:grid-cols-4">
+        <div className="gap-40 sm:gap-20 grid grid-cols-2 items-center sm:grid-cols-4">
           {teamList.map((item, index) => (
             <div className="flex flex-col items-center gap-1" key={index}>
               <Avatar

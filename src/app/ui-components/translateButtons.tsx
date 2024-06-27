@@ -21,23 +21,23 @@ export default function TranslateButtons() {
   document.addEventListener("mousedown", () => openSelect(false));
 
   return (
-    <div className="flex flex-col justify-end sm:absolute gap-2">
+    <div className="absolute">
       <Button
         isIconOnly
         variant="light"
         data-hover="hovered"
         onPress={() => openSelect(!isSelectOpened)}
         size="md"
-        className="text-black/10 border-2 sm:border-1 font-MPlusMedium text-sm w-28 sm:w-12 border-black/20 rounded tracking-wider px-14 py-8 sm:px-4 sm:py-0"
+        className="text-black/10 border-1 font-MPlusMedium text-sm w-12 border-black/20 rounded tracking-wider px-4 py-0"
       >
-        <span className="font-MPlusMedium sm:text-xs text-4xl text-black/50 pr-4 sm:pr-2">
+        <span className="font-MPlusMedium text-xs text-black/50 pr-2">
           {t(language)}
         </span>
         <span
           id="arrow"
           className={
             (isSelectOpened ? "rotated-up" : "rotated-down") +
-            " text-2xl sm:text-xs text-black/50"
+            " text-xs text-black/50"
           }
         >
           ❮
