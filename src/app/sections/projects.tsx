@@ -16,11 +16,11 @@ export default function Projects() {
     const router = useRouter();
 
     return (
-        <main className="px-48 pb-32 mt-24 relative">
+        <main className="px-8 sm:px-48 pb-32 mt-12 sm:mt-24 relative">
             <div id="projects" className="absolute -top-44"/>
             <div className="flex flex-col items-start">
-                <div className="flex flex-row justify-between w-full items-center">
-                    <h1 className="font-MPlusRegular tracking-wide text-black/10 uppercase mb-24 text-9xl antialiased">
+                <div className="flex flex-col sm:flex-row justify-between gap-8 w-full items-start sm:items-center">
+                    <h1 className="font-MPlusRegular tracking-wide text-black/10 uppercase sm:mb-24 text-5xl sm:text-9xl antialiased">
                         {t("projects")}
                     </h1>
                     <Button
@@ -28,9 +28,9 @@ export default function Projects() {
                         data-hover="hovered"
                         onPress={() => router.push("projects")}
                         size="lg"
-                        className="text-black/30 font-MPlusMedium text-xl border-2 rounded-md tracking-wider px-4"
+                        className="text-wrap font-MPlusMedium text-sm sm:text-xl border-2 mb-12 sm:mb-0 rounded-md tracking-wider px-1 sm:px-4"
                     >
-                        {t("view_all")}
+                        <span className="text-black/30">{t("view_all")}</span>
                     </Button>
                 </div>
                 <div className="grid grid-cols-4 gap-10 items-center">
