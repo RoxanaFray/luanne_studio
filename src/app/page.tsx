@@ -4,13 +4,8 @@ import Projects from "./sections/projects";
 import Team from "./sections/team";
 import { NextUIProvider } from "@nextui-org/react";
 import Footer from "./sections/footer";
-import { useEffect } from 'react';
 
 export default function Home() {
-    useEffect(() =>
-    {
-        // document.body.classList.add("w-fit");
-    }, []);
   return (
     <NextUIProvider>
       <main className="">

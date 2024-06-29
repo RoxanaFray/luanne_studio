@@ -128,14 +128,22 @@ body {
 
 /* SIZES */
 
-@media screen and (min-width: 1000px) {
+
+@media screen and (max-width: 640px) {
     .project-card-image {
-        height: 260px;
+        height: 100%;
     }
 }
 
-@media screen and (max-width: 999px) {
+@media screen and (min-width: 641px) and (max-width: 999px) {
     .project-card-image {
         height: 200px;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+    .project-card-image {
+        height: 260px;
     }
 }
