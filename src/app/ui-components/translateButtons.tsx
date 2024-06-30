@@ -48,7 +48,7 @@ export default function TranslateButtons() {
           key={index}
           className={
             isSelectOpened && item != language
-              ? `block border-2 sm:border-1 border-black/20 w-28 sm:w-12 rounded pl-4 pr-24 pt-4 pb-12 sm:py-0 sm:pl-2 sm:pr-6 lan-button bg-background-grey`
+              ? `block border-1 border-black/20 w-12 rounded px-2 pr-6 lan-button bg-background-grey`
               : "hidden"
           }
           isIconOnly
@@ -58,7 +58,7 @@ export default function TranslateButtons() {
           size="md"
           onClick={() => changeLanguage(item)}
         >
-          <span className="font-MPlusMedium text-4xl sm:text-xs text-black/50">
+          <span className="font-MPlusMedium text-xs text-black/50">
             {t(item)}
           </span>
         </Button>

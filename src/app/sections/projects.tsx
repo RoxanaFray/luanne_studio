@@ -8,21 +8,19 @@ import {
     Image,
     Button,
 } from "@nextui-org/react";
-import projectsList from "../data/gamesArray.json"
+import projectsList from "../data/gamesArray.json";
+import screenWidth from "../utils/screenWidth";
 
 export default function Projects() {
     const {t} = useTranslation();
     const router = useRouter();
 
-    const [width, setWidth] = useState(window.innerWidth);
     const [maxGamesAmount, setMaxGamesAmount] = useState(4);
+    const widthOfScreen= screenWidth();
 
     useEffect(() => {
-        const handleResize = () => setWidth(window.innerWidth);
-        setMaxGamesAmount(width < 640 ? 3 : 4)
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, [width]);
+        setMaxGamesAmount(widthOfScreen < 640 ? 3 : 4)
+    }, [widthOfScreen]);
 
     return (
         <main className="px-8 sm:px-48 pb-16 sm:pb-32 mt-16 sm:mt-24 relative">
