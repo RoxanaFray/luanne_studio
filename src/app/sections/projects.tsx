@@ -35,7 +35,7 @@ export default function Projects() {
                         data-hover="hovered"
                         onPress={() => router.push("projects")}
                         size="lg"
-                        className="hidden sm:block font-MPlusMedium text-xl border-2 mb-0 rounded-md tracking-wider px-4"
+                        className="hidden sm:block font-MPlusRegular text-xl border-2 mb-0 rounded-md tracking-wider px-4"
                     >
                         <span className="text-black/30">{t("view_all")}</span>
                     </Button>
@@ -60,7 +60,7 @@ export default function Projects() {
                                 />
                             </CardBody>
                             <CardFooter className="project-card-title justify-between h-12">
-                                <h6 className="text-black/70 font-medium text-md">
+                                <h6 className="text-black/70 font-medium text-md font-MPlusRegular">
                                     {t(item.title)}
                                 </h6>
                             </CardFooter>
@@ -72,7 +72,7 @@ export default function Projects() {
                     data-hover="hovered"
                     onPress={() => router.push("projects")}
                     size="lg"
-                    className="block sm:hidden bg-white text-wrap font-MPlusMedium text-md border-1 drop-shadow-sm mt-16 rounded-md tracking-wider w-80 mx-auto py-4 h-16 px-1"
+                    className="block sm:hidden bg-white text-wrap font-MPlusRegular text-md border-1 drop-shadow-sm mt-16 rounded-md tracking-wider w-80 mx-auto py-4 h-16 px-1"
                 >
                     <span className="text-black/30">{t("view_all")}</span>
                 </Button>
