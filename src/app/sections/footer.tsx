@@ -44,8 +44,8 @@ export default function Footer() {
     return (
         <main id="contacts">
             <div className="w-full border-t-1 border-black/20 object-center pt-8 pb-2 sm:pb-12"/>
-            <div className="flex flex-col sm:flex-row items-start sm:items-stretch justify-start px-8 h-80 sm:h-auto sm:px-48 mb-8 sm:mb-20 gap-7 sm:gap-20">
-                <h5 className="block sm:block font-MPlusMedium tracking-wide text-black/10 uppercase text-4xl sm:text-7xl antialiased">
+            <div className="flex flex-col sm:flex-row items-center sm:items-stretch justify-start px-8 h-80 sm:h-auto sm:px-48 mb-8 sm:mb-20 gap-7 sm:gap-20">
+                <h5 className="block sm:block font-MPlusMedium tracking-wide text-black/10 uppercase text-5xl sm:text-7xl antialiased">
                     {t("connect_us")}
                 </h5>
                 <div className="flex items-center sm:items-center sm:pl-12 justify-between gap-5 sm:gap-10">

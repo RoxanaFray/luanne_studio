@@ -25,8 +25,8 @@ export default function Projects() {
     return (
         <main className="px-8 sm:px-48 pb-16 sm:pb-32 mt-16 sm:mt-24 relative">
             <div id="projects" className="absolute -top-44"/>
-            <div className="flex flex-col items-start">
-                <div className="flex flex-col sm:flex-row justify-between gap-8 w-full items-start sm:items-center">
+            <div className="flex flex-col items-center sm:items-start">
+                <div className="flex flex-col sm:flex-row justify-between gap-8 w-full items-center sm:items-center">
                     <h1 className="font-MPlusRegular tracking-wide text-black/10 uppercase mb-16 sm:mb-24 text-5xl sm:text-9xl antialiased">
                         {t("projects")}
                     </h1>
