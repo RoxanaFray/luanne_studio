@@ -17,15 +17,15 @@ export default function Header() {
 
     return (
         <main className="border-b-1 border-black/30 fixed max-h-[100px] sm:max-h-[120px] w-full z-40 bg-background-grey">
-            <div className="flex px-8 sm:px-48 grey-text flex-row items-center justify-between pt-4 pb-2">
+            <div className="flex px-8 sm:px-48 grey-text flex-row items-center justify-between pt-3 sm:pt-4 pb-2">
                 <Button
                     variant="light"
                     data-hover="hovered"
                     disableRipple={true}
-                    className="border-1 border-black/70 rounded py-1 px-2 mb-4 mt-2"
+                    className="border-1 border-black/40 sm:border-black/70 rounded py-0 sm:py-1 px-2 mb-1 sm:mb-4 mt-0 sm:mt-2"
                     onPress={() => smoothScrollTo("top_point")}
                 >
-          <span className="text-typing text-black/60 uppercase font-MPlusMedium text-lg">
+          <span className="text-typing text-black/60 sm:text-black/60 uppercase font-MPlusRegular sm:font-MPlusMedium text-sm sm:text-lg">
             {t("luanne_studio")}
           </span>
                 </Button>
@@ -44,7 +44,7 @@ export default function Header() {
                         </Button>
                     ))}
                 </div>
-                <div className="absolute w-16 sm:h-12 top-7 right-3">
+                <div className="absolute w-16 sm:h-12 top-4 sm:top-7 right-3">
                     <TranslateButtons/>
                 </div>
             </div>

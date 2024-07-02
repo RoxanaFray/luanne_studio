@@ -4,13 +4,21 @@ import useLocalStorage from "@/app/utils/useLocalStorage";
 import { useTranslation } from "next-i18next";
 import "../globals.css";
 import { Button } from "@nextui-org/react";
-import { useState } from "react";
+import { useState, useEffect  } from "react";
+import screenWidth from "@/app/utils/screenWidth";
 
 export default function TranslateButtons() {
   const { t } = useTranslation();
   const langs : Array<"ru" | "en"> = ["ru", "en"];
   const [language, setLanguage] = useLocalStorage("language", "en");
   const [isSelectOpened, openSelect] = useState(false);
+  const widthOfScreen= screenWidth();
+  const sm = 640;
+  const [width, setWidth] = useState(widthOfScreen);
+
+  useEffect(() => {
+    setWidth(widthOfScreen)
+  }, [widthOfScreen]);
 
   const changeLanguage = (lan: string) => {
     i18n.changeLanguage(lan);
@@ -27,8 +35,8 @@ export default function TranslateButtons() {
         variant="light"
         data-hover="hovered"
         onPress={() => openSelect(!isSelectOpened)}
-        size="md"
-        className="text-black/10 border-1 font-MPlusMedium text-sm w-12 border-black/20 rounded tracking-wider px-4 py-0"
+        size={width < sm ? "sm" : "md"}
+        className="text-black/10 border-1 font-MPlusMedium text-sm w-12 border-black/20 rounded tracking-wider px-4 py-4 sm:py-0"
       >
         <span className="font-MPlusMedium text-xs text-black/50 pr-2">
           {t(language)}

@@ -26,7 +26,7 @@ export default function Projects() {
         <main className="px-8 sm:px-48 pb-16 sm:pb-32 mt-16 sm:mt-24 relative">
             <div id="projects" className="absolute -top-44"/>
             <div className="flex flex-col items-center sm:items-start">
-                <div className="flex flex-col sm:flex-row justify-between gap-8 w-full items-center sm:items-center">
+                <div className="flex flex-col sm:flex-row justify-between w-full items-center sm:items-center">
                     <h1 className="font-MPlusRegular tracking-wide text-black/10 uppercase mb-16 sm:mb-24 text-5xl sm:text-9xl antialiased">
                         {t("projects")}
                     </h1>
@@ -72,7 +72,7 @@ export default function Projects() {
                     data-hover="hovered"
                     onPress={() => router.push("projects")}
                     size="lg"
-                    className="block sm:hidden bg-white text-wrap font-MPlusRegular text-md border-1 drop-shadow-sm mt-16 rounded-md tracking-wider w-80 mx-auto py-4 h-16 px-1"
+                    className="block sm:hidden bg-white text-wrap font-MPlusRegular text-md border-1 drop-shadow-sm mt-12 rounded-md tracking-wider w-80 mx-auto py-4 h-16 px-1"
                 >
                     <span className="text-black/30">{t("view_all")}</span>
                 </Button>
