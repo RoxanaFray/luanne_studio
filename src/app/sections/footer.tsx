@@ -44,12 +44,12 @@ export default function Footer() {
 
     return (
         <main id="contacts">
-            <div className="w-full border-t-1 border-black/10 object-center pt-8 pb-4 sm:pb-12"/>
-            <div className="flex flex-col sm:flex-row items-center sm:items-stretch justify-start px-8 h-fit sm:h-auto sm:px-48 mb-56 sm:mb-20 gap-12 sm:gap-20">
+            <div className="hidden sm:block w-full border-t-1 border-black/10 object-center pt-8 pb-4 sm:pb-12"/>
+            <div className="flex flex-col sm:flex-row items-center sm:items-stretch justify-start px-8 h-fit sm:h-auto sm:px-48 mt-8 sm:mt-0 mb-20 sm:mb-20 gap-12 sm:gap-20">
                 <h5 className="hidden sm:block font-MPlusMedium tracking-wide text-black/10 uppercase text-5xl sm:text-7xl antialiased">
                     {t("connect_us")}
                 </h5>
-                <div className="flex flex-row items-center sm:items-center sm:pl-12 justify-between gap-5 sm:gap-10">
+                <div className="flex flex-row flex-wrap items-center sm:items-center sm:pl-12 justify-between gap-2 sm:gap-10 w-full">
                     {meansOfCommunication.map((item, index) => (
                         <Tooltip content={item.title} key={index}>
                             <Button

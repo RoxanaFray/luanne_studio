@@ -23,11 +23,11 @@ export default function Projects() {
     }, [widthOfScreen]);
 
     return (
-        <main className="px-8 sm:px-48 pb-16 sm:pb-32 mt-16 sm:mt-24 relative">
+        <main className="px-8 sm:px-48 pb-16 sm:pb-32 mt-28 sm:mt-24 relative">
             <div id="projects" className="absolute -top-44"/>
             <div className="flex flex-col items-center sm:items-start">
                 <div className="flex flex-col sm:flex-row justify-between w-full items-center sm:items-center">
-                    <h1 className="font-MPlusRegular tracking-wide text-black/10 uppercase mb-16 sm:mb-24 text-5xl sm:text-9xl antialiased">
+                    <h1 className="font-MPlusRegular tracking-normal sm:tracking-wide text-black/60 sm:text-black/10 uppercase mb-16 sm:mb-24 text-4xl sm:text-9xl antialiased">
                         {t("projects")}
                     </h1>
                     <Button
@@ -47,19 +47,19 @@ export default function Projects() {
                             shadow="sm"
                             isPressable
                             onPress={() => router.push(item.link)}
-                            className="rounded-md w-80 sm:w-full h-96 sm:h-auto"
+                            className="rounded-md w-72 sm:w-full h-80 sm:h-auto"
                         >
-                            <CardBody className="overflow-visible p-0 h-96 sm:h-auto">
+                            <CardBody className="overflow-visible p-0 h-64 sm:h-auto">
                                 <Image
                                     alt={t(item.title)}
                                     shadow="sm"
                                     radius="lg"
                                     width="100%"
                                     src={item.img}
-                                    className="project-card-image w-full rounded-sm object-cover sm:max-h-[260px] "
+                                    className="project-card-image w-full rounded-sm object-cover max-h-[280px] sm:max-h-[260px] "
                                 />
                             </CardBody>
-                            <CardFooter className="project-card-title justify-between h-12">
+                            <CardFooter className="project-card-title justify-between h-10">
                                 <h6 className="text-black/70 font-medium text-md font-MPlusRegular">
                                     {t(item.title)}
                                 </h6>
@@ -72,7 +72,7 @@ export default function Projects() {
                     data-hover="hovered"
                     onPress={() => router.push("projects")}
                     size="lg"
-                    className="block sm:hidden bg-white text-wrap font-MPlusRegular text-md border-1 drop-shadow-sm mt-12 rounded-md tracking-wider w-80 mx-auto py-4 h-16 px-1"
+                    className="block sm:hidden bg-white text-wrap font-MPlusRegular text-md border-1 drop-shadow-sm mt-12 rounded-md tracking-wider w-72 mx-auto py-4 h-16 px-1"
                 >
                     <span className="text-black/30">{t("view_all")}</span>
                 </Button>

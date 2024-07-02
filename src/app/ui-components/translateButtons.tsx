@@ -36,9 +36,9 @@ export default function TranslateButtons() {
         data-hover="hovered"
         onPress={() => openSelect(!isSelectOpened)}
         size={width < sm ? "sm" : "md"}
-        className="text-black/10 border-1 font-MPlusMedium text-sm w-12 border-black/20 rounded tracking-wider px-4 py-4 sm:py-0"
+        className="hidden sm:flex border-1 border-black/20 w-12 h-10 rounded px-4 py-0"
       >
-        <span className="font-MPlusMedium text-xs text-black/50 pr-2">
+        <span className="font-MPlusRegular sm:font-MPlusMedium text-xs text-black/50 pr-2 tracking-wider">
           {t(language)}
         </span>
         <span
@@ -51,12 +51,24 @@ export default function TranslateButtons() {
           ❮
         </span>
       </Button>
+      <Button
+          isIconOnly
+          variant="light"
+          data-hover="hovered"
+          onPress={() => changeLanguage(language == "en" ? "ru" : "en")}
+          size={width < sm ? "sm" : "md"}
+          className="flex sm:hidden border-1 border-black/20 w-8 h-8 rounded-md pl-2 py-3"
+      >
+        <span className="font-MPlusRegular sm:font-MPlusMedium text-xs text-black/50 pr-2 tracking-wider">
+          {t(language == "en" ? "ru" : "en")}
+        </span>
+      </Button>
       {langs.map((item, index) => (
         <Button
           key={index}
           className={
             isSelectOpened && item != language
-              ? `block border-1 border-black/20 w-12 rounded px-2 pr-6 lan-button bg-background-grey`
+              ? `block border-1 border-black/20 w-12 h-10 rounded pl-2 pr-6 lan-button bg-background-grey`
               : "hidden"
           }
           isIconOnly
@@ -66,7 +78,7 @@ export default function TranslateButtons() {
           size="md"
           onClick={() => changeLanguage(item)}
         >
-          <span className="font-MPlusMedium text-xs text-black/50">
+          <span className="font-MPlusMedium text-xs text-black/50 tracking-wider">
             {t(item)}
           </span>
         </Button>
