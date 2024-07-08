@@ -14,6 +14,7 @@ export default function TranslateButtons() {
   const [isSelectOpened, openSelect] = useState(false);
   const widthOfScreen= screenWidth();
   const sm = 640;
+  const xl = 1280;
   const [width, setWidth] = useState(widthOfScreen);
 
   useEffect(() => {
@@ -35,10 +36,10 @@ export default function TranslateButtons() {
         variant="light"
         data-hover="hovered"
         onPress={() => openSelect(!isSelectOpened)}
-        size={width < sm ? "sm" : "md"}
-        className="hidden sm:flex border-1 border-black/20 w-12 h-10 rounded px-4 py-0"
+        size={width < xl ? "sm" : "md"}
+        className="hidden xl:flex border-1 border-black/20 w-12 h-10 rounded px-4 py-0"
       >
-        <span className="font-MPlusRegular sm:font-MPlusMedium text-xs text-black/50 pr-2 tracking-wider">
+        <span className="font-MPlusRegular xl:font-MPlusMedium text-xs text-black/50 pr-2 tracking-wider">
           {t(language)}
         </span>
         <span
@@ -56,10 +57,10 @@ export default function TranslateButtons() {
           variant="light"
           data-hover="hovered"
           onPress={() => changeLanguage(language == "en" ? "ru" : "en")}
-          size={width < sm ? "sm" : "md"}
-          className="flex sm:hidden border-1 border-black/20 w-8 h-8 rounded-md pl-2 py-3"
+          size={width < xl ? "sm" : "md"}
+          className="flex xl:hidden border-1 border-black/20 w-8 h-8 rounded-md pl-2 py-3"
       >
-        <span className="font-MPlusRegular sm:font-MPlusMedium text-xs text-black/50 pr-2 tracking-wider">
+        <span className="font-MPlusRegular xl:font-MPlusMedium text-xs text-black/50 pr-2 tracking-wider">
           {t(language == "en" ? "ru" : "en")}
         </span>
       </Button>

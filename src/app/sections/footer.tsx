@@ -44,18 +44,18 @@ export default function Footer() {
 
     return (
         <main id="contacts">
-            <div className="hidden sm:block w-full border-t-1 border-black/10 object-center pt-8 pb-4 sm:pb-12"/>
-            <div className="flex flex-col sm:flex-row items-center sm:items-stretch justify-start px-8 h-fit sm:h-auto sm:px-48 mt-8 sm:mt-0 mb-20 sm:mb-20 gap-12 sm:gap-20">
-                <h5 className="hidden sm:block font-MPlusMedium tracking-wide text-black/10 uppercase text-5xl sm:text-7xl antialiased">
+            <div className="hidden xl:block w-full border-t-1 border-black/10 object-center pt-8 pb-4 xl:pb-12"/>
+            <div className="flex flex-col xl:flex-row items-center xl:items-stretch justify-start xl:justify-between px-8 xl:px-48 h-fit xl:h-auto mt-8 xl:mt-0 mb-20 gap-12">
+                <h5 className="hidden xl:block font-MPlusMedium tracking-wide text-black/10 uppercase text-5xl xl:text-7xl antialiased">
                     {t("connect_us")}
                 </h5>
-                <div className="flex flex-row flex-wrap items-center sm:items-center sm:pl-12 justify-between gap-2 sm:gap-10 w-full">
+                <div className="flex flex-row flex-wrap items-center xl:items-center xl:pl-12 justify-between xl:justify-around gap-2 w-full">
                     {meansOfCommunication.map((item, index) => (
                         <Tooltip content={item.title} key={index}>
                             <Button
                                 isIconOnly
                                 variant="solid"
-                                className="w-14 sm:w-16 h-14 sm:h-16  justify-center gap-7 sm:gap-0 border-1 border-black/10 bg-white/50"
+                                className="w-14 xl:w-16 h-14 xl:h-16  justify-center gap-7 xl:gap-0 border-1 border-black/10 bg-white/50"
                                 size="lg"
                             >
                                 <Image

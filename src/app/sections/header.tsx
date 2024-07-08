@@ -16,20 +16,20 @@ export default function Header() {
     };
 
     return (
-            <main className="hidden sm:block border-b-1 border-black/30 fixed max-h-[100px] sm:max-h-[120px] w-full z-40 bg-background-grey">
-            <div className="flex px-8 sm:px-48 grey-text flex-row items-center justify-between pt-3 sm:pt-4 pb-2">
+            <main className="hidden xl:block border-b-1 border-black/30 fixed max-h-[100px] xl:max-h-[120px] w-full z-40 bg-background-grey">
+            <div className="flex px-8 xl:px-48 grey-text flex-row items-center justify-between pt-3 xl:pt-4 pb-2">
                 <Button
                     variant="light"
                     data-hover="hovered"
                     disableRipple={true}
-                    className="border-1 border-black/40 sm:border-black/70 rounded py-0 sm:py-1 px-2 mb-1 sm:mb-4 mt-0 sm:mt-2"
+                    className="border-1 border-black/40 xl:border-black/70 rounded py-0 xl:py-1 px-2 mb-1 xl:mb-4 mt-0 xl:mt-2"
                     onPress={() => smoothScrollTo("top_point")}
                 >
-          <span className="text-typing text-black/60 uppercase font-MPlusRegular sm:font-MPlusMedium text-sm sm:text-lg">
+          <span className="text-typing text-black/60 uppercase font-MPlusRegular xl:font-MPlusMedium text-sm xl:text-lg">
             {t("luanne_studio")}
           </span>
                 </Button>
-                <div className="hidden sm:flex flex-row items-end gap-10 pt-4">
+                <div className="hidden xl:flex flex-row items-end gap-10 pt-4">
                     {menuItems.map((item, index) => (
                         <Button
                             variant="light"
@@ -44,7 +44,7 @@ export default function Header() {
                         </Button>
                     ))}
                 </div>
-                <div className="absolute w-16 sm:h-12 top-4 sm:top-7 right-3">
+                <div className="absolute w-16 xl:h-12 top-4 xl:top-7 right-3">
                     <TranslateButtons/>
                 </div>
             </div>
