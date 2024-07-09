@@ -33,17 +33,17 @@ export default function Team() {
   return (
       <main className="w-full">
         <div id="team" className="absolute top-10"/>
-        <div className="font-MPlusLight flex flex-col items-center xl:items-start px-8 sm:px-12 xl:px-48">
-          <div className="block xl:hidden mt-16 sm:mt-20 py-0 px-2">
+        <div className="font-MPlusLight flex flex-col items-center xl:items-start px-8 sm:px-12 xl:px-32 2xl:px-48">
+          <div className="block xl:hidden mt-16 sm:mt-20 md:mt-24 py-0 px-2">
           <span
-              className="text-black/60 uppercase font-MPlusRegular text-3xl sm:text-5xl">
+              className="text-black/60 uppercase font-MPlusRegular text-3xl sm:text-5xl lg:text-7xl sm:tracking-wide">
             {t("luanne_studio")}
           </span>
           </div>
           <h1 className="hidden xl:inline font-MPlusRegular pt-28 xl:pt-36 tracking-wide text-black/15 uppercase text-5xl xl:text-9xl antialiased">
             {t("team")}
           </h1>
-          <h5 className="text-xl sm:text-2xl xl:text-3xl mb-12 sm:mb-16 xl:mb-20 mt-8 sm:mt-12 xl:mt-16 max-w-full xl:max-w-4xl text-center xl:text-start text-black/70 leading-normal tracking-wide antialiased">
+          <h5 className="text-xl sm:text-2xl lg:text-3xl xl:text-3xl mb-12 sm:mb-16 lg:mb-20 xl:mb-20 mt-8 sm:mt-12 lg:mt-16 xl:mt-16 max-w-full 2xl:max-w-4xl text-center xl:text-start text-black/70 leading-normal tracking-wide antialiased">
             {t("team_description")}
           </h5>
           <div className="gap-12 xl:gap-20 grid grid-cols-2 items-center sm:grid-cols-4">

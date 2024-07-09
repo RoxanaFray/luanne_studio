@@ -18,7 +18,7 @@ export default function Header() {
     return (
         <main
             className="border-b-1 border-black/30 relative xl:fixed max-h-[100px] xl:max-h-[120px] w-full z-40 bg-background-grey">
-            <div className="hidden xl:flex px-8 xl:px-48 grey-text flex-row items-center justify-between pt-3 xl:pt-4 pb-2">
+            <div className="hidden xl:flex px-8 xl:px-32 2xl:px-48 grey-text flex-row items-center justify-between pt-3 xl:pt-4 pb-2">
                 <Button
                     variant="light"
                     data-hover="hovered"
@@ -47,7 +47,7 @@ export default function Header() {
                     ))}
                 </div>
             </div>
-            <div className="absolute w-8 xl:w-16 xl:h-12 top-2 xl:top-7 right-2 xl:right-3">
+            <div className="absolute w-8 xl:w-16 xl:h-12 top-2 sm:top-5 xl:top-8 2xl:top-7 right-2 sm:right-4 xl:right-1 2xl:right-3">
                 <TranslateButtons/>
             </div>
         </main>

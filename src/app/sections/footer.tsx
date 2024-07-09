@@ -45,7 +45,7 @@ export default function Footer() {
     return (
         <main id="contacts">
             <div className="hidden xl:block w-full border-t-1 border-black/10 object-center pt-8 pb-4 xl:pb-12"/>
-            <div className="flex flex-col xl:flex-row items-center xl:items-stretch justify-start xl:justify-between px-8 xl:px-48 h-fit xl:h-auto mt-8 xl:mt-0 mb-20 gap-12 xl:gap-8">
+            <div className="flex flex-col xl:flex-row items-center xl:items-stretch justify-start xl:justify-between px-8 xl:px-32 2xl:px-48 h-fit xl:h-auto mt-8 xl:mt-0 mb-20 md:mb-12 xl:mb-20 gap-12 xl:gap-8">
                 <h5 className="hidden xl:block xl:whitespace-nowrap font-MPlusMedium tracking-wide text-black/10 uppercase text-5xl xl:text-7xl antialiased">
                     {t("connect_us")}
                 </h5>

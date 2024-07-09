@@ -135,14 +135,14 @@ body {
     }
 }
 
-@media screen and (min-width: 641px) and (max-width: 999px) {
-    .project-card-image {
-        height: 200px;
-    }
-}
+/*@media screen and (min-width: 641px) and (max-width: 999px) {*/
+/*    .project-card-image {*/
+/*        height: 200px;*/
+/*    }*/
+/*}*/
 
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1000px) and (max-width: 1279px) {
     .project-card-image {
         height: 260px;
     }
