@@ -45,11 +45,11 @@ export default function Footer() {
     return (
         <main id="contacts">
             <div className="hidden xl:block w-full border-t-1 border-black/10 object-center pt-8 pb-4 xl:pb-12"/>
-            <div className="flex flex-col xl:flex-row items-center xl:items-stretch justify-start xl:justify-between px-8 xl:px-32 2xl:px-48 h-fit xl:h-auto mt-8 xl:mt-0 mb-20 md:mb-12 xl:mb-20 gap-12 xl:gap-8">
+            <div className="flex flex-col xl:flex-row items-center xl:items-stretch justify-start xl:justify-between px-8 xl:px-32 2xl:container 2xl:mx-auto h-fit xl:h-auto mt-8 xl:mt-0 mb-20 md:mb-12 xl:mb-20 gap-12 xl:gap-8">
                 <h5 className="hidden xl:block xl:whitespace-nowrap font-MPlusMedium tracking-wide text-black/10 uppercase text-5xl xl:text-7xl antialiased">
                     {t("connect_us")}
                 </h5>
-                <div className="flex flex-row flex-wrap xl:flex-nowrap items-center xl:items-center xl:pl-12 justify-between xl:justify-around gap-2 sm:gap-12 xl:gap-4 w-full sm:w-auto xl:w-full">
+                <div className="flex flex-row flex-wrap xl:flex-nowrap items-center xl:items-center xl:pl-12 justify-between xl:justify-around 2xl:justify-end gap-2 sm:gap-12 xl:gap-4 2xl:gap-16 w-full sm:w-auto xl:w-full">
                     {meansOfCommunication.map((item, index) => (
                         <Tooltip content={item.title} key={index}>
                             <Button

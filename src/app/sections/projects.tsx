@@ -27,7 +27,7 @@ export default function Projects() {
     }, [widthOfScreen]);
 
     return (
-        <main className="px-8 xl:px-32 2xl:px-48 pb-16 xl:pb-32 mt-28 md:mt-32 xl:mt-24 relative">
+        <main className="2xl:container 2xl:mx-auto px-8 xl:px-32 pb-16 xl:pb-32 mt-28 md:mt-32 xl:mt-24 relative">
             <div id="projects" className="absolute -top-44"/>
             <div className="flex flex-col items-center xl:items-start">
                 <div className="flex flex-col xl:flex-row justify-between w-full items-center xl:items-center">
@@ -44,27 +44,27 @@ export default function Projects() {
                         <span className="text-black/30">{t("view_all")}</span>
                     </Button>
                 </div>
-                <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-${maxGamesAmount} gap-14 md:gap-10 lg:gap-10 xl:gap-20 items-center mx-auto`}>
+                <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-${maxGamesAmount} 2xl:grid-cols-4 gap-14 md:gap-10 lg:gap-10 xl:gap-20 2xl:gap-20 items-center mx-auto 2xl:w-full`}>
                     {projectsList.map((item, index) => (
                         index < maxGamesAmount && <Card
                             key={index}
                             shadow="sm"
                             isPressable
                             onPress={() => router.push(item.link)}
-                            className="rounded-md w-72 sm:w-60 md:w-56 lg:w-56 xl:w-max xl:max-w-80 2xl:w-full h-80 sm:h-72 md:h-64 lg:h-min xl:h-min 2xl:h-auto"
+                            className="rounded-md w-72 sm:w-60 md:w-56 lg:w-56 xl:w-max xl:max-w-80 2xl:w-max h-80 sm:h-72 md:h-64 lg:h-min xl:h-min"
                         >
-                            <CardBody className="overflow-visible p-0 h-64 sm:h-64 lg:h-64 xl:h-80 2xl:h-auto">
+                            <CardBody className="overflow-visible p-0 h-64 sm:h-64 lg:h-64 xl:h-80 2xl:h-80">
                                 <Image
                                     alt={t(item.title)}
                                     shadow="sm"
                                     radius="lg"
                                     width="100%"
                                     src={item.img}
-                                    className="project-card-image w-full rounded-sm object-cover max-h-[280px] sm:max-h-[250px] md:max-h-[220px] lg:max-h-[260px] xl:max-h-[310px] 2xl:max-h-[260px] "
+                                    className="project-card-image w-full rounded-sm object-cover max-h-[280px] sm:max-h-[250px] md:max-h-[220px] lg:max-h-[260px] xl:max-h-[310px] 2xl:max-h-[330px] "
                                 />
                             </CardBody>
-                            <CardFooter className="project-card-title justify-between h-10 lg:h-12 xl:h-10 lg:pt-4 xl:pt-0">
-                                <h6 className="text-black/70 font-medium text-md font-MPlusRegular">
+                            <CardFooter className="project-card-title justify-between h-10 lg:h-12 xl:h-10 2xl:h-14 lg:pt-4 xl:pt-0 2xl:pt-4">
+                                <h6 className="text-black/70 font-medium text-md font-MPlusRegular 2xl:text-xl">
                                     {t(item.title)}
                                 </h6>
                             </CardFooter>

@@ -18,7 +18,7 @@ export default function Header() {
     return (
         <main
             className="border-b-1 border-black/30 relative xl:fixed max-h-[100px] xl:max-h-[120px] w-full z-40 bg-background-grey">
-            <div className="hidden xl:flex px-8 xl:px-32 2xl:px-48 grey-text flex-row items-center justify-between pt-3 xl:pt-4 pb-2">
+            <div className="hidden 2xl:container 2xl:mx-auto xl:flex px-8 xl:px-32 grey-text flex-row items-center justify-between pt-3 xl:pt-4 pb-2">
                 <Button
                     variant="light"
                     data-hover="hovered"
