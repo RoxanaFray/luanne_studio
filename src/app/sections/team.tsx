@@ -33,7 +33,7 @@ export default function Team() {
   return (
       <main className="w-full">
         <div id="team" className="absolute top-10"/>
-        <div className="font-MPlusLight flex flex-col items-center xl:items-start px-8 sm:px-12 xl:px-32 2xl:container 2xl:mx-auto">
+        <div className="font-MPlusLight flex flex-col items-center xl:items-start px-8 sm:px-12 xl:px-28 xl:container xl:mx-auto">
           <div className="block xl:hidden mt-16 sm:mt-20 md:mt-24 py-0 px-2">
           <span
               className="text-black/60 uppercase font-MPlusRegular text-3xl sm:text-5xl lg:text-7xl sm:tracking-wide">
