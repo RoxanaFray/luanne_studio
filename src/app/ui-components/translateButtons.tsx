@@ -58,7 +58,7 @@ export default function TranslateButtons() {
           data-hover="hovered"
           onPress={() => changeLanguage(language == "en" ? "ru" : "en")}
           size={width < xl ? "sm" : "md"}
-          className="flex xl:hidden border-1 border-black/20 w-8 h-8 rounded-md pl-2 py-3"
+          className="flex xl:hidden border-1 border-black/40 w-8 h-8 rounded-md pl-2 py-3"
       >
         <span className="font-MPlusRegular xl:font-MPlusMedium text-xs text-black/50 pr-2 tracking-wider">
           {t(language == "en" ? "ru" : "en")}
