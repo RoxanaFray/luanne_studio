@@ -1,7 +1,6 @@
 "use client";
 import {useTranslation} from "react-i18next";
 import {Button} from "@nextui-org/react";
-import {useRouter} from "next/navigation";
 import ImagesCarouselPopup from "../ui-components/imagesCarouselPopup";
 import ImagesCarousel from "../ui-components/imagesCarousel";
 import {useState} from "react";

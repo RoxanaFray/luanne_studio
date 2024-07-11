@@ -2,8 +2,6 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { Avatar } from "@nextui-org/react";
 import { Divider } from "@nextui-org/react";
-import {Button} from "@nextui-org/button";
-import TranslateButtons from "@/app/ui-components/translateButtons";
 
 export default function Team() {
   const { t } = useTranslation();

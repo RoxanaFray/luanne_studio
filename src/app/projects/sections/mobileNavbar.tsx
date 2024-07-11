@@ -1,11 +1,8 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
-import {Divider} from "@nextui-org/divider";
-import GameList from "../ui-components/gameList";
-import {CardFooter, ScrollShadow} from "@nextui-org/react";
-import {Button} from "@nextui-org/react";
+import {CardFooter} from "@nextui-org/react";
 import {useRouter} from "next/navigation";
-import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
+import {Card, CardBody, Image} from "@nextui-org/react";
 import projectsList from "../../data/gamesArray.json"
 
 export default function MobileNavBar() {
