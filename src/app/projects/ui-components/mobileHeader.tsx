@@ -14,20 +14,20 @@ export default function MobileHeader() {
     return (
         <main
             className="block xl:hidden border-b-1 border-black/30 max-h-[100px] w-full z-40 bg-background-grey">
-            <div className="flex px-8 sm:px-12 grey-text flex-row items-center justify-start gap-12 sm:justify-between pt-3 pb-2">
-                {pathname != "/projects" &&
-                    <Button
-                        isIconOnly
-                        variant="bordered"
-                        radius="full"
-                        className="h-9 w-9 text-black/80 border-1 border-black/30"
-                        size="sm"
-                        onPress={()=> router.push("/projects")}
-                    >
-                        <Image src="/images/svg/arrowbackwardgrey.svg" alt="Close Icon" width={15} height={15}/>
-                    </Button>
+            {pathname != "/projects" &&
+                <Button
+                    isIconOnly
+                    variant="bordered"
+                    radius="full"
+                    className="absolute left-6 top-4 sm:top-5 h-8 w-8 text-black/80 border-1 border-black/40"
+                    size="sm"
+                    onPress={()=> router.push("/projects")}
+                >
+                    <Image src="/images/svg/arrowbackwardgrey.svg" alt="Close Icon" width={14} height={14}/>
+                </Button>
 
-                }
+            }
+            <div className="flex px-8 sm:px-12 grey-text flex-row items-center justify-center gap-10 sm:justify-center pt-3 pb-2">
                 <Button
                     variant="light"
                     data-hover="hovered"
