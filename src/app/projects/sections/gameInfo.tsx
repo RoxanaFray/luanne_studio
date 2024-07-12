@@ -4,6 +4,7 @@ import {Button} from "@nextui-org/react";
 import ImagesCarouselPopup from "../ui-components/imagesCarouselPopup";
 import ImagesCarousel from "../ui-components/imagesCarousel";
 import {useState} from "react";
+import MobileHeader from "@/app/projects/ui-components/mobileHeader";
 
 const GameInfo = (props: GameInfoProps) => {
     const {t} = useTranslation();
@@ -37,11 +38,12 @@ const GameInfo = (props: GameInfoProps) => {
 
     return (
         <main className="font-MPlusBold text-grey tracking-wider leading-normal text-center antialiased">
-            <div className="flex flex-col gap-16 my-16 ml-20 mr-32 text-left">
-                <div className="flex flex-row flex-wrap justify-start items-start gap-8">
+            <MobileHeader/>
+            <div className="flex flex-col gap-8 xl:gap-16 my-8 xl:my-16 ml-8 xl:ml-20 mr-8 xl:mr-32 text-left">
+                <div className="flex flex-row flex-wrap justify-start items-start uppercase">
                     <div className="uppercase">
-                        <h1 className="font-MPlusBold text-6xl">{props.title}:</h1>
-                        <h3 className="font-MPlusMedium text-5xl">{props.subtitle}</h3>
+                        <h1 className="font-MPlusBold text-4xl xl:text-6xl pb-2">{props.title}:</h1>
+                        <h3 className="font-MPlusMedium text-3xl xl:text-5xl">{props.subtitle}</h3>
                     </div>
                 </div>
                 <p className="font-MPlusRegular text-lg text-grey-text">

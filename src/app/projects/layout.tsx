@@ -16,13 +16,13 @@ export default function ProjectsLayout({
   useEffect(() =>
   {
       if (widthOfScreen > 1280) {
-          document.body.classList.add("overflow-hidden");
+          document.body.classList.add("xl:overflow-hidden");
       }
-    return () => document.body.classList.remove("overflow-hidden");
+    return () => document.body.classList.remove("xl:overflow-hidden");
   }, []);
 
   return (
-      <main className="overflow-hidden">
+      <main className="xl:overflow-hidden">
         <div className="hidden xl:block absolute w-16 h-12 top-4 right-0">
           <TranslateButtons />
         </div>

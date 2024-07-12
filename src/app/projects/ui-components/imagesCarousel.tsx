@@ -2,6 +2,7 @@ import {Image} from "@nextui-org/image";
 import {Button} from "@nextui-org/react";
 import React from "react";
 import {ScrollShadow} from "@nextui-org/react";
+import ScreenWidth from "@/app/utils/screenWidth";
 
 export default function ImagesCarousel(props: CarouselProps) {
     function scroll(side: string) {
@@ -19,12 +20,14 @@ export default function ImagesCarousel(props: CarouselProps) {
         }
     }
 
+    let screenWidth = ScreenWidth();
+
     return (
         <div className="relative flex flex-row justify-start items-center">
             <Button
                 variant="light"
                 radius="full"
-                className="h-16 text-black/50 absolute -left-[72px]"
+                className="hidden sm:block h-16 text-black/50 absolute -left-[72px]"
                 size="sm"
                 onPress={() => scroll("left")}
             >
@@ -33,7 +36,7 @@ export default function ImagesCarousel(props: CarouselProps) {
             <Button
                 variant="light"
                 radius="full"
-                className="h-16 w-16 text-black/50 absolute right-60 "
+                className="hidden sm:block h-16 w-16 text-black/50 absolute right-60 "
                 size="sm"
                 onPress={() => scroll("right")}
             >
@@ -45,16 +48,16 @@ export default function ImagesCarousel(props: CarouselProps) {
                 className="max-w-[670px] max-h-[300px] scroll-smooth"
                 id="scrollContainer"
             >
-                <div className="flex flex-row gap-4 w-screen" id="imagesContainer">
+                <div className="flex flex-row gap-4 w-max sm:w-screen" id="imagesContainer">
                     {props.images.map((item, index) => {
                         return (
                             <Image
-                                width="200"
-                                height="200"
+                                width={screenWidth < 640 ? 150 : 200}
+                                height={screenWidth < 640 ? 150 : 200}
                                 alt="Game Image"
                                 key={index}
                                 src={item}
-                                className="cursor-pointer"
+                                className="cursor-pointer object-cover object-center"
                                 onClick={() => {
                                     props.imageClick(index);
                                     scroll("start")
