@@ -10,7 +10,7 @@ export default function MobileNavBar() {
     const router = useRouter();
 
     return (
-        <main className="block xl:hidden px-0 mx-0">
+        <main className="block xl:hidden px-0 mx-0 pt-16">
             <div className="mt-12 mb-20 px-4 sm:px-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
                 {projectsList.map((item, index) => (
                     <Card isPressable className="flex flex-col justify-start items-start py-2 max-w-64 md:max-w-60 lg:max-w-64 gap-0" key={index} onPress={() => router.push(item.link)}>
@@ -24,7 +24,7 @@ export default function MobileNavBar() {
                         </CardBody>
                         <CardFooter className="pb-3 md:pb-3 pt-2 sm:pt-6 lg:pt-5 px-4 flex-col items-start justify-start align-top">
                             <h4 className="font-bold text-large text-left align-top">{t(item.title)}</h4>
-                            <small className="text-default-500 text-wrap text-left align-top">{item.short_description}</small>
+                            <small className="text-default-500 text-wrap text-left align-top">{item.description}</small>
                         </CardFooter>
                     </Card>
                 ))}

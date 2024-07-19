@@ -27,7 +27,7 @@ export default function ImagesCarousel(props: CarouselProps) {
             <Button
                 variant="light"
                 radius="full"
-                className="hidden sm:block h-16 text-black/50 absolute -left-[72px]"
+                className="hidden sm:flex h-16 text-black/50 absolute -left-[72px]"
                 size="sm"
                 onPress={() => scroll("left")}
             >
@@ -36,7 +36,7 @@ export default function ImagesCarousel(props: CarouselProps) {
             <Button
                 variant="light"
                 radius="full"
-                className="hidden sm:block h-16 w-16 text-black/50 absolute right-60 "
+                className="hidden sm:flex h-16 w-16 text-black/50 absolute right-60 "
                 size="sm"
                 onPress={() => scroll("right")}
             >
@@ -52,8 +52,8 @@ export default function ImagesCarousel(props: CarouselProps) {
                     {props.images.map((item, index) => {
                         return (
                             <Image
-                                width={screenWidth < 640 ? 150 : 200}
-                                height={screenWidth < 640 ? 150 : 200}
+                                width={screenWidth < 768 ? 150 : 200}
+                                height={screenWidth < 768 ? 150 : 200}
                                 alt="Game Image"
                                 key={index}
                                 src={item}

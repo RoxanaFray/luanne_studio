@@ -5,6 +5,8 @@ import TranslateButtons from "../ui-components/translateButtons";
 import Navbar from "./sections/navbar";
 import { useEffect } from 'react';
 import screenWidth from "../utils/screenWidth";
+import MobileHeader from "@/app/projects/ui-components/mobileHeader";
+import MobileFooter from "@/app/projects/ui-components/mobileFooter";
 
 export default function ProjectsLayout({
   children,
@@ -32,7 +34,10 @@ export default function ProjectsLayout({
             <ScrollShadow className="w-full h-screen">{children}</ScrollShadow>
           </div>
         </div>
-          <div className="block w-full basis-full xl:hidden">{children}</div>
+          <div className="block w-full basis-full xl:hidden">
+              <MobileHeader/>
+              {children}
+          </div>
     </main>
   );
 }

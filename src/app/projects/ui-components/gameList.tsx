@@ -39,8 +39,6 @@ export default function GameList() {
                         />
                     </div>
                         <span className="text-black/70 p-4 pt-5 text-md"> {t(item.title)}</span>
-                    <span className="font-MPlusThin p-4 pt-5 text-xs xl:hidden">{item.short_description}</span>
-                    <div className="hover-cover absolute bg-grey/5 rounded w-full h-full top-0 hidden"/>
                 </Button>
             ))}
         </main>

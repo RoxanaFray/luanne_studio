@@ -13,13 +13,13 @@ export default function MobileHeader() {
 
     return (
         <main
-            className="block xl:hidden border-b-1 border-black/30 max-h-[100px] w-full z-40 bg-background-grey">
+            className="block xl:hidden fixed top-0 left-0 border-b-1 border-black/30 h-[75px] w-full z-40 bg-background-grey">
             {pathname != "/projects" &&
                 <Button
                     isIconOnly
                     variant="bordered"
-                    radius="full"
-                    className="absolute left-6 top-4 sm:top-5 h-8 w-8 text-black/80 border-1 border-black/40"
+                    radius="sm"
+                    className="absolute left-6 top-5 sm:top-5 h-8 w-8 px-2 py-3 text-black/80 border-1 border-black/40"
                     size="sm"
                     onPress={()=> router.push("/projects")}
                 >
@@ -27,12 +27,13 @@ export default function MobileHeader() {
                 </Button>
 
             }
-            <div className="flex px-8 sm:px-12 grey-text flex-row items-center justify-center gap-10 sm:justify-center pt-3 pb-2">
+            <div className="flex px-8 sm:px-12 grey-text flex-row items-center justify-center gap-10 sm:justify-center pt-4 pb-4">
                 <Button
                     variant="light"
+                    radius="full"
                     data-hover="hovered"
                     disableRipple={true}
-                    className="border-1 border-black/40 rounded py-0 px-2 mb-1 mt-0"
+                    className="border-1 border-black/40 py-0 px-2 mb-1 mt-0"
                     onPress={() => router.push("/")}
                 >
           <span
@@ -41,7 +42,7 @@ export default function MobileHeader() {
           </span>
                 </Button>
             </div>
-            <div className="absolute w-8 top-4 sm:top-5 right-6 sm:right-12">
+            <div className="absolute w-8 top-5 sm:top-5 right-6 sm:right-12">
                 <TranslateButtons/>
             </div>
         </main>

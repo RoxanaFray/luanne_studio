@@ -12,7 +12,6 @@ export default function Page() {
                 <p>{t("pick something")}</p>
                 <p>{t("from the list")}</p>
             </div>
-            <MobileHeader/>
             <MobileNavBar/>
         </main>
     );

@@ -3,11 +3,15 @@ import {useTranslation} from "react-i18next";
 import {Button} from "@nextui-org/react";
 import ImagesCarouselPopup from "../ui-components/imagesCarouselPopup";
 import ImagesCarousel from "../ui-components/imagesCarousel";
-import {useState} from "react";
-import MobileHeader from "@/app/projects/ui-components/mobileHeader";
+import React, {useState} from "react";
+import {usePathname, useRouter} from "next/navigation";
+import projectsList from "../../data/gamesArray.json"
+import MobileFooter from "@/app/projects/ui-components/mobileFooter";
 
 const GameInfo = (props: GameInfoProps) => {
     const {t} = useTranslation();
+    const pathname = usePathname();
+    const router = useRouter();
     const [isImagePopupOpen, openImagePopup] = useState(false);
     const [activeImageIndex, setActiveImageIndex] = useState(0);
     const [activeImagePath, setActiveImagePath] = useState("");
@@ -36,13 +40,24 @@ const GameInfo = (props: GameInfoProps) => {
         setActiveImagePath(props.gameImages[index]);
     }
 
+    let currentGameIndex = projectsList.findIndex(item => item.link == pathname);
+
+    function showNextGame() {
+        let nextGamePathname = currentGameIndex >= projectsList.length - 1 ? projectsList[0].link : projectsList[currentGameIndex + 1].link;
+        router.push(nextGamePathname);
+    }
+
+    function showPrevGame() {
+        let prevGamePathname: string = currentGameIndex <= 0 ? projectsList[projectsList.length - 1].link : projectsList[currentGameIndex - 1].link;
+        router.push(prevGamePathname);
+    }
+
     return (
         <main className="font-MPlusBold text-grey tracking-wider leading-normal text-center antialiased">
-            <MobileHeader/>
-            <div className="flex flex-col gap-8 xl:gap-16 my-8 xl:my-16 ml-8 xl:ml-20 mr-8 xl:mr-32 text-left">
+            <div className="flex flex-col gap-8 xl:gap-16 py-24 xl:py-0 xl:my-16 ml-8 xl:ml-20 mr-8 xl:mr-32 text-left">
                 <div className="flex flex-row flex-wrap justify-start items-start uppercase">
                     <div className="uppercase">
-                        <h1 className="font-MPlusBold text-4xl xl:text-6xl pb-2">{props.title}:</h1>
+                        <h1 className="font-MPlusBold text-4xl xl:text-6xl pb-2">{props.title}</h1>
                         <h3 className="font-MPlusMedium text-3xl xl:text-5xl">{props.subtitle}</h3>
                     </div>
                 </div>
@@ -90,6 +105,7 @@ const GameInfo = (props: GameInfoProps) => {
                     </Button>
                 </div>
             </div>
+            <MobileFooter showPrevGame={showPrevGame} showNextGame={showNextGame}/>
         </main>
     );
 };
