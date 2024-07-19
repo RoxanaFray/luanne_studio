@@ -54,11 +54,11 @@ const GameInfo = (props: GameInfoProps) => {
 
     return (
         <main className="font-MPlusBold text-grey tracking-wider leading-normal text-center antialiased">
-            <div className="flex flex-col gap-8 xl:gap-16 py-24 xl:py-0 xl:my-16 ml-8 xl:ml-20 mr-8 xl:mr-32 text-left">
+            <div className="flex flex-col gap-8 xl:gap-16 py-24 sm:py-28 xl:py-0 xl:my-16 ml-8 xl:ml-20 mr-8 xl:mr-32 text-left">
                 <div className="flex flex-row flex-wrap justify-start items-start uppercase">
                     <div className="uppercase">
-                        <h1 className="font-MPlusBold text-4xl xl:text-6xl pb-2">{props.title}</h1>
-                        <h3 className="font-MPlusMedium text-3xl xl:text-5xl">{props.subtitle}</h3>
+                        <h1 className="font-MPlusBold text-4xl sm:text-5xl xl:text-6xl pb-2">{props.title}</h1>
+                        <h3 className="font-MPlusMedium text-3xl sm:text-4xl xl:text-5xl">{props.subtitle}</h3>
                     </div>
                 </div>
                 <p className="font-MPlusRegular text-lg text-grey-text">

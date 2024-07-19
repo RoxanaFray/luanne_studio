@@ -18,7 +18,7 @@ export default function Page() {
       <main className="">
         <GameInfo
             title={t("titles.game_3")}
-            subtitle={t("subtitles.game_3")}
+            subtitle=""
             description={t("descriptions.game_3")}
             image="/images/B4.jpg"
             playOpportunity={true}

@@ -16,6 +16,22 @@ export default function ImagesCarouselPopup(props: CarouselProps) {
         setTouchPosition(touchDown)
     }
 
+    const imageWidth = ():string => {
+        if (screenWidth < 640) {
+            return "90%"
+        }
+        if (screenWidth >= 640 && screenWidth < 768) {
+            return "80%"
+        }
+        if (screenWidth >= 768 && screenWidth < 1024) {
+            return "85%"
+        }
+        if (screenWidth >= 1024 && screenWidth < 1280) {
+            return "90%"
+        }
+        return "700px"
+    }
+
     const handleTouchMove = (e:React.TouchEvent<HTMLDivElement>) => {
         const touchDown = touchPosition
 
@@ -48,7 +64,7 @@ export default function ImagesCarouselPopup(props: CarouselProps) {
     return (
         props.isOpen &&
         <div
-            className="absolute flex flex-row justify-center items-center w-screen h-screen top-0 left-0 bg-black/80 z-10"
+            className="absolute flex flex-row justify-center items-center w-screen h-screen top-0 left-0 bg-black/80 z-50"
             onClick={props.closeImagePopup}>
             <Button
                 variant="light"
@@ -64,7 +80,7 @@ export default function ImagesCarouselPopup(props: CarouselProps) {
                 variant="light"
                 radius="full"
                 className={clsx(
-                    "hidden sm:flex h-24 w-24 text-white absolute z-20 left-5",
+                    "hidden sm:flex h-24 w-24 text-white absolute z-50 left-5 sm:left-2",
                     {
                         "hidden": props.isPrevButtonDisabled,
                     },
@@ -75,11 +91,12 @@ export default function ImagesCarouselPopup(props: CarouselProps) {
                 <Image className="hidden sm:block" src="/images/svg/arrowbackward.svg" alt="Close Icon" width={25} height={25}/>
             </Button>
             <Image
-                width={screenWidth < 640 ? "90%" : 700}
+                width={imageWidth()}
+
                 alt="Game Image"
                 src={props.activeImagePath}
                 onClick={(e ) => e.stopPropagation()}
-                className="object-cover object-center mx-auto"
+                className="object-cover object-center mx-auto max-h-[700px]"
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
             />
@@ -87,7 +104,7 @@ export default function ImagesCarouselPopup(props: CarouselProps) {
                 variant="light"
                 radius="full"
                 className={clsx(
-                    "hidden sm:flex h-24 w-24 text-white absolute right-5 z-20",
+                    "hidden sm:flex h-24 w-24 text-white absolute right-5 sm:right-2 z-20",
                     {
                         "hidden": props.isNextButtonDisabled,
                     },
