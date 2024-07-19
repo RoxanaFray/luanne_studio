@@ -11,13 +11,13 @@ export default function MobileFooter(props: mobileFooterProps) {
 
     return (
         pathname != "/projects" &&
-        <main className="block xl:hidden w-full h-16 fixed bottom-0 left-0 z-40">
+        <main className="block xl:hidden w-full h-16 fixed bg-light-background bottom-0 left-0 z-40">
             <Divider className="w-full"></Divider>
-            <div className="flex flex-row justify-between bg-light-background">
+            <div className="flex flex-row justify-between mx-8 sm:mx-12 md:mx-20 lg:mx-24">
                 <Button
                     radius="full"
                     variant="bordered"
-                    className="xl:hidden mt-4 mb-4 ml-5 border-1 border-black/30"
+                    className="xl:hidden mt-4 mb-4 border-1 border-black/30"
                     onPress={props.showPrevGame}
                 >
                     <span className="font-MPlusRegular text-black/50">Previous</span>
@@ -25,7 +25,7 @@ export default function MobileFooter(props: mobileFooterProps) {
                 <Button
                     radius="full"
                     variant="bordered"
-                    className="flex flex-col xl:hidden mt-4 mb-4 mr-5 border-1 border-black/30"
+                    className="flex flex-col xl:hidden mt-4 mb-4 border-1 border-black/30"
                     onPress={props.showNextGame}
                 >
                     <span className="font-MPlusRegular text-black/50">Next</span>

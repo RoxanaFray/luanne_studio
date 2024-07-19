@@ -53,8 +53,8 @@ const GameInfo = (props: GameInfoProps) => {
     }
 
     return (
-        <main className="font-MPlusBold text-grey tracking-wider leading-normal text-center antialiased">
-            <div className="flex flex-col gap-8 xl:gap-16 py-24 sm:py-28 xl:py-0 xl:my-16 ml-8 xl:ml-20 mr-8 xl:mr-32 text-left">
+        <main className="font-MPlusBold text-grey tracking-wider leading-normal text-center antialiased sm:mx-4">
+            <div className="flex flex-col gap-8 xl:gap-16 py-24 sm:py-32 xl:py-0 xl:my-16 mx-8 md:mx-16 lg:mx-20 xl:ml-20 xl:mr-32 text-left">
                 <div className="flex flex-row flex-wrap justify-start items-start uppercase">
                     <div className="uppercase">
                         <h1 className="font-MPlusBold text-4xl sm:text-5xl xl:text-6xl pb-2">{props.title}</h1>
@@ -78,8 +78,9 @@ const GameInfo = (props: GameInfoProps) => {
                 <div className="flex flex-row gap-4 ">
                     {props.playOpportunity && (
                         <Button
-                            className="py-4 px-8 bg-grey"
+                            className="py-4 px-8 bg-light-grey xl:bg-grey"
                             variant="solid"
+                            radius="md"
                             size="lg"
                             onPress={() => {
                                 window.open(props.playLink, "_blank");
@@ -92,9 +93,10 @@ const GameInfo = (props: GameInfoProps) => {
                     )}
 
                     <Button
-                        className="py-4 px-8 bg-grey"
+                        className="py-4 px-8 bg-light-grey xl:bg-grey"
                         variant="solid"
                         size="lg"
+                        radius="md"
                         onPress={() => {
                             window.open(props.githubLink, "_blank");
                         }}

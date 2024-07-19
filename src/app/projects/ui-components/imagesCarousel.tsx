@@ -13,7 +13,9 @@ export default function ImagesCarousel(props: CarouselProps) {
             container?.scroll(leftScrollPosition - 600, 0);
         }
         if (side == "right") {
+            console.log('RIGHT', container?.clientWidth)
             container?.scroll(leftScrollPosition + 600, 0);
+
         }
         if (side == "start") {
             container?.scroll({top: 0, left: 0, behavior: "instant"});
@@ -27,7 +29,7 @@ export default function ImagesCarousel(props: CarouselProps) {
             <Button
                 variant="light"
                 radius="full"
-                className="hidden md:flex h-16 text-black/50 absolute -left-[72px]"
+                className="hidden lg:flex h-16 text-black/50 absolute lg:-left-20 xl:-left-[72px]"
                 size="sm"
                 onPress={() => scroll("left")}
             >
@@ -36,7 +38,7 @@ export default function ImagesCarousel(props: CarouselProps) {
             <Button
                 variant="light"
                 radius="full"
-                className="hidden md:flex h-16 w-16 text-black/50 absolute right-60 "
+                className="hidden lg:flex h-16 w-16 text-black/50 absolute lg:-right-16 xl:right-60  "
                 size="sm"
                 onPress={() => scroll("right")}
             >
@@ -45,7 +47,7 @@ export default function ImagesCarousel(props: CarouselProps) {
             <ScrollShadow
                 hideScrollBar
                 orientation="horizontal"
-                className="max-w-[670px] max-h-[300px] scroll-smooth"
+                className="max-w-[550px] mr-4 sm:max-w-[650px] sm:mr-8 md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[670px] max-h-[300px] scroll-smooth"
                 id="scrollContainer"
             >
                 <div className="flex flex-row gap-4 w-max xl:w-screen" id="imagesContainer">
