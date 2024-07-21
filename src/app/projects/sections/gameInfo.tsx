@@ -53,7 +53,7 @@ const GameInfo = (props: GameInfoProps) => {
     }
 
     return (
-        <main className="font-MPlusBold text-grey tracking-wider leading-normal text-center antialiased sm:mx-4">
+        <main className="xl:max-w-7xl sm:mx-4 text-grey tracking-wider leading-normal text-center antialiased ">
             <div className="flex flex-col gap-8 xl:gap-16 py-24 sm:py-32 xl:py-0 xl:my-16 mx-8 md:mx-16 lg:mx-20 xl:ml-20 xl:mr-32 text-left">
                 <div className="flex flex-row flex-wrap justify-start items-start uppercase">
                     <div className="uppercase">

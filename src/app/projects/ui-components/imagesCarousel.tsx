@@ -13,7 +13,6 @@ export default function ImagesCarousel(props: CarouselProps) {
             container?.scroll(leftScrollPosition - 600, 0);
         }
         if (side == "right") {
-            console.log('RIGHT', container?.clientWidth)
             container?.scroll(leftScrollPosition + 600, 0);
 
         }
@@ -29,28 +28,19 @@ export default function ImagesCarousel(props: CarouselProps) {
             <Button
                 variant="light"
                 radius="full"
-                className="hidden lg:flex h-16 text-black/50 absolute lg:-left-20 xl:-left-[72px]"
+                className="hidden xl:flex h-16 text-black/50 absolute xl:-left-[72px]"
                 size="sm"
                 onPress={() => scroll("left")}
             >
                 <Image src="/images/svg/chevronleftgrey.svg" alt="Close Icon" width={10} height={10}/>
             </Button>
-            <Button
-                variant="light"
-                radius="full"
-                className="hidden lg:flex h-16 w-16 text-black/50 absolute lg:-right-16 xl:right-60  "
-                size="sm"
-                onPress={() => scroll("right")}
-            >
-                <Image src="/images/svg/chevronrightgrey.svg" alt="Close Icon" width={10} height={10}/>
-            </Button>
             <ScrollShadow
                 hideScrollBar
                 orientation="horizontal"
-                className="max-w-[550px] mr-4 sm:max-w-[650px] sm:mr-8 md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[670px] max-h-[300px] scroll-smooth"
+                className="max-w-[550px] mr-4 sm:max-w-[650px] sm:mr-8 md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[600px] 2xl:max-w-[800px] max-h-[300px] scroll-smooth"
                 id="scrollContainer"
             >
-                <div className="flex flex-row gap-4 w-max xl:w-screen" id="imagesContainer">
+                <div className="flex flex-row gap-4 w-max" id="imagesContainer">
                     {props.images.map((item, index) => {
                         return (
                             <Image
@@ -69,6 +59,15 @@ export default function ImagesCarousel(props: CarouselProps) {
                     })}
                 </div>
             </ScrollShadow>
+            <Button
+                variant="light"
+                radius="full"
+                className="hidden xl:flex h-16 w-16 text-black/50"
+                size="sm"
+                onPress={() => scroll("right")}
+            >
+                <Image src="/images/svg/chevronrightgrey.svg" alt="Close Icon" width={10} height={10}/>
+            </Button>
         </div>
     );
 }
