@@ -23,14 +23,16 @@ const GameInfo = (props: GameInfoProps) => {
 
     function showNextImageInPopup() {
         if (activeImageIndex >= props.gameImages.length - 1) {
-            return;
+            setActiveImage(0)
+            return
         }
         setActiveImage(activeImageIndex + 1)
     }
 
     function showPrevImageInPopup() {
         if (activeImageIndex <= 0) {
-            return;
+            setActiveImage(props.gameImages.length - 1)
+            return
         }
         setActiveImage(activeImageIndex - 1)
     }

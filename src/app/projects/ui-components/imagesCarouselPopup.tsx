@@ -3,8 +3,6 @@ import {Button} from "@nextui-org/react";
 import React, {useEffect, useState} from "react";
 import clsx from "clsx";
 import ScreenWidth from "@/app/utils/screenWidth";
-import {number} from "prop-types";
-
 
 export default function ImagesCarouselPopup(props: CarouselProps) {
     let screenWidth = ScreenWidth();
@@ -41,12 +39,15 @@ export default function ImagesCarouselPopup(props: CarouselProps) {
         const currentTouch = e.touches[0].clientX
         const diff = touchDown - currentTouch
 
-        if (diff > 5) {
-            props.showNext()
-        }
+        if (screenWidth < 1280) {
 
-        if (diff < -5) {
-            props.showPrev()
+            if (diff > 5) {
+                props.showNext()
+            }
+
+            if (diff < -5) {
+                props.showPrev()
+            }
         }
 
         setTouchPosition(null)
@@ -92,7 +93,6 @@ export default function ImagesCarouselPopup(props: CarouselProps) {
             </Button>
             <Image
                 width={imageWidth()}
-
                 alt="Game Image"
                 src={props.activeImagePath}
                 onClick={(e ) => e.stopPropagation()}
