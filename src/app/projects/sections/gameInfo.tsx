@@ -7,6 +7,7 @@ import React, {useState} from "react";
 import {usePathname, useRouter} from "next/navigation";
 import projectsList from "../../data/gamesArray.json"
 import MobileFooter from "@/app/projects/ui-components/mobileFooter";
+import NewImagesCarouselPopup from "@/app/projects/ui-components/newImagesCarouselPopup";
 
 const GameInfo = (props: GameInfoProps) => {
     const {t} = useTranslation();
@@ -66,14 +67,20 @@ const GameInfo = (props: GameInfoProps) => {
                 <p className="font-MPlusRegular text-lg text-grey-text">
                     {props.description}
                 </p>
-                <ImagesCarouselPopup
-                    isPrevButtonDisabled={activeImageIndex <= 0}
-                    isNextButtonDisabled={activeImageIndex >= props.gameImages.length - 1}
-                    activeImagePath={activeImagePath}
+                {/*<ImagesCarouselPopup*/}
+                {/*    isPrevButtonDisabled={activeImageIndex <= 0}*/}
+                {/*    isNextButtonDisabled={activeImageIndex >= props.gameImages.length - 1}*/}
+                {/*    activeImagePath={activeImagePath}*/}
+                {/*    isOpen={isImagePopupOpen}*/}
+                {/*    closeImagePopup={() => openImagePopup(false)}*/}
+                {/*    showPrev={showPrevImageInPopup}*/}
+                {/*    showNext={showNextImageInPopup}*/}
+                {/*/>*/}
+                <NewImagesCarouselPopup
                     isOpen={isImagePopupOpen}
                     closeImagePopup={() => openImagePopup(false)}
-                    showPrev={showPrevImageInPopup}
-                    showNext={showNextImageInPopup}
+                    imageToOpen={activeImageIndex}
+                    images={props.gameImages}
                 />
 
                 <ImagesCarousel images={props.gameImages} imageClick={openImageCarouselPopup}/>
