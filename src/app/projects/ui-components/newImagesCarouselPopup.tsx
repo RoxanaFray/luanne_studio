@@ -12,6 +12,8 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
 
     const prevSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + props.images.length) % props.images.length);
+        console.log('1', props.imageToOpen)
+        console.log('2', currentIndex)
     };
 
     let screenWidth = ScreenWidth();
@@ -66,6 +68,7 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
         if (props.isOpen) {
             document.body.classList.add("overflow-hidden");
             window.scrollTo(0, 0);
+            setCurrentIndex(props.imageToOpen)
         }
         return () => document.body.classList.remove("overflow-hidden");
     }, [props.isOpen]);
@@ -73,7 +76,6 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
     return (
         props.isOpen &&
         <div
-
             className={`slider-container ${props.isOpen ? "open" : "close"} absolute flex flex-row justify-center items-center w-screen h-screen top-0 left-0 bg-black/80 z-50`}
             onClick={props.closeImagePopup}>
             <Button
@@ -96,47 +98,43 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
                 <Image className="hidden sm:block" src="/images/svg/arrowbackward.svg" alt="Close Icon" width={25}
                        height={25}/>
             </Button>
-            {/*<div className="slider flex flex-row absolute w-max h-full mx-auto max-h-[700px]">*/}
-            {/*    <div className="slider w-min h-full mx-auto max-h-[700px]">*/}
-                {props.images.map((image, index) => (
-                    <div key={index} className={`slide ${index === currentIndex ? 'active' : 'hid'}  absolute w-[${imageWidth()}] max-h-[700px]`} >
-                    {/*// <div key={index} className={`slide ${index === currentIndex ? 'active' : ''} flex flex-row justify-center items-center px-24 max-h-[700px]`} >*/}
-                    <Image
-                        width={imageWidth()}
-                        alt="Game Image"
-                        src={image}
-                        onClick={(e) => {
-
-                            e.stopPropagation()
-                            console.log('index: ', index)
-                            console.log('curindex: ', currentIndex)
-
-                        }
-                        }
-                        className="object-cover object-center"
-                        onTouchStart={handleTouchStart}
-                        onTouchMove={handleTouchMove}
-                    />
-                    </div>
-                    // <Image
-                    //     key={index}
-                    //     width={imageWidth()}
-                    //     alt="Game Image"
-                    //     src={image}
-                    //     onClick={(e) => {
-                    //
-                    //         e.stopPropagation()
-                    //         console.log('index: ', index)
-                    //         console.log('curindex: ', currentIndex)
-                    //
-                    //     }
-                    // }
-                    //     className={`slide ${index === currentIndex ? 'active' : ''} object-cover object-center w-96 h-64`}
-                    //     onTouchStart={handleTouchStart}
-                    //     onTouchMove={handleTouchMove}
-                    // />
-                ))}
+            {/*<div className="flex flex-row justify-center items-center mx-auto max-h-[700px]">*/}
+            {/*        <div className={`slide ${props.imageToOpen === currentIndex ? 'active' : 'hid'} absolute w-[${imageWidth()}] max-h-[700px]`}>*/}
+            {/*            <Image*/}
+            {/*                width={imageWidth()}*/}
+            {/*                alt="Game Image"*/}
+            {/*                src={props.images[currentIndex]}*/}
+            {/*                onClick={(e) => {*/}
+            {/*                    e.stopPropagation()*/}
+            {/*                }*/}
+            {/*                }*/}
+            {/*                className="object-cover object-center max-h-[700px]"*/}
+            {/*                onTouchStart={handleTouchStart}*/}
+            {/*                onTouchMove={handleTouchMove}*/}
+            {/*            />*/}
+            {/*        </div>*/}
             {/*</div>*/}
+            <div className="flex flex-row justify-center items-center mx-auto max-h-[700px]">
+                {props.images.map((image, index) => (
+                    <div key={index}
+                         className={`slide ${index === currentIndex ? 'active' : 'hid'} absolute w-[${imageWidth()}] max-h-[700px]`}>
+                        <Image
+                            width={imageWidth()}
+                            alt="Game Image"
+                            src={props.images[currentIndex]}
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                console.log('index: ', index)
+                                console.log('curindex: ', currentIndex)
+                            }
+                            }
+                            className="object-cover object-center max-h-[700px]"
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                        />
+                    </div>
+                ))}
+            </div>
             <Button
                 variant="light"
                 radius="full"
