@@ -112,61 +112,15 @@ body {
     animation: appear 0.1s linear;
 }
 
-.slider-container {
-    opacity: 0;
-    animation: opacity 0.3s forwards;
-    -webkit-animation: opacity 0.3s forwards;
-}
-
-@keyframes opacity {
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 50%;
+    }
     100% {
-        opacity: 1
-    }
-}
-
-
-
-.slide.active {
-    animation: slide-in 0.8s forwards;
-    -webkit-animation: slide-in 0.8s forwards;
-}
-
-.slide.hid {
-    animation: slide-out 0.7s forwards;
-    -webkit-animation: slide-out .7s forwards;
-    /*display: none;*/
-}
-
-@keyframes slide-in {
-    from {
-        transform:  translateX(-200%) scale(0.1);
-        /*transform: scale(0.2);*/
-        opacity: 0;
-        /*transform: translateX(-200%);*/
-        /*transform: rotate(-30deg) scale(0.2);*/
-    }
-    to {
-        transform:  translateX(0%) scale(1);
-        /*transform: scale(1);*/
-        opacity: 1;
-        /*transform: rotate(0deg) scale(1);*/
-        /*transform: translateX(0%);*/
-    }
-}
-
-@keyframes slide-out {
-    from {
-        /*transform: scale(1) translateX(0%);*/
-        /*transform: scale(1);*/
-        opacity: 1;
-        transform: translateX(0%);
-    }
-    to {
-        /*transform: scale(2);*/
-        transform: scale(0.2) translateX(700%);
-        display: none;
-        opacity: 0;
-        /*transform: translateX(200%);*/
+        opacity: 100%;
     }
 }
 
@@ -181,33 +135,101 @@ button.prev, button.next {
     cursor: pointer;
 }
 
-@keyframes appear {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 50%;
-    }
+.slider-container {
+    opacity: 0;
+    animation: opacity 0.3s forwards;
+    -webkit-animation: opacity 0.3s forwards;
+}
+
+@keyframes opacity {
     100% {
-        opacity: 100%;
+        opacity: 1
     }
 }
 
-/* SIZES */
+.slide.active.right {
+    animation: slide-in-to-right 0.8s forwards;
+    -webkit-animation: slide-in-to-right 0.8s forwards;
+}
 
+@keyframes slide-in-to-right {
+    from {
+        transform:  translateX(-200%) scale(0.1);
+        opacity: 0;
+    }
+    to {
+        transform:  translateX(0%) scale(1);
+        opacity: 1;
+    }
+}
+
+.slide.active.left {
+    animation: slide-in-to-left 0.8s forwards;
+    -webkit-animation: slide-in-to-left 0.8s forwards;
+}
+
+@keyframes slide-in-to-left {
+    from {
+        transform:  translateX(200%) scale(0.1);
+        opacity: 0;
+    }
+    to {
+        transform:  translateX(0%) scale(1);
+        opacity: 1;
+    }
+}
+
+.slide.hid {
+    opacity: 0;
+    transform: translate(200%);
+}
+
+.slide.hid.straight {
+    transform: translate(200%);
+    opacity: 0;
+}
+
+.slide.hid.right {
+    animation: slide-out-to-right 0.7s forwards;
+    -webkit-animation: slide-out-to-right .7s forwards;
+}
+
+@keyframes slide-out-to-right {
+    from {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    to {
+        transform: scale(0.2) translateX(700%);
+        opacity: 0;
+    }
+}
+
+.slide.hid.left {
+    animation: slide-out-to-left 0.7s forwards;
+    -webkit-animation: slide-out-to-left .7s forwards;
+}
+
+@keyframes slide-out-to-left {
+    from {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    to {
+        transform: scale(0.2) translateX(-700%);
+        opacity: 0;
+    }
+}
+
+
+
+/* SIZES */
 
 @media screen and (max-width: 640px) {
     .project-card-image {
         height: 100%;
     }
 }
-
-/*@media screen and (min-width: 641px) and (max-width: 999px) {*/
-/*    .project-card-image {*/
-/*        height: 200px;*/
-/*    }*/
-/*}*/
-
 
 @media screen and (min-width: 1000px) and (max-width: 1279px) {
     .project-card-image {

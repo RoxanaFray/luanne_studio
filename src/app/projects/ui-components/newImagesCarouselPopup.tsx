@@ -5,15 +5,16 @@ import ScreenWidth from "@/app/utils/screenWidth";
 
 export default function NewImagesCarouselPopup(props: CarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [side, setSide] = useState("")
 
     const nextSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % props.images.length);
+        setSide("right")
     };
 
     const prevSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + props.images.length) % props.images.length);
-        console.log('1', props.imageToOpen)
-        console.log('2', currentIndex)
+        setSide("left")
     };
 
     let screenWidth = ScreenWidth();
@@ -69,9 +70,35 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
             document.body.classList.add("overflow-hidden");
             window.scrollTo(0, 0);
             setCurrentIndex(props.imageToOpen)
+            setSide("straight")
         }
         return () => document.body.classList.remove("overflow-hidden");
-    }, [props.isOpen]);
+    }, [props.isOpen, props.imageToOpen]);
+
+    const playAnimation = (index: number): string => {
+        let prevIndex = (currentIndex - 1 + props.images.length) % props.images.length;
+        let nextIndex = (currentIndex + 1) % props.images.length;
+
+        if (index === currentIndex) {
+            if (side === "right") {
+                return "active right"
+            }
+            if (side === "left") {
+                return "active left"
+            }
+            if (side === "straight") {
+                return "active straight"
+            }
+        } else {
+            if (side == "right" && index === prevIndex) {
+                return "hid right"
+            }
+            if (side == "left" && index === nextIndex) {
+                return "hid left"
+            }
+        }
+        return "hid"
+    }
 
     return (
         props.isOpen &&
@@ -98,34 +125,17 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
                 <Image className="hidden sm:block" src="/images/svg/arrowbackward.svg" alt="Close Icon" width={25}
                        height={25}/>
             </Button>
-            {/*<div className="flex flex-row justify-center items-center mx-auto max-h-[700px]">*/}
-            {/*        <div className={`slide ${props.imageToOpen === currentIndex ? 'active' : 'hid'} absolute w-[${imageWidth()}] max-h-[700px]`}>*/}
-            {/*            <Image*/}
-            {/*                width={imageWidth()}*/}
-            {/*                alt="Game Image"*/}
-            {/*                src={props.images[currentIndex]}*/}
-            {/*                onClick={(e) => {*/}
-            {/*                    e.stopPropagation()*/}
-            {/*                }*/}
-            {/*                }*/}
-            {/*                className="object-cover object-center max-h-[700px]"*/}
-            {/*                onTouchStart={handleTouchStart}*/}
-            {/*                onTouchMove={handleTouchMove}*/}
-            {/*            />*/}
-            {/*        </div>*/}
-            {/*</div>*/}
             <div className="flex flex-row justify-center items-center mx-auto max-h-[700px]">
                 {props.images.map((image, index) => (
                     <div key={index}
-                         className={`slide ${index === currentIndex ? 'active' : 'hid'} absolute w-[${imageWidth()}] max-h-[700px]`}>
+                         className={`slide ${playAnimation(index)} absolute w-[${imageWidth()}] max-h-[700px]`}>
+                        {/*// className={`slide ${index === currentIndex ? `active ${side}` : `hid ${side}`} absolute w-[${imageWidth()}] max-h-[700px]`}>*/}
                         <Image
                             width={imageWidth()}
                             alt="Game Image"
-                            src={props.images[currentIndex]}
+                            src={image}
                             onClick={(e) => {
                                 e.stopPropagation()
-                                console.log('index: ', index)
-                                console.log('curindex: ', currentIndex)
                             }
                             }
                             className="object-cover object-center max-h-[700px]"
