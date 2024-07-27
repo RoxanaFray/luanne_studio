@@ -11,7 +11,7 @@ export default function NavBar() {
   const router = useRouter();
 
   return (
-    <main className="navbar basis-1/5 ">
+    <main className="navbar basis-1/5 z-10">
       <div className="h-screen shadow-xl border-1 border-grey-border bg-light-background">
         <div className="hidden sm:flex flex-col w-full items-center h-screen justify-center">
           <Button

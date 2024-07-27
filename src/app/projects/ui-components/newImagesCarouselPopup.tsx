@@ -134,10 +134,11 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
                 <Image className="hidden sm:block" src="/images/svg/arrowbackward.svg" alt="Close Icon" width={25}
                        height={25}/>
             </Button>
-            <div className="flex flex-row justify-center items-center mx-auto max-h-[700px]">
+            <div className="flex flex-row justify-center items-center mx-auto h-screen w-screen">
                 {props.images.map((image, index) => (
                     <div key={index}
-                         className={`slide ${playAnimation(index)} absolute w-[${imageWidth()}] mx-auto max-h-[700px]`}>
+                         className={`slide ${playAnimation(index)} absolute w-[${imageWidth()}] flex justify-center mx-auto`}
+                    >
                         <Image
                             width={imageWidth()}
                             key={index}
@@ -158,7 +159,7 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
                 variant="light"
                 radius="full"
                 hidden
-                className="sm:flex h-24 w-24 text-white absolute right-5 sm:right-2 z-20 next"
+                className="hidden sm:flex h-24 w-24 text-white absolute right-5 sm:right-2 z-20 next"
                 size="sm"
                 onPress={nextSlide}
             >
