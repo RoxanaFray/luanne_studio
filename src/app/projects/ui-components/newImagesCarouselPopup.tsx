@@ -137,9 +137,10 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
             <div className="flex flex-row justify-center items-center mx-auto max-h-[700px]">
                 {props.images.map((image, index) => (
                     <div key={index}
-                         className={`slide ${playAnimation(index)} absolute w-[${imageWidth()}] max-h-[700px]`}>
+                         className={`slide ${playAnimation(index)} absolute w-[${imageWidth()}] mx-auto max-h-[700px]`}>
                         <Image
                             width={imageWidth()}
+                            key={index}
                             alt="Game Image"
                             src={image}
                             onClick={(e) => {

@@ -197,7 +197,6 @@ button.prev, button.next {
 
 .slide.hid {
     opacity: 0;
-    transform: translate(200%);
 }
 
 .slide.hid.straight {
@@ -218,6 +217,7 @@ button.prev, button.next {
     to {
         transform: scale(0.2) translateX(700%);
         opacity: 0;
+        display: none;
     }
 }
 
