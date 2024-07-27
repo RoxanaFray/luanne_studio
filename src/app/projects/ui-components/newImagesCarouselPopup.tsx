@@ -10,12 +10,12 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
 
     const nextSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % props.images.length);
-        setSide("right")
+         setSide("left")
     };
 
     const prevSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + props.images.length) % props.images.length);
-        setSide("left")
+         setSide("right")
     };
 
     let screenWidth = ScreenWidth();
@@ -37,11 +37,9 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
         const diff = touchDown - currentTouch
 
         if (screenWidth < 1280) {
-
             if (diff > 5) {
                 nextSlide()
             }
-
             if (diff < -5) {
                 prevSlide()
             }
@@ -84,21 +82,21 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
         let nextIndex = (currentIndex + 1) % props.images.length;
 
         if (index === currentIndex) {
-            if (side === "right") {
-                return "active right"
-            }
             if (side === "left") {
                 return "active left"
+            }
+            if (side === "right") {
+                return "active right"
             }
             if (side === "straight") {
                 return "active straight"
             }
         } else {
-            if (side == "right" && index === prevIndex) {
-                return "hid right"
-            }
-            if (side == "left" && index === nextIndex) {
+            if (side == "left" && index === prevIndex) {
                 return "hid left"
+            }
+            if (side == "right" && index === nextIndex) {
+                return "hid right"
             }
         }
         return "hid"
