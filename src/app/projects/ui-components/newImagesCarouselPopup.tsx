@@ -6,6 +6,7 @@ import ScreenWidth from "@/app/utils/screenWidth";
 export default function NewImagesCarouselPopup(props: CarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [side, setSide] = useState("")
+    const [closeAnimation, playCloseAnimation] = useState(false)
 
     const nextSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % props.images.length);
@@ -72,7 +73,10 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
             setCurrentIndex(props.imageToOpen)
             setSide("straight")
         }
-        return () => document.body.classList.remove("overflow-hidden");
+        return () => {
+            document.body.classList.remove("overflow-hidden");
+
+        }
     }, [props.isOpen, props.imageToOpen]);
 
     const playAnimation = (index: number): string => {
@@ -100,17 +104,22 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
         return "hid"
     }
 
+    const closePopup = () => {
+        playCloseAnimation(true);
+        props.closeImagePopup();
+        setTimeout(() => playCloseAnimation(false), 400)
+    }
+
     return (
-        props.isOpen &&
         <div
-            className={`slider-container ${props.isOpen ? "open" : "close"} absolute flex flex-row justify-center items-center w-screen h-screen top-0 left-0 bg-black/80 z-50`}
-            onClick={props.closeImagePopup}>
+            className={`slider-container ${props.isOpen ? "open" : closeAnimation ? "close" : "hidden"} absolute flex flex-row justify-center items-center w-screen h-screen top-0 left-0 bg-black/80 z-50`}
+            onClick={closePopup}>
             <Button
                 variant="light"
                 radius="full"
                 className="absolute w-20 h-20 right-1 top-1 text-4xl text-white"
                 size="sm"
-                onPress={props.closeImagePopup}
+                onPress={closePopup}
             >
                 <Image src="/images/svg/xmark.svg" alt="Close Icon" width={25} height={25}/>
             </Button>
@@ -129,7 +138,6 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
                 {props.images.map((image, index) => (
                     <div key={index}
                          className={`slide ${playAnimation(index)} absolute w-[${imageWidth()}] max-h-[700px]`}>
-                        {/*// className={`slide ${index === currentIndex ? `active ${side}` : `hid ${side}`} absolute w-[${imageWidth()}] max-h-[700px]`}>*/}
                         <Image
                             width={imageWidth()}
                             alt="Game Image"
