@@ -11,7 +11,7 @@ export default function MobileFooter(props: mobileFooterProps) {
 
     return (
         pathname != "/projects" &&
-        <main className="block xl:hidden w-full h-16 fixed bg-light-background bottom-0 left-0 z-40">
+        <main className="block xl:hidden w-screen h-16 fixed bg-light-background bottom-0 left-0 z-40">
             <Divider className="w-full"></Divider>
             <div className="flex flex-row justify-between mx-8 sm:mx-12 md:mx-20 lg:mx-24">
                 <Button

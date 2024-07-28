@@ -13,7 +13,7 @@ export default function MobileHeader() {
 
     return (
         <main
-            className="block xl:hidden fixed top-0 left-0 border-b-1 border-black/30 h-[75px] w-full z-40 bg-background-grey px-8 sm:px-12 md:px-20 lg:px-24">
+            className="block xl:hidden fixed top-0 left-0 border-b-1 border-black/30 h-[75px] w-screen z-40 bg-background-grey px-8 sm:px-12 md:px-20 lg:px-24">
             {pathname != "/projects" &&
                 <Button
                     isIconOnly
