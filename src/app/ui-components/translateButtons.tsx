@@ -13,7 +13,6 @@ export default function TranslateButtons() {
   const [language, setLanguage] = useLocalStorage("language", "en");
   const [isSelectOpened, openSelect] = useState(false);
   const widthOfScreen= screenWidth();
-  const sm = 640;
   const xl = 1280;
   const [width, setWidth] = useState(widthOfScreen);
 
@@ -61,7 +60,7 @@ export default function TranslateButtons() {
           className="flex xl:hidden border-1 border-black/40 w-8 h-8 rounded-md pl-2 py-3"
       >
         <span className="font-MPlusRegular xl:font-MPlusMedium text-xs text-black/50 pr-2 tracking-wider">
-          {t(language == "en" ? "ru" : "en")}
+          {t(language == "en" ? "en" : "ru")}
         </span>
       </Button>
       {langs.map((item, index) => (

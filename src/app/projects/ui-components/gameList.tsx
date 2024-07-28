@@ -5,7 +5,7 @@ import {Button} from "@nextui-org/react";
 import {useRouter} from "next/navigation";
 import {usePathname} from "next/navigation";
 import clsx from "clsx";
-import projectsList from "../../data/gamesArray.json"
+import projectsList from "../../data/projectsList.json"
 import screenWidth from "../../utils/screenWidth";
 
 export default function GameList() {

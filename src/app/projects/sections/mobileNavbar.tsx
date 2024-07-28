@@ -3,7 +3,7 @@ import {useTranslation} from "react-i18next";
 import {CardFooter} from "@nextui-org/react";
 import {useRouter} from "next/navigation";
 import {Card, CardBody, Image} from "@nextui-org/react";
-import projectsList from "../../data/gamesArray.json"
+import projectsList from "../../data/projectsList.json"
 
 export default function MobileNavBar() {
     const {t} = useTranslation();
@@ -24,7 +24,7 @@ export default function MobileNavBar() {
                         </CardBody>
                         <CardFooter className="pb-3 md:pb-3 pt-2 sm:pt-6 lg:pt-5 px-4 flex-col items-start justify-start align-top">
                             <h4 className="font-bold text-large text-left align-top">{t(item.title)}</h4>
-                            <small className="text-default-500 text-wrap text-left align-top">{item.description}</small>
+                            <small className="text-default-500 text-wrap text-left align-top">{t(item.description).slice(0,60) + "..."}</small>
                         </CardFooter>
                     </Card>
                 ))}

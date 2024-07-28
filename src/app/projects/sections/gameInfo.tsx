@@ -4,7 +4,7 @@ import {Button} from "@nextui-org/react";
 import ImagesCarousel from "../ui-components/imagesCarousel";
 import React, {useState} from "react";
 import {usePathname, useRouter} from "next/navigation";
-import projectsList from "../../data/gamesArray.json"
+import projectsList from "../../data/projectsList.json"
 import MobileFooter from "@/app/projects/ui-components/mobileFooter";
 import ImagesCarouselPopup from "../ui-components/carouselPopup/imagesCarouselPopup";
 

@@ -8,7 +8,7 @@ import {
     Image,
     Button,
 } from "@nextui-org/react";
-import projectsList from "../data/gamesArray.json";
+import projectsList from "../data/projectsList.json";
 import screenWidth from "../utils/screenWidth";
 
 export default function Projects() {
