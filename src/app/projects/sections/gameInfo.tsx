@@ -1,50 +1,25 @@
 "use client";
 import {useTranslation} from "react-i18next";
 import {Button} from "@nextui-org/react";
-import ImagesCarouselPopup from "../ui-components/imagesCarouselPopup";
 import ImagesCarousel from "../ui-components/imagesCarousel";
 import React, {useState} from "react";
 import {usePathname, useRouter} from "next/navigation";
 import projectsList from "../../data/gamesArray.json"
 import MobileFooter from "@/app/projects/ui-components/mobileFooter";
-import NewImagesCarouselPopup from "@/app/projects/ui-components/newImagesCarouselPopup";
-import NewestImagesCarouselPopup from "../ui-components/newestImagesCarouselPopup";
+import ImagesCarouselPopup from "../ui-components/carouselPopup/imagesCarouselPopup";
 
 const GameInfo = (props: GameInfoProps) => {
     const {t} = useTranslation();
     const pathname = usePathname();
     const router = useRouter();
+    const currentGameIndex = projectsList.findIndex(item => item.link == pathname);
     const [isImagePopupOpen, openImagePopup] = useState(false);
-    const [activeImageIndex, setActiveImageIndex] = useState(0);
-    const [activeImagePath, setActiveImagePath] = useState("");
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     function openImageCarouselPopup(imageIndex: number) {
         openImagePopup(true);
-        setActiveImage(imageIndex);
+        setCurrentImageIndex(imageIndex);
     }
-
-    function showNextImageInPopup() {
-        if (activeImageIndex >= props.gameImages.length - 1) {
-            setActiveImage(0)
-            return
-        }
-        setActiveImage(activeImageIndex + 1)
-    }
-
-    function showPrevImageInPopup() {
-        if (activeImageIndex <= 0) {
-            setActiveImage(props.gameImages.length - 1)
-            return
-        }
-        setActiveImage(activeImageIndex - 1)
-    }
-
-    function setActiveImage(index: number) {
-        setActiveImageIndex(index);
-        setActiveImagePath(props.gameImages[index]);
-    }
-
-    let currentGameIndex = projectsList.findIndex(item => item.link == pathname);
 
     function showNextGame() {
         let nextGamePathname = currentGameIndex >= projectsList.length - 1 ? projectsList[0].link : projectsList[currentGameIndex + 1].link;
@@ -68,28 +43,12 @@ const GameInfo = (props: GameInfoProps) => {
                 <p className="font-MPlusRegular text-lg text-grey-text">
                     {props.description}
                 </p>
-                {/*<ImagesCarouselPopup*/}
-                {/*    isPrevButtonDisabled={activeImageIndex <= 0}*/}
-                {/*    isNextButtonDisabled={activeImageIndex >= props.gameImages.length - 1}*/}
-                {/*    activeImagePath={activeImagePath}*/}
-                {/*    isOpen={isImagePopupOpen}*/}
-                {/*    closeImagePopup={() => openImagePopup(false)}*/}
-                {/*    showPrev={showPrevImageInPopup}*/}
-                {/*    showNext={showNextImageInPopup}*/}
-                {/*/>*/}
-                {/*<NewImagesCarouselPopup*/}
-                {/*    isOpen={isImagePopupOpen}*/}
-                {/*    closeImagePopup={() => openImagePopup(false)}*/}
-                {/*    imageToOpen={activeImageIndex}*/}
-                {/*    images={props.gameImages}*/}
-                {/*/>*/}
-                <NewestImagesCarouselPopup
+                <ImagesCarouselPopup
                     isOpen={isImagePopupOpen}
                     closeImagePopup={() => openImagePopup(false)}
-                    imageToOpen={activeImageIndex}
+                    imageToOpen={currentImageIndex}
                     images={props.gameImages}
                 />
-
                 <ImagesCarousel images={props.gameImages} imageClick={openImageCarouselPopup}/>
                 <div className="flex flex-row gap-4 ">
                     {props.playOpportunity && (

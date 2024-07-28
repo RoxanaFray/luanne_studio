@@ -6,7 +6,6 @@ import Navbar from "./sections/navbar";
 import {useEffect} from 'react';
 import screenWidth from "../utils/screenWidth";
 import MobileHeader from "@/app/projects/ui-components/mobileHeader";
-import MobileFooter from "@/app/projects/ui-components/mobileFooter";
 
 export default function ProjectsLayout({
                                            children,
@@ -20,7 +19,7 @@ export default function ProjectsLayout({
             document.body.classList.add("xl:overflow-hidden");
         }
         return () => document.body.classList.remove("xl:overflow-hidden");
-    }, []);
+    }, [widthOfScreen]);
 
     return (
         <main className="xl:overflow-hidden">

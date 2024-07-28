@@ -1,12 +1,10 @@
 "use client";
-import {useTranslation} from "next-i18next";
 import {Button} from "@nextui-org/button";
-import {usePathname, useRouter} from "next/navigation";
+import {usePathname} from "next/navigation";
 import React from "react";
 import {Divider} from "@nextui-org/divider";
 
 export default function MobileFooter(props: mobileFooterProps) {
-    const {t} = useTranslation();
     const pathname = usePathname();
 
     return (

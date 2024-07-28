@@ -1,41 +1,49 @@
-import {Image} from "@nextui-org/image";
-import {Button} from "@nextui-org/react";
 import React, {useEffect, useState} from "react";
+import {Button, Image} from "@nextui-org/react";
 import ScreenWidth from "@/app/utils/screenWidth";
+import styles from "./imagesCarouselPopup.module.css"
 
-export default function NewImagesCarouselPopup(props: CarouselProps) {
+export default function ImagesCarouselPopup(props: CarouselProps) {
+    const screenWidth = ScreenWidth();
+    const [touchPosition, setTouchPosition] = useState<null | number>(null)
     const [currentIndex, setCurrentIndex] = useState(0);
     const [side, setSide] = useState("")
     const [closeAnimation, playCloseAnimation] = useState(false)
 
-    const nextSlide = () => {
+    useEffect(() => {
+        if (props.isOpen) {
+            document.body.classList.add("overflow-hidden");
+            window.scrollTo(0, 0);
+            setCurrentIndex(props.imageToOpen)
+            setSide("straight")
+        }
+        return () => {
+            document.body.classList.remove("overflow-hidden");
+        }
+    }, [props.isOpen, props.imageToOpen]);
+
+    function nextSlide(): void {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % props.images.length);
-         setSide("left")
-    };
+        setSide("left")
+    }
 
-    const prevSlide = () => {
+    function prevSlide(): void {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + props.images.length) % props.images.length);
-         setSide("right")
-    };
+        setSide("right")
+    }
 
-    let screenWidth = ScreenWidth();
-
-    const [touchPosition, setTouchPosition] = useState<null | number>(null)
-
-    const handleTouchStart = (e: React.TouchEvent<HTMLImageElement>) => {
+    function handleTouchStart(e: React.TouchEvent<HTMLImageElement>): void {
         const touchDown = e.touches[0].clientX
         setTouchPosition(touchDown)
     }
 
-    const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-        const touchDown = touchPosition
-
+    function handleTouchMove(e: React.TouchEvent<HTMLDivElement>): void {
+        const touchDown = touchPosition;
         if (touchDown === null) {
             return
         }
         const currentTouch = e.touches[0].clientX
         const diff = touchDown - currentTouch
-
         if (screenWidth < 1280) {
             if (diff > 5) {
                 nextSlide()
@@ -44,11 +52,10 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
                 prevSlide()
             }
         }
-
         setTouchPosition(null)
     }
 
-    const imageWidth = (): string => {
+    function imageWidth(): string {
         if (screenWidth < 640) {
             return "90%"
         }
@@ -64,45 +71,31 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
         return "700px"
     }
 
-    useEffect(() => {
-        if (props.isOpen) {
-            document.body.classList.add("overflow-hidden");
-            window.scrollTo(0, 0);
-            setCurrentIndex(props.imageToOpen)
-            setSide("straight")
-        }
-        return () => {
-            document.body.classList.remove("overflow-hidden");
-
-        }
-    }, [props.isOpen, props.imageToOpen]);
-
-    const playAnimation = (index: number): string => {
+    function playAnimation(index: number): string {
         let prevIndex = (currentIndex - 1 + props.images.length) % props.images.length;
         let nextIndex = (currentIndex + 1) % props.images.length;
 
         if (index === currentIndex) {
             if (side === "left") {
-                return "active left"
+                return styles.active + " " + styles.left
             }
             if (side === "right") {
-                return "active right"
+                return styles.active + " " + styles.right
             }
             if (side === "straight") {
-                return "active straight"
-            }
-        } else {
-            if (side == "left" && index === prevIndex) {
-                return "hid left"
-            }
-            if (side == "right" && index === nextIndex) {
-                return "hid right"
+                return styles.active + " " + styles.straight
             }
         }
-        return "hid"
+        if (side == "left" && index === prevIndex) {
+            return styles.hid + " " + styles.left
+        }
+        if (side == "right" && index === nextIndex) {
+            return styles.hid + " " + styles.right
+        }
+        return styles.hid
     }
 
-    const closePopup = () => {
+    function closePopup():void {
         playCloseAnimation(true);
         props.closeImagePopup();
         setTimeout(() => playCloseAnimation(false), 400)
@@ -110,7 +103,7 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
 
     return (
         <div
-            className={`slider-container ${props.isOpen ? "open" : closeAnimation ? "close" : "hidden"} absolute flex flex-row justify-center items-center w-screen h-screen top-0 left-0 bg-black/80 z-50`}
+            className={`${styles.sliderContainer} ${props.isOpen ? styles.open : closeAnimation ? styles.close : "hidden"} fixed flex flex-row justify-center items-center w-screen h-screen top-0 left-0 bg-black/80 z-50`}
             onClick={closePopup}>
             <Button
                 variant="light"
@@ -125,17 +118,18 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
             <Button
                 variant="light"
                 radius="full"
-                className="hidden sm:flex h-24 w-24 text-white absolute z-50 left-5 sm:left-2 prev"
+                className={`hidden sm:flex h-24 w-24 text-white absolute z-50 left-5 sm:left-2 ${styles.prev}`}
                 size="sm"
                 onPress={prevSlide}
             >
                 <Image className="hidden sm:block" src="/images/svg/arrowbackward.svg" alt="Close Icon" width={25}
                        height={25}/>
             </Button>
+
             <div className="flex flex-row justify-center items-center mx-auto h-screen w-screen">
                 {props.images.map((image, index) => (
                     <div key={index}
-                         className={`slide ${playAnimation(index)} absolute w-[${imageWidth()}] flex justify-center mx-auto`}
+                         className={`${styles.slide} ${playAnimation(index)} absolute w-[${imageWidth()}] flex justify-center mx-auto`}
                     >
                         <Image
                             width={imageWidth()}
@@ -157,7 +151,7 @@ export default function NewImagesCarouselPopup(props: CarouselProps) {
                 variant="light"
                 radius="full"
                 hidden
-                className="hidden sm:flex h-24 w-24 text-white absolute right-5 sm:right-2 z-20 next"
+                className={`hidden sm:flex h-24 w-24 text-white absolute right-5 sm:right-2 z-20 ${styles.next}`}
                 size="sm"
                 onPress={nextSlide}
             >
@@ -173,5 +167,4 @@ interface CarouselProps {
     closeImagePopup: () => void;
     imageToOpen: number;
     images: Array<string>;
-
 }
