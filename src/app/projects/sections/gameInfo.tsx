@@ -8,6 +8,7 @@ import {usePathname, useRouter} from "next/navigation";
 import projectsList from "../../data/gamesArray.json"
 import MobileFooter from "@/app/projects/ui-components/mobileFooter";
 import NewImagesCarouselPopup from "@/app/projects/ui-components/newImagesCarouselPopup";
+import NewestImagesCarouselPopup from "../ui-components/newestImagesCarouselPopup";
 
 const GameInfo = (props: GameInfoProps) => {
     const {t} = useTranslation();
@@ -76,7 +77,13 @@ const GameInfo = (props: GameInfoProps) => {
                 {/*    showPrev={showPrevImageInPopup}*/}
                 {/*    showNext={showNextImageInPopup}*/}
                 {/*/>*/}
-                <NewImagesCarouselPopup
+                {/*<NewImagesCarouselPopup*/}
+                {/*    isOpen={isImagePopupOpen}*/}
+                {/*    closeImagePopup={() => openImagePopup(false)}*/}
+                {/*    imageToOpen={activeImageIndex}*/}
+                {/*    images={props.gameImages}*/}
+                {/*/>*/}
+                <NewestImagesCarouselPopup
                     isOpen={isImagePopupOpen}
                     closeImagePopup={() => openImagePopup(false)}
                     imageToOpen={activeImageIndex}

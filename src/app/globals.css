@@ -170,13 +170,14 @@ button.prev, button.next {
 
 @keyframes slide-in-to-right {
     from {
-        /*transform:  translateX(-200%) scale(0.1);*/
-        transform: scale(0.1);
+        transform:  translateX(-200%) scale(0.1);
         opacity: 0;
+        display:none;
     }
     to {
         transform:  translateX(0%) scale(1);
         opacity: 1;
+        display: flex;
     }
 }
 
@@ -187,13 +188,14 @@ button.prev, button.next {
 
 @keyframes slide-in-to-left {
     from {
-        /*transform:  translateX(200%) scale(0.1);*/
-        transform: scale(0.1);
+        transform:  translateX(200%) scale(0.1);
         opacity: 0;
+        display:none;
     }
     to {
         transform:  translateX(0%) scale(1);
         opacity: 1;
+        display:flex;
     }
 }
 
@@ -219,11 +221,11 @@ button.prev, button.next {
 @keyframes slide-out-to-right {
     from {
         opacity: 1;
+        display: flex;
         transform: translateX(0%);
     }
     to {
-        /*transform: scale(0.2) translateX(700%);*/
-        transform: scale(0.2);
+        transform: scale(0.2) translateX(700%);
         opacity: 0;
         display: none;
     }
@@ -238,11 +240,12 @@ button.prev, button.next {
     from {
         opacity: 1;
         transform: translateX(0%);
+        display: flex;
     }
     to {
-        /*transform: scale(0.2) translateX(-700%);*/
-        transform: scale(0.2);
+        transform: scale(0.2) translateX(-700%);
         opacity: 0;
+        display: none;
     }
 }
 
