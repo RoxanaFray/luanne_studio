@@ -22,7 +22,7 @@ export default function NavBar() {
             onPress={() => router.push("/")}
           >
             <span className="text-black/60 uppercase font-MPlusMedium text-lg">
-              {t("luanne_studio")}
+              {t("hog_sheep_studio")}
             </span>
           </Button>
           <Divider className="w-full p-0" />

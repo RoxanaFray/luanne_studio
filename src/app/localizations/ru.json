@@ -1,6 +1,6 @@
 {
   "hello": "Привет!",
-  "luanne_studio": "LUANNE STUDIO",
+  "hog_sheep_studio": "HogSheep Studio",
   "projects": "Проекты",
   "ru": "РУ",
   "en": "EN",
@@ -14,17 +14,17 @@
   "show_on_github": "Открыть на GitHub",
   "connect_us": "Контакты",
   "titles": {
-    "game_1": "Minesweeper Paws",
+    "minesweeper": "Minesweeper Paws",
     "game_2": "Run use gun",
     "game_3": "Command: Summon",
     "game_4": "Catch the toy",
     "game_5": "Find me"
   },
   "subtitles": {
-    "game_1": "Frenchie Edition"
+    "minesweeper": "Frenchie Edition"
   },
   "descriptions": {
-    "game_1": "Бомбовая игра",
+    "minesweeper": "Бомбовая игра",
     "game_2": "Крутая игра с бегом и стрельбой. Просто супер супер супер!",
     "game_3": "Хорошая и интересная игра про пончики.",
     "game_4": "Чудесная игра",

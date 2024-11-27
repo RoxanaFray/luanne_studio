@@ -35,7 +35,7 @@ export default function Team() {
           <div className="block xl:hidden mt-16 sm:mt-20 md:mt-24 py-0 px-2">
           <span
               className="text-black/60 uppercase font-MPlusRegular text-3xl sm:text-5xl lg:text-7xl sm:tracking-wide">
-            {t("luanne_studio")}
+            {t("hog_sheep_studio")}
           </span>
           </div>
           <h1 className="hidden xl:inline font-MPlusRegular pt-28 xl:pt-36 tracking-wide text-black/15 uppercase text-5xl xl:text-9xl antialiased">

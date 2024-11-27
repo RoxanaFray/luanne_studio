@@ -38,7 +38,7 @@ export default function MobileHeader() {
                 >
           <span
               className="text-typing text-black/60 uppercase font-MPlusRegular text-sm">
-            {t("luanne_studio")}
+            {t("hog_sheep_studio")}
           </span>
                 </Button>
             </div>

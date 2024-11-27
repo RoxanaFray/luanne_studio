@@ -1,86 +1,26 @@
 [
   {
-    "title": "titles.game_1",
+    "title": "titles.mimic_nights",
+    "img": "/images/B5.jpg",
+    "link": "/projects/mimic_nights",
+    "description": "descriptions.mimic_nights"
+  },
+  {
+    "title": "titles.run_use_gun",
+    "img": "/images/run_use_gun.jpg",
+    "link": "/projects/run_use_gun",
+    "description": "descriptions.run_use_gun"
+  },
+  {
+    "title": "titles.summon",
+    "img": "/images/summon.png",
+    "link": "/projects/summon",
+    "description": "descriptions.summon"
+  },
+  {
+    "title": "titles.minesweeper",
     "img": "/images/B4.jpg",
     "link": "/projects/minesweeper",
-    "description": "descriptions.game_1"
-  },
-  {
-    "title": "titles.game_2",
-    "img": "/images/run_use_gun.jpg",
-    "link": "/projects/run_use_gun",
-    "description": "descriptions.game_2"
-  },
-  {
-    "title": "titles.game_3",
-    "img": "/images/summon.png",
-    "link": "/projects/summon",
-    "description": "descriptions.game_3"
-  },
-  {
-    "title": "titles.game_4",
-    "img": "/images/B5.jpg",
-    "link": "/projects/catch_the_toy",
-    "description": "descriptions.game_4"
-  },
-  {
-    "title": "titles.game_5",
-    "img": "/images/poodle.jpeg",
-    "link": "/projects/find_me",
-    "description": "descriptions.game_5"
-  },
-  {
-    "title": "titles.game_1",
-    "img": "/images/B4.jpg",
-    "link": "/projects/minesweeper",
-    "description": "Amazing game with puzzle elements..."
-  },
-  {
-    "title": "titles.game_2",
-    "img": "/images/run_use_gun.jpg",
-    "link": "/projects/run_use_gun",
-    "description": "Amazing game with puzzle elements..."
-  },
-  {
-    "title": "titles.game_3",
-    "img": "/images/summon.png",
-    "link": "/projects/summon",
-    "description": "Amazing game with puzzle elements..."
-  },
-  {
-    "title": "titles.game_4",
-    "img": "/images/B5.jpg",
-    "link": "/projects/catch_the_toy",
-    "description": "Amazing game with puzzle elements..."
-  },
-  {
-    "title": "titles.game_5",
-    "img": "/images/poodle.jpeg",
-    "link": "/projects/find_me",
-    "description": "Amazing game with puzzle elements..."
-  },
-  {
-    "title": "titles.game_1",
-    "img": "/images/run_use_gun.jpg",
-    "link": "/projects/run_use_gun",
-    "description": "Amazing game with puzzle elements..."
-  },
-  {
-    "title": "titles.game_2",
-    "img": "/images/summon.png",
-    "link": "/projects/summon",
-    "description": "Amazing game with puzzle elements..."
-  },
-  {
-    "title": "titles.game_3",
-    "img": "/images/B5.jpg",
-    "link": "/projects/catch_the_toy",
-    "description": "Amazing game with puzzle elements..."
-  },
-  {
-    "title": "titles.game_4",
-    "img": "/images/poodle.jpeg",
-    "link": "/projects/find_me",
-    "description": "Amazing game with puzzle elements..."
+    "description": "descriptions.minesweeper"
   }
 ]

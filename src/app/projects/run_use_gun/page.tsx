@@ -18,9 +18,9 @@ export default function Page() {
   return (
     <main className="">
       <GameInfo
-        title={t("titles.game_2")}
+        title={t("titles.run_use_gun")}
         subtitle=""
-        description={t("descriptions.game_2")}
+        description={t("descriptions.run_use_gun")}
         image="/images/B4.jpg"
         playOpportunity={false}
         githubLink="https://github.com/"

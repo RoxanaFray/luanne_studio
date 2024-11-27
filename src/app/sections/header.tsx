@@ -28,7 +28,7 @@ export default function Header() {
                 >
           <span
               className="text-typing text-black/60 uppercase font-MPlusRegular xl:font-MPlusMedium text-sm xl:text-lg">
-            {t("luanne_studio")}
+            {t("hog_sheep_studio")}
           </span>
                 </Button>
                 <div className="hidden xl:flex flex-row items-end gap-10 pt-4">
