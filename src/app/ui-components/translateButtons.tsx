@@ -36,7 +36,7 @@ export default function TranslateButtons() {
         data-hover="hovered"
         onPress={() => openSelect(!isSelectOpened)}
         size={width < xl ? "sm" : "md"}
-        className="hidden xl:flex border-1 border-black/20 w-12 h-10 rounded px-4 py-0"
+        className="hidden xl:flex border-1 border-black/20 w-12 h-10 rounded px-4 py-0 z-50 cursor-pointer"
       >
         <span className="font-MPlusRegular xl:font-MPlusMedium text-xs text-black/50 pr-2 tracking-wider">
           {t(language)}
@@ -57,9 +57,9 @@ export default function TranslateButtons() {
           data-hover="hovered"
           onPress={() => changeLanguage(language == "en" ? "ru" : "en")}
           size={width < xl ? "sm" : "md"}
-          className="flex xl:hidden border-1 border-black/40 w-8 h-8 rounded-md pl-2 py-3"
+          className="flex xl:hidden border-1 border-black/40 w-8 h-8 rounded-md pl-2 py-3 z-50"
       >
-        <span className="font-MPlusRegular xl:font-MPlusMedium text-xs text-black/50 pr-2 tracking-wider">
+        <span className="font-MPlusRegular xl:font-MPlusMedium text-xs text-black/50 pr-2 cursor-pointer tracking-wider">
           {t(language == "en" ? "en" : "ru")}
         </span>
       </Button>
@@ -68,7 +68,7 @@ export default function TranslateButtons() {
           key={index}
           className={
             isSelectOpened && item != language
-              ? `block border-1 border-black/20 w-12 h-10 rounded pl-2 pr-6 lan-button bg-background-grey`
+              ? `block border-1 border-black/20 w-12 h-10 rounded pl-2 pr-6 lan-button bg-background-grey z-50`
               : "hidden"
           }
           isIconOnly

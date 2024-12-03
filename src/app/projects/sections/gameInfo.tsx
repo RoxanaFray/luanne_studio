@@ -40,7 +40,7 @@ const GameInfo = (props: GameInfoProps) => {
                         <h3 className="font-MPlusMedium text-3xl sm:text-4xl xl:text-5xl">{props.subtitle}</h3>
                     </div>
                 </div>
-                <p className="font-MPlusRegular text-lg text-grey-text">
+                <p className="font-MPlusRegular text-lg text-grey-text description">
                     {props.description}
                 </p>
                 <ImagesCarouselPopup

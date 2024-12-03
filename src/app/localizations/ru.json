@@ -15,20 +15,18 @@
   "connect_us": "Контакты",
   "titles": {
     "minesweeper": "Minesweeper Paws",
-    "game_2": "Run use gun",
-    "game_3": "Command: Summon",
-    "game_4": "Catch the toy",
-    "game_5": "Find me"
+    "run_use_gun": "Run use gun",
+    "summon": "Command: Summon",
+    "mimic_nights": "Mimic nights"
   },
   "subtitles": {
     "minesweeper": "Frenchie Edition"
   },
   "descriptions": {
-    "minesweeper": "Бомбовая игра",
-    "game_2": "Крутая игра с бегом и стрельбой. Просто супер супер супер!",
-    "game_3": "Хорошая и интересная игра про пончики.",
-    "game_4": "Чудесная игра",
-    "game_5": "Просто потрясно!"
+    "minesweeper": "Activision has released a new Call of Duty game every year since 2005, and that streak will continue in 2024 with the next entry in the main series. But 2024's Call of Duty game, Call of Duty: Black Ops 6, will be the most notable in years. That's because it's the first new entry since Microsoft acquired",
+    "run_use_gun": "Stop release a new Call of Duty game every year since 2005, and that streak will continue in 2024 with the next entry in the main series. But 2024's Call of Duty game, Call of Duty: Black Ops 6, will be the most notable in years. That's because it's the first new entry since Microsoft acquired",
+    "summon": "Some game",
+    "mimic_nights": "Это небольшая хоррор-игра, созданная в рамках гейм-джема Ludum Dare 56. После окончания джема мы немного доработали её, добавили локализации, обучающий режим, поддержку мобильных устройств и управление с геймпада.\nЦель игры — найти мимика среди предметов в тёмной хижине. Вам предстоит выжить семь ночей, при этом количество предметов вокруг будет расти, а вместе с ним увеличивается и сложность игры."
   },
   "game_director": "Директор",
   "game_artist": "Художник",

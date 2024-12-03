@@ -8,7 +8,7 @@ export default function Team() {
   const teamList = [
     {
       name: "Alik",
-      img: "/images/team_photoes/team_member_1.png",
+      img: "/images/Alik.JPG",
       link: "@shrekfactory",
     },
     {

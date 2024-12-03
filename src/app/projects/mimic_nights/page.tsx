@@ -30,8 +30,8 @@ export default function Page() {
             description={t("descriptions.mimic_nights")}
             image="/images/B4.jpg"
             playOpportunity={true}
-            githubLink="https://github.com/"
-            playLink="https://github.com/"
+            githubLink="https://github.com/aokroian/ludum-dare-56"
+            playLink="https://gastar.itch.io/nights-at-cozy-shack"
             gameImages={lan === '"ru"' ? ruImagesList : enImagesList}
         />
       </main>

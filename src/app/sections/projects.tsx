@@ -37,7 +37,7 @@ export default function Projects() {
                     <Button
                         variant="light"
                         data-hover="hovered"
-                        onPress={() => router.push("projects")}
+                        onPress={() => router.push(projectsList[0].link)}
                         size="lg"
                         className="hidden xl:block font-MPlusRegular text-xl border-2 mb-0 rounded-md tracking-wider px-4"
                     >

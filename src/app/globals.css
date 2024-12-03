@@ -23,6 +23,7 @@ body {
             transparent,
             rgb(var(--background-end-rgb))
     ) rgb(var(--background-start-rgb));
+    white-space: pre-wrap;
 }
 
 @layer utilities {
@@ -64,6 +65,10 @@ body {
     clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
     animation: typing 1.5s steps(16, end) forwards,
     blink 1s 4;
+}
+
+.description {
+    /*text-indent: 20px;*/
 }
 
 
@@ -110,6 +115,10 @@ body {
 
 .lan-button {
     animation: appear 0.1s linear;
+}
+
+button {
+    cursor: pointer;
 }
 
 @keyframes appear {
