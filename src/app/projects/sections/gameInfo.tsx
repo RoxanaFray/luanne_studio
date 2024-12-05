@@ -33,14 +33,14 @@ const GameInfo = (props: GameInfoProps) => {
 
     return (
         <main className="xl:max-w-7xl sm:mx-4 text-grey tracking-wider leading-normal text-center antialiased ">
-            <div className="flex flex-col gap-8 xl:gap-16 py-24 sm:py-32 xl:py-0 xl:my-16 mx-8 md:mx-16 lg:mx-20 xl:ml-20 xl:mr-32 text-left">
+            <div className="flex flex-col gap-8 xl:gap-16 py-24 sm:py-32 xl:py-0  xl:my-16 mx-8 md:mx-16 lg:mx-20 xl:ml-20 xl:mr-32 text-left">
                 <div className="flex flex-row flex-wrap justify-start items-start uppercase">
                     <div className="uppercase">
                         <h1 className="font-MPlusBold text-4xl sm:text-5xl xl:text-6xl pb-2">{props.title}</h1>
                         <h3 className="font-MPlusMedium text-3xl sm:text-4xl xl:text-5xl">{props.subtitle}</h3>
                     </div>
                 </div>
-                <p className="font-MPlusRegular text-lg text-grey-text description">
+                <p className="font-MPlusRegular text-lg text-grey-text description whitespace-pre-wrap">
                     {props.description}
                 </p>
                 <ImagesCarouselPopup
