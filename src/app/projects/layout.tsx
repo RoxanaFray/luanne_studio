@@ -23,12 +23,12 @@ export default function ProjectsLayout({
 
     return (
         <main className="xl:overflow-hidden">
-            <div className="hidden xl:block absolute w-16 h-12 top-4 right-0">
+            <div className="hidden xl:block absolute w-16 h-12 top-4 right-0 z-40">
                 <TranslateButtons/>
             </div>
             <div className="hidden xl:flex flex-row ">
                 <Navbar/>
-                <ScrollShadow className="h-screen basis-4/5 z-40">{children}</ScrollShadow>
+                <ScrollShadow className="h-screen basis-4/5">{children}</ScrollShadow>
             </div>
             <div className="block w-full basis-full xl:hidden">
                 <MobileHeader/>

@@ -105,15 +105,6 @@ export default function ImagesCarouselPopup(props: CarouselProps) {
         <div
             className={`${styles.sliderContainer} ${props.isOpen ? styles.open : closeAnimation ? styles.close : "hidden"} fixed flex flex-row justify-center items-center w-screen h-screen top-0 left-0 bg-black/80 z-50`}
             onClick={closePopup}>
-            <Button
-                variant="light"
-                radius="full"
-                className="absolute w-20 h-20 right-1 top-1 text-4xl text-white"
-                size="sm"
-                onPress={closePopup}
-            >
-                <Image src="/images/svg/xmark.svg" alt="Close Icon" width={25} height={25}/>
-            </Button>
 
             <Button
                 variant="light"
@@ -122,7 +113,7 @@ export default function ImagesCarouselPopup(props: CarouselProps) {
                 size="sm"
                 onPress={prevSlide}
             >
-                <Image className="hidden sm:block" src="/images/svg/arrowbackward.svg" alt="Close Icon" width={25}
+                <Image className="hidden sm:block" src="/images/svg/arrowbackward.svg" alt="Previous slide button" width={25}
                        height={25}/>
             </Button>
 
@@ -151,11 +142,20 @@ export default function ImagesCarouselPopup(props: CarouselProps) {
                 variant="light"
                 radius="full"
                 hidden
-                className={`hidden sm:flex h-24 w-24 text-white absolute right-5 sm:right-2 z-20 ${styles.next}`}
+                className={`hidden sm:flex h-24 w-24 text-white absolute right-5 sm:right-2 z-50 ${styles.next}`}
                 size="sm"
                 onPress={nextSlide}
             >
-                <Image src="/images/svg/arrowforward.svg" alt="Close Icon" width={25} height={25}/>
+                <Image src="/images/svg/arrowforward.svg" alt="Next slide button" width={25} height={25}/>
+            </Button>
+            <Button
+                variant="light"
+                radius="full"
+                className="absolute w-20 h-20 right-1 top-1 text-4xl text-white z-50"
+                size="sm"
+                onPress={closePopup}
+            >
+                <Image className="z-50" src="/images/svg/xmark.svg" alt="Close Icon" width={25} height={25}/>
             </Button>
         </div>
 
