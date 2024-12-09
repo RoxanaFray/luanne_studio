@@ -32,11 +32,12 @@ export default function Team() {
       <main className="w-full">
         <div id="team" className="absolute top-10"/>
         <div className="font-MPlusLight flex flex-col items-center xl:items-start px-8 sm:px-12 xl:px-28 xl:container xl:mx-auto">
-          <div className="block xl:hidden mt-16 sm:mt-20 md:mt-24 py-0 px-2">
+          <div className="block xl:hidden mt-16 sm:mt-20 md:mt-24 py-0 px-2 w-full text-center">
           <span
-              className="text-black/60 uppercase font-MPlusRegular text-3xl sm:text-5xl lg:text-7xl sm:tracking-wide">
+              className="text-black/15 uppercase leading-tight font-MPlusBold text-5xl sm:text-6xl lg:text-7xl sm:tracking-widest">
             {t("hog_sheep_studio")}
           </span>
+              <Divider className="mt-4 sm:mt-8"/>
           </div>
           <h1 className="hidden xl:inline font-MPlusRegular pt-28 xl:pt-36 tracking-wide text-black/15 uppercase text-5xl xl:text-9xl antialiased">
             {t("team")}

@@ -32,7 +32,7 @@ export default function Projects() {
             <div id="projects" className="absolute -top-44"/>
             <div className="flex flex-col items-center xl:items-start">
                 <div className="flex flex-col xl:flex-row justify-between w-full items-center xl:items-center">
-                    <h1 className="font-MPlusRegular tracking-normal sm:tracking-wide text-black/60 xl:text-black/10 uppercase mb-16 sm:mb-20 md:mb-16 lg:mb-20 xl:mb-24 text-4xl sm:text-6xl lg:text-7xl xl:text-9xl antialiased">
+                    <h1 className="font-MPlusBold xl:font-MPlusRegular tracking-wide sm:tracking-wide text-black/20 xl:text-black/10 uppercase mb-16 sm:mb-20 md:mb-16 lg:mb-20 xl:mb-24 text-4xl sm:text-6xl lg:text-7xl xl:text-9xl antialiased">
                         {t("projects")}
                     </h1>
                     <Button
