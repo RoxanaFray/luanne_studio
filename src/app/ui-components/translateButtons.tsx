@@ -4,8 +4,9 @@ import useLocalStorage from "@/app/utils/useLocalStorage";
 import { useTranslation } from "next-i18next";
 import "../globals.css";
 import { Button } from "@nextui-org/react";
-import { useState, useEffect  } from "react";
+import React, { useState, useEffect  } from "react";
 import screenWidth from "@/app/utils/screenWidth";
+import HoverBlock from "@/app/utils/hoverBlock";
 
 export default function TranslateButtons() {
   const { t } = useTranslation();
@@ -30,32 +31,33 @@ export default function TranslateButtons() {
 
   return (
     <div className="absolute">
-      <Button
-        isIconOnly
-        variant="light"
-        data-hover="hovered"
-        onPress={() => openSelect(!isSelectOpened)}
-        size={width < xl ? "sm" : "md"}
-        className="hidden xl:flex border-1 border-black/20 w-12 h-10 rounded px-4 py-0 z-50 cursor-pointer"
-      >
-        <span className="font-MPlusRegular xl:font-MPlusMedium text-xs text-black/50 pr-2 tracking-wider">
+        <Button
+            isIconOnly
+            variant="light"
+            data-hover="hoverable"
+            onPress={() => openSelect(!isSelectOpened)}
+            size={width < xl ? "sm" : "md"}
+            className="hidden xl:flex border-1 border-black/20 w-12 h-10 rounded px-4 py-0 z-50 cursor-pointer"
+        >
+            <HoverBlock/>
+            <span className="font-MPlusRegular xl:font-MPlusMedium text-xs text-black/50 pr-2 tracking-wider">
           {t(language)}
         </span>
-        <span
-          id="arrow"
-          className={
-            (isSelectOpened ? "rotated-up" : "rotated-down") +
-            " text-xs text-black/50"
-          }
-        >
+            <span
+                id="arrow"
+                className={
+                    (isSelectOpened ? "rotated-up" : "rotated-down") +
+                    " text-xs text-black/50"
+                }
+            >
           ❮
         </span>
-      </Button>
-      <Button
-          isIconOnly
-          variant="light"
-          data-hover="hovered"
-          onPress={() => changeLanguage(language == "en" ? "ru" : "en")}
+        </Button>
+        <Button
+            isIconOnly
+            variant="light"
+            data-hover="hoverable"
+            onPress={() => changeLanguage(language == "en" ? "ru" : "en")}
           size={width < xl ? "sm" : "md"}
           className="flex xl:hidden border-1 border-black/40 w-8 h-8 rounded-md pl-2 py-3 z-50"
       >
@@ -72,12 +74,13 @@ export default function TranslateButtons() {
               : "hidden"
           }
           isIconOnly
-          data-hover="hovered"
+          data-hover="hoverable"
           variant="light"
           disableRipple={true}
           size="md"
           onClick={() => changeLanguage(item)}
         >
+            <HoverBlock/>
           <span className="font-MPlusMedium text-xs text-black/50 tracking-wider">
             {t(item)}
           </span>

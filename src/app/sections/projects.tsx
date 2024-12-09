@@ -1,6 +1,6 @@
 import {useTranslation} from "next-i18next";
 import {useRouter} from "next/navigation";
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import {
     Card,
     CardFooter,
@@ -10,17 +10,18 @@ import {
 } from "@nextui-org/react";
 import projectsList from "../data/projectsList.json";
 import screenWidth from "../utils/screenWidth";
+import HoverBlock from "@/app/utils/hoverBlock";
 
 export default function Projects() {
     const {t} = useTranslation();
     const router = useRouter();
 
     const [maxGamesAmount, setMaxGamesAmount] = useState(4);
-    const widthOfScreen= screenWidth();
+    const widthOfScreen = screenWidth();
 
     useEffect(() => {
         if (widthOfScreen < 640 || (widthOfScreen > 767 && widthOfScreen < 1024)) {
-           setMaxGamesAmount(3);
+            setMaxGamesAmount(3);
         } else {
             setMaxGamesAmount(4);
         }
@@ -36,46 +37,53 @@ export default function Projects() {
                     </h1>
                     <Button
                         variant="light"
-                        data-hover="hovered"
                         onPress={() => router.push(projectsList[0].link)}
                         size="lg"
+                        data-hover="hoverable"
                         className="hidden xl:block font-MPlusRegular text-xl border-2 mb-0 rounded-md tracking-wider px-4"
                     >
+                        <HoverBlock/>
                         <span className="text-black/30">{t("view_all")}</span>
                     </Button>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-14 md:gap-10 lg:gap-10 xl:gap-10 xl:w-full items-center mx-auto">
+                <div
+                    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-14 md:gap-10 lg:gap-10 xl:gap-10 xl:w-full items-center mx-auto">
                     {projectsList.map((item, index) => (
                         index < maxGamesAmount && <Card
                             key={index}
+                            isFooterBlurred
                             shadow="sm"
                             isPressable
+                            isHoverable
+                            data-hover="hoverable"
                             onPress={() => router.push(item.link)}
-                            className="rounded-md w-72 sm:w-60 md:w-56 lg:w-56 xl:w-64 xl:max-w-80 h-80 sm:h-72 md:h-64 lg:h-min xl:h-min"
+                            className="w-72 sm:w-60 md:w-56 lg:w-56 xl:w-64 xl:max-w-80 h-min"
                         >
-                            <CardBody className="overflow-visible p-0 h-64 sm:h-64 lg:h-64 xl:h-64">
-                                <Image
-                                    alt={t(item.title)}
-                                    shadow="sm"
-                                    radius="lg"
-                                    width="100%"
-                                    src={item.img}
-                                    className="project-card-image w-full rounded-sm object-cover max-h-[280px] sm:max-h-[250px] md:max-h-[220px] lg:max-h-[260px] xl:h-[320px]"
-                                />
-                            </CardBody>
-                            <CardFooter className="project-card-title justify-between h-10 lg:h-12 xl:h-12 xl:pt-4">
-                                <h6 className="text-black/70 font-medium text-md font-MPlusRegular xl:text-lg">
+                            <Image
+                                removeWrapper
+                                alt={t(item.title)}
+                                shadow="sm"
+                                radius="lg"
+                                width="100%"
+                                src={item.img}
+                                className="project-card-image w-full object-cover max-h-[280px] sm:max-h-[250px] md:max-h-[220px] lg:max-h-[260px] xl:h-[320px]"
+                            />
+                            <CardFooter
+                                className="absolute bg-black/20 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between"
+                            >
+                                <h6 className="text-white/90 text-md font-MPlusMedium xl:text-lg">
                                     {t(item.title)}
                                 </h6>
                             </CardFooter>
+                            <HoverBlock/>
                         </Card>
                     ))}
                 </div>
                 <Button
                     variant="solid"
-                    data-hover="hovered"
                     onPress={() => router.push("projects")}
                     size="lg"
+                    data-hovered="hoverable"
                     className="block xl:hidden bg-white text-wrap font-MPlusRegular text-md border-1 drop-shadow-sm mt-12 sm:mt-20 md:mt-16 rounded-md tracking-wider w-72 mx-auto py-4 h-16 px-1"
                 >
                     <span className="text-black/30">{t("view_all")}</span>

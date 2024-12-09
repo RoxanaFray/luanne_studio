@@ -66,11 +66,6 @@ body {
     blink 1s 4;
 }
 
-.description {
-    /*text-indent: 20px;*/
-}
-
-
 @keyframes typing {
     0% {
         width: 0;
@@ -132,6 +127,30 @@ button {
     }
 }
 
+/*.card-button:hover > img {*/
+/*    -moz-transform: scale(1.05);*/
+/*    -webkit-transform: scale(1.05);*/
+/*    -o-transform: scale(1.05);*/
+/*    -ms-transform: scale(1.05);*/
+/*    -webkit-transform: scale(1.05);*/
+/*    transform: scale(1.05);*/
+
+    /*-webkit-transition: transform 1.05s ease-in-out;*/
+    /*-moz-transition:transform 1.05s ease-in-out;*/
+    /*-ms-transition:transform 1.05s ease-in-out;*/
+/*}*/
+
+.hover-block {
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+}
+
+button[data-hover="hoverable"]:hover > .hover-block {
+    opacity: 1;
+}
 
 /* SIZES */
 

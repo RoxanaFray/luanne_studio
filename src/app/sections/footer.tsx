@@ -3,6 +3,7 @@ import {useTranslation} from "next-i18next";
 import {Button, Tooltip} from "@nextui-org/react";
 import screenWidth from "@/app/utils/screenWidth";
 import {useEffect, useState} from "react";
+import HoverBlock from "@/app/utils/hoverBlock";
 
 export default function Footer() {
     const {t} = useTranslation();

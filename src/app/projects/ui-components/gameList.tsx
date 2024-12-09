@@ -8,6 +8,7 @@ import clsx from "clsx";
 import projectsList from "../../data/projectsList.json"
 
 import screenWidth from "../../utils/screenWidth";
+import HoverBlock from "@/app/utils/hoverBlock";
 
 export default function GameList() {
     const {t} = useTranslation();
@@ -23,7 +24,7 @@ export default function GameList() {
                     variant="light"
                     radius="none"
                     className={clsx(
-                        "flex flex-row items-start font-MPlusLight justify-start w-full pl-0 relative project-link min-h-20 xl:min-h-16 project-card border-b-1 ",
+                        "flex flex-row items-start font-MPlusLight justify-start w-full pl-0 relative project-link min-h-20 xl:min-h-16 border-b-1 ",
                         {
                             "bg-background-grey font-MPlusMedium": pathname === item.link,
                         },

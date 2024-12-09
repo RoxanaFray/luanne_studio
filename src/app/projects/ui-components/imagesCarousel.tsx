@@ -3,6 +3,7 @@ import {Button} from "@nextui-org/react";
 import React, {useState} from "react";
 import {ScrollShadow} from "@nextui-org/react";
 import ScreenWidth from "@/app/utils/screenWidth";
+import HoverBlock from "@/app/utils/hoverBlock";
 
 export default function ImagesCarousel(props: CarouselProps) {
     const [sliderScrollPosition, setSliderScrollPosition] = useState(0);
@@ -65,16 +66,16 @@ export default function ImagesCarousel(props: CarouselProps) {
                     })}
                 </div>
             </ScrollShadow>
-                <Button
-                    isDisabled={maxSliderScrollPosition - sliderScrollPosition < 1}
-                    variant="light"
-                    radius="full"
-                    className="hidden xl:flex h-16 w-16 text-black/50"
-                    size="sm"
-                    onPress={() => scroll("right")}
-                >
-                    <Image src="/images/svg/chevronrightgrey.svg" alt="Close Icon" width={10} height={10}/>
-                </Button>
+            <Button
+                isDisabled={maxSliderScrollPosition - sliderScrollPosition < 1}
+                variant="light"
+                radius="full"
+                className="hidden xl:flex h-16 w-16 text-black/50"
+                size="sm"
+                onPress={() => scroll("right")}
+            >
+                <Image src="/images/svg/chevronrightgrey.svg" alt="Close Icon" width={10} height={10}/>
+            </Button>
         </div>
     );
 }

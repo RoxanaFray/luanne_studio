@@ -5,6 +5,7 @@ import GameList from "../ui-components/gameList";
 import { ScrollShadow } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
+import HoverBlock from "@/app/utils/hoverBlock";
 
 export default function NavBar() {
   const { t }  = useTranslation();
@@ -16,11 +17,12 @@ export default function NavBar() {
         <div className="hidden sm:flex flex-col w-full items-center h-screen justify-center">
           <Button
             variant="light"
-            data-hover="hovered"
+            data-hover="hoverable"
             disableRipple={true}
             className="border-1 border-black/70 rounded py-1 px-2 mb-8 mt-8"
             onPress={() => router.push("/")}
           >
+              <HoverBlock/>
             <span className="text-black/60 uppercase font-MPlusMedium text-lg">
               {t("hog_sheep_studio")}
             </span>

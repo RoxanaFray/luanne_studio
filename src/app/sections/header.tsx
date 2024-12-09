@@ -2,6 +2,7 @@
 import {useTranslation} from "next-i18next";
 import {Button} from "@nextui-org/button";
 import TranslateButtons from "../ui-components/translateButtons";
+import HoverBlock from "@/app/utils/hoverBlock";
 
 export default function Header() {
     const {t} = useTranslation();
@@ -21,11 +22,12 @@ export default function Header() {
             <div className="hidden xl:container xl:mx-auto xl:flex px-8 xl:px-28 grey-text flex-row items-center justify-between pt-3 xl:pt-4 pb-2">
                 <Button
                     variant="light"
-                    data-hover="hovered"
+                    data-hover="hoverable"
                     disableRipple={true}
                     className="border-1 border-black/40 xl:border-black/70 rounded py-0 xl:py-1 px-2 mb-1 xl:mb-4 mt-0 xl:mt-2"
                     onPress={() => smoothScrollTo("top_point")}
                 >
+                    <HoverBlock/>
           <span
               className="text-typing text-black/60 uppercase font-MPlusRegular xl:font-MPlusMedium text-sm xl:text-lg">
             {t("hog_sheep_studio")}
@@ -35,11 +37,13 @@ export default function Header() {
                     {menuItems.map((item, index) => (
                         <Button
                             variant="light"
+                            radius="sm"
                             onClick={() => smoothScrollTo(item)}
                             disableRipple={true}
-                            data-hover="hovered"
+                            data-hover="hoverable"
                             key={index}
                         >
+                            <HoverBlock/>
               <span className="text-black/30 uppercase font-MPlusBold text-xl">
                 {t(item)}
               </span>
