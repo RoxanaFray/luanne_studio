@@ -22,6 +22,17 @@ export default function Page() {
         "/images/mimic_nights/rus/6.png"
     ];
 
+    const playLinks = [
+        {
+            linkTitle: "Itch.io",
+            link: "https://gastar.itch.io/nights-at-cozy-shack"
+        },
+        {
+            linkTitle: "Itch.io",
+            link: "https://gastar.itch.io/nights-at-cozy-shack"
+        }
+    ]
+
   return (
       <main className="">
         <GameInfo
@@ -31,7 +42,7 @@ export default function Page() {
             image="/images/B4.jpg"
             playOpportunity={true}
             githubLink="https://github.com/aokroian/ludum-dare-56"
-            playLink="https://gastar.itch.io/nights-at-cozy-shack"
+            playLink={playLinks}
             gameImages={lan === '"ru"' ? ruImagesList : enImagesList}
         />
       </main>

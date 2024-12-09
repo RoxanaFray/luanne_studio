@@ -51,18 +51,19 @@ const GameInfo = (props: GameInfoProps) => {
                 />
                 <ImagesCarousel images={props.gameImages} imageClick={openImageCarouselPopup}/>
                 <div className="flex flex-row gap-4 ">
-                    {props.playOpportunity && (
+                    {props.playOpportunity && props.playLink.map((item, index)=>
                         <Button
+                            key={index}
                             className="py-4 px-8 bg-light-grey xl:bg-grey"
                             variant="solid"
                             radius="md"
                             size="lg"
                             onPress={() => {
-                                window.open(props.playLink, "_blank");
+                                window.open(item.link, "_blank");
                             }}
                         >
                             <span className="font-MPlusMedium text-black/50 text-medium">
-                               {t("play")}
+                               {t("play") + item.linkTitle}
                             </span>
                         </Button>
                     )}
@@ -92,7 +93,10 @@ interface GameInfoProps {
     subtitle: string;
     description: string;
     playOpportunity: boolean;
-    playLink: string;
+    playLink: {
+            linkTitle: string;
+            link: string;
+        }[];
     githubLink: string;
     image: string;
     gameImages: Array<string>;

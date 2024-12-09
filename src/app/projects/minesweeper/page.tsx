@@ -14,6 +14,13 @@ export default function Page() {
     "/images/summon.png",
   ];
 
+    const playLinks = [
+        {
+            linkTitle: "",
+            link: ""
+        },
+    ]
+
   return (
     <main className="">
       <GameInfo
@@ -21,9 +28,9 @@ export default function Page() {
         subtitle={t("subtitles.minesweeper")}
         description={t("descriptions.minesweeper")}
         image="/images/B4.jpg"
-        playOpportunity={true}
+        playOpportunity={false}
         githubLink="https://github.com/"
-        playLink="https://github.com/"
+        playLink={playLinks}
         gameImages={imagesList}
       />
     </main>

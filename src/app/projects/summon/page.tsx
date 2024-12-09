@@ -14,6 +14,13 @@ export default function Page() {
     "/images/summon.png",
   ];
 
+    const playLinks = [
+        {
+            linkTitle: "Itch.io",
+            link: "https://gastar.itch.io/nights-at-cozy-shack"
+        },
+    ]
+
   return (
       <main className="">
         <GameInfo
@@ -23,7 +30,7 @@ export default function Page() {
             image="/images/B4.jpg"
             playOpportunity={true}
             githubLink="https://github.com/"
-            playLink="https://github.com/"
+            playLink={playLinks}
             gameImages={imagesList}
         />
       </main>

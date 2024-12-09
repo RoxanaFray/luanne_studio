@@ -15,6 +15,13 @@ export default function Page() {
     "/images/toy.jpeg",
   ];
 
+  const playLinks = [
+      {
+          linkTitle: "",
+          link: ""
+      },
+  ]
+
   return (
     <main className="">
       <GameInfo
@@ -24,7 +31,7 @@ export default function Page() {
         image="/images/B4.jpg"
         playOpportunity={false}
         githubLink="https://github.com/"
-        playLink=""
+        playLink={playLinks}
         gameImages={imagesList}
       />
     </main>

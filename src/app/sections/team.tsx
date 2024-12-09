@@ -8,24 +8,24 @@ export default function Team() {
   const teamList = [
     {
       name: "Alik",
-      img: "/images/Alik.JPG",
+      img: "/images/team_photoes/Alik-1.jpg",
       link: "@shrekfactory",
     },
     {
       name: "Sergey",
-      img: "/images/team_photoes/team_member_2.png",
+      img: "/images/team_photoes/Sergey-3.jpg",
       link: "@gastar"
     },
     {
-      name: "Tanya",
-      img: "/images/team_photoes/team_member_3.png",
-      link: "@roxanafray"
-    },
-    {
       name: "Liana",
-      img: "/images/team_photoes/team_member_4.png",
+      img: "/images/team_photoes/Liana-3.jpg",
       link: "@lulun"
     },
+      {
+          name: "Tanya",
+          img: "/images/team_photoes/Tanya-4.jpg",
+          link: "@roxxxana"
+      }
   ];
 
   return (

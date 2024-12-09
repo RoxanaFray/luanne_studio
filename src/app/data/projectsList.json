@@ -7,19 +7,19 @@
   },
   {
     "title": "titles.run_use_gun",
-    "img": "/images/run_use_gun.jpg",
+    "img": "/images/run_use_gun/run_use_gun.jpg",
     "link": "/projects/run_use_gun",
     "description": "descriptions.run_use_gun"
   },
   {
     "title": "titles.summon",
-    "img": "/images/summon.png",
+    "img": "/images/summon/summon.png",
     "link": "/projects/summon",
     "description": "descriptions.summon"
   },
   {
     "title": "titles.minesweeper",
-    "img": "/images/B4.jpg",
+    "img": "/images/minesweeper/B4.jpg",
     "link": "/projects/minesweeper",
     "description": "descriptions.minesweeper"
   }
