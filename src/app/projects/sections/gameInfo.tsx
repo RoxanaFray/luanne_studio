@@ -63,7 +63,7 @@ const GameInfo = (props: GameInfoProps) => {
                             }}
                         >
                             <span className="font-MPlusMedium text-black/50 text-medium">
-                               {t("play") + item.linkTitle}
+                               {t("play") + t(item.linkTitle)}
                             </span>
                         </Button>
                     )}

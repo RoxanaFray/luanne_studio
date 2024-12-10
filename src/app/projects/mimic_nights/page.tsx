@@ -24,12 +24,12 @@ export default function Page() {
 
     const playLinks = [
         {
-            linkTitle: "Itch.io",
+            linkTitle: "itch_io",
             link: "https://gastar.itch.io/nights-at-cozy-shack"
         },
         {
-            linkTitle: "Itch.io",
-            link: "https://gastar.itch.io/nights-at-cozy-shack"
+            linkTitle: "app_store",
+            link: "https://apps.apple.com/kz/app/mimic-nights/id6738483986"
         }
     ]
 

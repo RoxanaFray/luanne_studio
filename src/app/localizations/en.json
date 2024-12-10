@@ -11,23 +11,26 @@
   "Tanya": "Tanya",
   "Liana": "Liana",
   "play": "Play on ",
+  "itch_io": "Itch.io",
+  "app_store": "App Store",
   "show_on_github": "Show on GitHub",
   "connect_us": "Connect us",
   "titles": {
     "minesweeper": "Minesweeper Paws",
     "run_use_gun": "Run use gun",
     "summon": "Command: Summon",
-    "mimic_nights": "Mimic nights"
+    "mimic_nights": "Mimic nights",
+    "stonx": "Stonx"
   },
   "subtitles": {
     "minesweeper": "Frenchie Edition"
   },
   "descriptions": {
-    "minesweeper": "Activision has released a new Call of Duty game every year since 2005, and that streak will continue in 2024 with the next entry in the main series. But 2024's Call of Duty game, Call of Duty: Black Ops 6, will be the most notable in years. That's because it's the first new entry since Microsoft acquired",
-    "run_use_gun": "Stop release a new Call of Duty game every year since 2005, and that streak will continue in 2024 with the next entry in the main series. But 2024's Call of Duty game, Call of Duty: Black Ops 6, will be the most notable in years. That's because it's the first new entry since Microsoft acquired",
-    "summon": "Some game",
-    "mimic_nights": "This is a small horror game made as part of the Ludum Dare 56 game-jam. After the game-jam we improved the game in general a bit, added localizations, tutorial, mobile and gamepad controls.\nThe point of the game is to search for a mimic among the items in a dark cabin. You have to survive seven nights in total, while the number of items gets bigger and bigger and the difficulty increases with it."
-
+    "minesweeper": "Join our adorable French Bulldog on a mission to uncover hidden mines in this charming twist on the classic game. Tap strategically to reveal safe paths while avoiding explosive dangers. With cute Frenchies and addictive gameplay, Minesweeper Paws is the perfect blend of fun and challenge for dog lovers and puzzle enthusiasts alike!",
+    "run_use_gun": "New exciting shooter in a harsh post-apocalypse! Modern graphics and endless action gameplay await you. Welcome to the world where robots have won! Humanity could not be saved, but before you die, you can take with you as many new masters of the planet as possible! Defeat iron enemies with the help of a lava bomb and your arsenal. Groundhog Day awaits you, but each time you will become stronger - more weapons, more health,more stamina.",
+    "summon": "Dive into a game where an old-school terminal is your tool and commands are your power. Summon a variety of things into existence and master combinations to explore all 7 unique endings.",
+    "mimic_nights": "This is a small horror game made as part of the Ludum Dare 56 game-jam. After the game-jam we improved the game in general a bit, added localizations, tutorial, mobile and gamepad controls.\nThe point of the game is to search for a mimic among the items in a dark cabin. You have to survive seven nights in total, while the number of items gets bigger and bigger and the difficulty increases with it.",
+    "stonx": "Try trading on our exchange.\nYou can buy or sell three resources: gold, wood and oil.\nSometimes market can become \"unstable\".\nYour goal is to make a million dollars!"
   },
   "game_director": "Game Director",
   "game_artist": "Game Artist",

@@ -19,8 +19,14 @@
   },
   {
     "title": "titles.minesweeper",
-    "img": "/images/minesweeper/B4.jpg",
+    "img": "/images/minesweeper/ms.jpg",
     "link": "/projects/minesweeper",
     "description": "descriptions.minesweeper"
+  },
+  {
+    "title": "titles.stonx",
+    "img": "/images/stonx/stonx.png",
+    "link": "/projects/stonx",
+    "description": "descriptions.stonx"
   }
 ]
