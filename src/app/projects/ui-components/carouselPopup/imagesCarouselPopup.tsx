@@ -12,12 +12,20 @@ export default function ImagesCarouselPopup(props: CarouselProps) {
 
     useEffect(() => {
         const keyDownHandler = (e: KeyboardEvent) => {
+            console.log(e.code)
             if (e.code === "ArrowLeft") {
                 prevSlide()
             }
             if (e.code === "ArrowRight") {
                 nextSlide()
-            }}
+            }
+            if (e.code === "Escape") {
+                closePopup()
+            }
+
+
+        }
+
 
             document.addEventListener("keydown", keyDownHandler);
             if (props.isOpen) {
