@@ -14,7 +14,7 @@ export default function Page() {
     const playLinks = [
         {
             linkTitle: "в App Store",
-            link: "https://apps.apple.com/kz/app/run-use-gun/id1585550795"
+            link: "https://apps.apple.com/ru/app/run-use-gun/id1585550795"
         },
     ]
 
