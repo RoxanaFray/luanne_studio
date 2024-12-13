@@ -1,14 +1,22 @@
 import {Image} from "@nextui-org/image";
 import {Button} from "@nextui-org/react";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {ScrollShadow} from "@nextui-org/react";
 import ScreenWidth from "@/app/utils/screenWidth";
-import HoverBlock from "@/app/utils/hoverBlock";
 
 export default function ImagesCarousel(props: CarouselProps) {
     const [sliderScrollPosition, setSliderScrollPosition] = useState(0);
     const [maxSliderScrollPosition, setMaxSliderScrollPosition] = useState(1);
+    const [areArrowButtonsShown, setArrowButtonsShown] = useState(false);
     let screenWidth = ScreenWidth();
+
+
+    useEffect(() => {
+        let imagesContainerWidth= document.getElementById("imagesContainer")?.offsetWidth;
+        let scrollContainerWidth= document.getElementById("scrollContainer")?.offsetWidth;
+        setArrowButtonsShown(scrollContainerWidth !== imagesContainerWidth)
+    }, []);
+
 
     function scroll(side: string) {
         let imagesContainer = document.getElementById("imagesContainer");
@@ -31,7 +39,7 @@ export default function ImagesCarousel(props: CarouselProps) {
 
     return (
         <div className="relative flex flex-row justify-start items-center">
-            <Button
+            {areArrowButtonsShown && <Button
                 isDisabled={sliderScrollPosition <= 0}
                 variant="light"
                 radius="full"
@@ -40,11 +48,12 @@ export default function ImagesCarousel(props: CarouselProps) {
                 onPress={() => scroll("left")}
             >
                 <Image src="/images/svg/chevronleftgrey.svg" alt="Close Icon" width={10} height={10}/>
-            </Button>
+            </Button>}
             <ScrollShadow
                 hideScrollBar
                 orientation="horizontal"
-                className="max-w-[550px] mr-4 sm:max-w-[650px] sm:mr-8 md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[600px] 2xl:max-w-[800px] max-h-[300px] scroll-smooth"
+                // className="max-w-[550px] mr-4 sm:max-w-[650px] sm:mr-8 md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[600px] 2xl:max-w-[800px] max-h-[300px] scroll-smooth"
+                className="mr-2 max-h-[300px] scroll-smooth"
                 id="scrollContainer"
                 onScroll={() => scroll("")}
             >
@@ -66,16 +75,16 @@ export default function ImagesCarousel(props: CarouselProps) {
                     })}
                 </div>
             </ScrollShadow>
-            <Button
+            {areArrowButtonsShown && <Button
                 isDisabled={maxSliderScrollPosition - sliderScrollPosition < 1}
                 variant="light"
                 radius="full"
-                className="hidden xl:flex h-16 w-16 text-black/50"
+                className="hidden xl:flex h-16 w-16 text-black/60"
                 size="sm"
                 onPress={() => scroll("right")}
             >
                 <Image src="/images/svg/chevronrightgrey.svg" alt="Close Icon" width={10} height={10}/>
-            </Button>
+            </Button>}
         </div>
     );
 }

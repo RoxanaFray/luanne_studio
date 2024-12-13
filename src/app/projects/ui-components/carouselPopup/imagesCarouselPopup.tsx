@@ -12,7 +12,6 @@ export default function ImagesCarouselPopup(props: CarouselProps) {
 
     useEffect(() => {
         const keyDownHandler = (e: KeyboardEvent) => {
-            console.log(e.code)
             if (e.code === "ArrowLeft") {
                 prevSlide()
             }
@@ -22,13 +21,10 @@ export default function ImagesCarouselPopup(props: CarouselProps) {
             if (e.code === "Escape") {
                 closePopup()
             }
-
-
         }
 
-
-            document.addEventListener("keydown", keyDownHandler);
-            if (props.isOpen) {
+        document.addEventListener("keydown", keyDownHandler);
+        if (props.isOpen) {
                 document.body.classList.add("overflow-hidden");
                 window.scrollTo(0, 0);
                 setCurrentIndex(props.imageToOpen)
@@ -162,7 +158,6 @@ export default function ImagesCarouselPopup(props: CarouselProps) {
                 <Button
                     variant="light"
                     radius="full"
-                    hidden
                     className={`hidden sm:flex h-24 w-24 text-white absolute right-5 sm:right-2 z-50 ${styles.next}`}
                     size="sm"
                     onPress={nextSlide}
